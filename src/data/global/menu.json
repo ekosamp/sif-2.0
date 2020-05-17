@@ -1,0 +1,90 @@
+[
+    {
+        "text": "Home",
+        "link": "/",
+        "isSubmenu": false,
+        "submenu": [
+            {
+                "text": "Infotechno",
+                "link": "/index-infotechno"
+            },
+            {
+                "text": "Appointment",
+                "link": "/index-appointment"
+            },
+            {
+                "text": "Processing",
+                "link": "/index-processing"
+            },
+            {
+                "text": "Services",
+                "link": "/index-services"
+            },
+            {
+                "text": "Resolutions",
+                "link": "/index-resolutions"
+            }
+        ]
+    },
+    {
+        "text": "Products",
+        "link": "/case-studies",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "BBQs",
+                "link": "/"
+            },
+            {
+                "text": "Wood",
+                "link": "/"
+            },
+            {
+                "text": "Gas",
+                "link": "/"
+            },
+            {
+                "text": "Outdoor",
+                "link": "/"
+            }
+        ]
+    },
+    {
+        "text": "Company",
+        "link": "/about-us",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "About Us",
+                "link": "/about-us"
+            },
+            {
+                "text": "Contact Us",
+                "link": "/contact-us"
+            },
+            {
+                "text": "Leadership",
+                "link": "/leadership"
+            }
+        ]
+    },
+    {
+        "text": "Services",
+        "link": "/it-services",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "IT Services",
+                "link": "/it-services"
+            },
+            {
+                "text": "IT Solutions",
+                "link": "/it-solutions"
+            }
+        ]
+    },
+    {
+        "text": "Special Offers",
+        "link": "/blogs/list-large-image"
+    }
+]

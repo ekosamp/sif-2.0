@@ -1,0 +1,53 @@
+[
+    {
+        "text": "Demos",
+        "link": "#section-demos"
+    },
+    {
+        "text": "Elements",
+        "link": "/",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "Accordion",
+                "link": "/elements/accordion"
+            },
+            {
+                "text": "Box Image",
+                "link": "/elements/box-image"
+            },
+            {
+                "text": "Box Large Image",
+                "link": "/elements/box-large-image"
+            },
+            {
+                "text": "Button",
+                "link": "/elements/button"
+            },
+            {
+                "text": "Call To Action",
+                "link": "/elements/call-to-action"
+            },
+            {
+                "text": "Client Logo",
+                "link": "/elements/client-logo"
+            },
+            {
+                "text": "Counters",
+                "link": "/elements/counters"
+            },
+            {
+                "text": "Lists",
+                "link": "/elements/lists"
+            },
+            {
+                "text": "Testimonials",
+                "link": "/elements/testimonials"
+            }
+        ]
+    },
+    {
+        "text": "Support",
+        "link": "https://hasthemes.com/contact-us/"
+    }
+]
