@@ -65,16 +65,16 @@ const Footer = ({copyrightStyle, ...props}) => {
                                 </TextWidget>
                             </FooterWidget>
                         </Col>
-                        <Col lg={2} md={4} sm={6}>
+                        <Col lg={2} md={4} sm={0}>
                             <FooterWidget responsive={{medium:{mb: '31px'}}}>
-                                <Heading as="h6" mt="-3px" mb="20px">IT Services</Heading>
+                                {/* <Heading as="h6" mt="-3px" mb="20px">IT Services</Heading>
                                 <FooterWidgetList>
                                     <li><Anchor path="/" color="textColor" hoverstyle="2">Managed IT</Anchor></li>
                                     <li><Anchor path="/" color="textColor" hoverstyle="2">IT Support</Anchor></li>
                                     <li><Anchor path="/" color="textColor" hoverstyle="2">IT Consultancy</Anchor></li>
                                     <li><Anchor path="/" color="textColor" hoverstyle="2">Cloud Computing</Anchor></li>
                                     <li><Anchor path="/" color="textColor" hoverstyle="2">Cyber Security</Anchor></li>
-                                </FooterWidgetList>
+                                </FooterWidgetList> */}
                             </FooterWidget>
                         </Col>
                         <Col lg={2} md={4} sm={6}>

@@ -20,7 +20,7 @@ module.exports = {
       address: "2939 Boys Road, Duncan, BC, Canada. V9L 6W4",
       email: 'sales@southislandfireplace.com',
       website: "http://southislandfireplace.com/",
-      rating: "3.0",
+      rating: "5.0",
       customers: "700",
       clients: "3200",
       addressInfos: [

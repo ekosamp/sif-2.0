@@ -132,7 +132,7 @@ const Header = (props) => {
                                                             </InfoIcon>
                                                             <InfoContent>
                                                                 <Heading {...infoHeading}>9:00AM - 5:00PM</Heading>
-                                                                <Text {...infoText}>Monday to Saturday</Text>
+                                                                <Text {...infoText}>Mon - Fri (4pm Sat)</Text>
                                                             </InfoContent>
                                                         </InfoItem>
                                                     </div>
@@ -154,7 +154,7 @@ const Header = (props) => {
                                                             </InfoIcon>
                                                             <InfoContent>
                                                                 <Heading {...infoHeading}>250-746-0123</Heading>
-                                                                <Text {...infoText}>sales@southisland.com</Text>
+                                                                <Text {...infoText}><a href="mailto:sales@southislandfireplace.com">sales@sif.com</a></Text>
                                                             </InfoContent>
                                                         </InfoItem>
                                                     </div>
@@ -172,7 +172,7 @@ const Header = (props) => {
                                                         </SocialLink>
                                                     )}
                                                     {instagram && (
-                                                        <SocialLink path="https://instagram.com" label="Instagram">
+                                                        <SocialLink path={instagram} label="Instagram">
                                                             <TiSocialInstagram/>
                                                         </SocialLink>
                                                     )}

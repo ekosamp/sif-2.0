@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/southisland9321/dev/
+    - /bin/cp -R * $DEPLOYPATH
+    
