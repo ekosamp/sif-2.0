@@ -34,8 +34,8 @@ const ContactForm = () => {
                             ref={register({
                                 required: 'Email is required',
                                 pattern: {
-                                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                  message: "invalid email address"
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                    message: "invalid email address"
                                 }
                             })}
                         />
@@ -67,8 +67,8 @@ const ContactForm = () => {
                             ref={register({ 
                                 required: 'Message is required',
                                 maxLength: {
-                                    value: 50,
-                                    message: "Maximum length is 50"
+                                    value: 500,
+                                    message: "Maximum length is 500"
                                 },
                                 minLength: {
                                     value: 10,

@@ -67,7 +67,7 @@ const Hero = ({headingSecondary, headingPrimary, buttonStyle}) => {
                         <HeroWrapperText>
                             {subtitle && <Heading {...headingSecondary}>{subtitle}</Heading>}
                             {title && <Heading {...headingPrimary}>{title}</Heading>}
-                            <Button {...buttonStyle}>Browse demos</Button>
+                            <Button {...buttonStyle} to="/case-studies">Browse products</Button>
                         </HeroWrapperText>
                     </Col>
                     <Col lg={6}>

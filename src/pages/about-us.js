@@ -11,7 +11,7 @@ import SolutionsArea from '../containers/about-us/solutions-area'
 import FunFactArea from '../containers/global/funfact-area/section-one'
 import TestimonialArea from '../containers/global/testimonial-area/section-one'
 import ClientsArea from '../containers/global/clients-area/section-one'
-import ContactArea from '../containers/global/contact-area/contact-two'
+import ContactArea from '../containers/global/contact-area/contact-one'
 
 const AboutPage = ({location}) => (
   <Layout location={location}>
