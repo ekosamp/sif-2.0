@@ -29,6 +29,7 @@ const Footer = ({copyrightStyle, ...props}) => {
             site {
                 siteMetadata {
                     copyright
+                    authorContact
                     contact {
                         phone
                         email
@@ -47,6 +48,7 @@ const Footer = ({copyrightStyle, ...props}) => {
     const {phone, email, address, website} = siteInfo.site.siteMetadata.contact;
     const {copyright} = siteInfo.site.siteMetadata;
     const {facebook, instagram, linkedin} = siteInfo.site.siteMetadata.social;
+    const ddContact = siteInfo.site.siteMetadata.authorContact;
     return (
         <FooterWrap {...props}>
             <FooterTop>
@@ -118,10 +120,11 @@ const Footer = ({copyrightStyle, ...props}) => {
             <FooterBottom>
                 <Container>
                     <Row className="align-items-center">
-                        <Col md={6} className="text-center text-md-left">
-                            {copyright && <Text {...copyrightStyle}>&copy; {new Date().getFullYear()} {parse(copyright)}</Text>}
+                        <Col md={8} className="text-center text-md-left">
+                            {copyright && <Text {...copyrightStyle}>&copy; {new Date().getFullYear()} {parse(copyright)}
+                             Web design by <Anchor path={ddContact} hoverstyle="2">Danny Di Iorio</Anchor></Text>}
                         </Col>
-                        <Col md={6} className="text-center text-md-right">
+                        <Col md={4} className="text-center text-md-right">
                             <Social space={8} shape="rounded" varient="outlined">
                                 {facebook && (
                                     <SocialLink 

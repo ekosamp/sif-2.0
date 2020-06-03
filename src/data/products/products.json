@@ -1,0 +1,54 @@
+{
+    "id": "products-tiles",
+    "title": "Select a category to see </br> the quality products we offer.",
+    "categories": [
+        {
+            "id": "gas-fireplaces",
+            "title": "Gas Fireplaces",
+            "desc": "",
+            "image": "../../images/products/gas-fire-tile.png"
+        },
+        {
+            "id": "gas-inserts",
+            "title": "Gas Inserts",
+            "desc": "",
+            "image": "../../images/products/"
+        },
+        {
+            "id": "gas-stoves",
+            "title": "Gas Stoves",
+            "desc": "",
+            "image": "../../images/products/"
+        },
+        {
+            "id": "wood-fireplaces",
+            "title": "Wood Fireplaces",
+            "desc": "",
+            "image": "../../images/products/"
+        },
+        {
+            "id": "wood-inserts",
+            "title": "Wood Inserts",
+            "desc": "",
+            "image": "../../images/products/"
+        },
+        {
+            "id": "wood-stoves",
+            "title": "Wood Stoves",
+            "desc": "",
+            "image": "../../images/products/"
+        },
+        {
+            "id": "electric-fireplaces",
+            "title": "Electric Fireplaces",
+            "desc": "",
+            "image": "../../images/products/"
+        },
+        {
+            "id": "bbqs-grills",
+            "title": "Barbecues, Grills",
+            "desc": "",
+            "image": "../../images/products/"
+        }
+    ]
+}

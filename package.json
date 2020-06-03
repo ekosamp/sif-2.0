@@ -1,6 +1,7 @@
 {
   "name": "sif-website",
   "private": true,
+  "homepage": "http://southislandfireplace.com/dev",
   "description": "Re-designed company website",
   "version": "0.1.0",
   "author": "Danny Di Iorio <ddiiorio.dev@gmail.com>",

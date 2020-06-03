@@ -1,14 +1,15 @@
 module.exports = {
-  pathPrefix: `/`,
+  pathPrefix: `/dev`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: ``,
     description: ``,
     author: `Danny Di Iorio`,
+    authorContact: `https://www.linkedin.com/in/danielrdiiorio/`,
     twitterUsername: ``,
     image: 'landing.png',
     siteUrl: 'http://www.southislandfireplace.com/',
-    copyright: "South Island Fireplace & Spas. <a href='https://hasthemes.com/' target='_blank' rel='noopener noreferrer'>All Rights Reserved.</a>",
+    copyright: "South Island Fireplace & Spas. <a href='https://hasthemes.com/' target='_blank' rel='noopener noreferrer'>All Rights Reserved. </a>",
     social: {
       facebook: "https://www.facebook.com/southislandfireplace/",
       // twitter: "https://www.twitter.com",
@@ -178,7 +179,7 @@ module.exports = {
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
-        useACF: false
+        useACF: true
       }
     }
   ]

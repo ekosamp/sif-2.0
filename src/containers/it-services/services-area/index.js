@@ -32,29 +32,50 @@ const ServicesArea = (props) => {
                   }
                 }
             }
+            allProductsJson {
+                edges {
+                  node {
+                    title
+                    categories {
+                      title
+                      desc
+                      image
+                    }
+                  }
+                }
+              }
         }
     `); 
     const featureData = featuredDataQuery.allItServicesJson.edges;
     const {linkStyle, headingStyle} = props;
+    const productsData = featuredDataQuery.allProductsJson.edges;
     return (
         <SectionWrap>
             <Container>
                 <Row>
                     <Col lg={12}>
                         <SectionTitle
-                            subtitle="Our Services"
-                            title="For your very specific industry, <br/> we have <span>highly-tailored IT solutions.</span>"
+                            subtitle="Our Products"
+                            title={productsData[0].node.title}
                         />
                     </Col>
                 </Row>
                 <Row>
-                    {featureData.map(feature => (
+                    {/* {featureData.map(feature => (
                         <Col lg={4} md={6} className="box-item" key={feature.node.id}>
                             <FeatureBox
                                 title={feature.node.title}
                                 imageSrc={feature.node.icon.img.childImageSharp}
                                 desc={feature.node.excerpt}
                                 path={`/it-service/${feature.node.fields.slug}`}
+                            />
+                        </Col>
+                    ))} */}
+                    {productsData[0].node.categories.map(product => (
+                        <Col lg={3} md={6} className="box-item" key={product.id}>
+                            <FeatureBox
+                                title={product.title}
+                                imageSrc={product.image}
                             />
                         </Col>
                     ))}
