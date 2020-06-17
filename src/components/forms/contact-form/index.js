@@ -63,7 +63,7 @@ const ContactForm = () => {
                         <Textarea 
                             name="con_message" 
                             id="con_message" 
-                            placeholder="Please describe what you need."
+                            placeholder="Please describe your question or how we can help you *"
                             ref={register({ 
                                 required: 'Message is required',
                                 maxLength: {
@@ -82,7 +82,7 @@ const ContactForm = () => {
             </Row>
             <Row>
                 <Col lg={12}>
-                    <Button type="submit">Send Message</Button>
+                    <Button skin="primary" type="submit">Send Message</Button>
                 </Col>
             </Row>
         </Form>

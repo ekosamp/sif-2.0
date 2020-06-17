@@ -26,7 +26,7 @@ const Button = ({children, icon, ...props}) => {
                 )
         }else {
             return(
-                <AnchorButton href={to} {...restProps}>
+                <AnchorButton href={to} target="_blank" {...restProps}>
                     {props.iconposition === 'left' && icon && <span className="btn-icon">{icon}</span>}
                     {children}
                     {props.iconposition === 'right' && icon && <span className="btn-icon">{icon}</span>}
