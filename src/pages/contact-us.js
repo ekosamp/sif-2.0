@@ -7,6 +7,7 @@ import PageHeader from '../components/pageheader'
 import CTAArea from '../containers/global/cta-area/section-one'
 import ContactFormArea from '../containers/contact-us/contact-form-area'
 import ContactInfoArea from '../containers/contact-us/contact-info-area'
+import GoogleMap from '../containers/elements/google-map/section-two'
 
 const ContactUsPage = ({ pageContext, location }) => (
     <Layout location={location}>
@@ -20,6 +21,7 @@ const ContactUsPage = ({ pageContext, location }) => (
         <main className="site-wrapper-reveal">
             <ContactFormArea/>
             <ContactInfoArea/>
+            <GoogleMap/>
             <CTAArea/>
         </main>
         <Footer/>

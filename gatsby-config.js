@@ -9,7 +9,7 @@ module.exports = {
     twitterUsername: ``,
     image: 'landing.png',
     siteUrl: 'http://www.southislandfireplace.com/',
-    copyright: "South Island Fireplace & Spas. <a href='https://hasthemes.com/' target='_blank' rel='noopener noreferrer'>All Rights Reserved. </a>",
+    copyright: "South Island Fireplace & Spas. <a href='' target='_blank' rel='noopener noreferrer'>All Rights Reserved. </a>",
     social: {
       facebook: "https://www.facebook.com/southislandfireplace/",
       // twitter: "https://www.twitter.com",
@@ -20,7 +20,7 @@ module.exports = {
       phone: '250-746-0123',
       address: "2939 Boys Road, Duncan, BC, Canada. V9L 6W4",
       email: 'sales@southislandfireplace.com',
-      website: "http://southislandfireplace.com/",
+      website: "http://www.southislandfireplace.com/",
       rating: "5.0",
       customers: "700",
       clients: "3200",
@@ -181,6 +181,13 @@ module.exports = {
         // does your site use the Advanced Custom Fields Plugin?
         useACF: true
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: 1849858,
+        sv: 6
+      },
+    },
   ]
 }
