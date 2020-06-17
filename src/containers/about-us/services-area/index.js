@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import {Container, Row, Col} from '../../../components/ui/wrapper'
 import Heading from '../../../components/ui/heading'
 import Anchor from '../../../components/ui/anchor'
-import ServiceBox from '../../../components/box-image/layout-six'
+import ServiceBox from '../../../components/box-image/layout-four'
 import {ServicesWrapper} from './services-area.style'
 
 const Services = ({serviceBoxStyle, linkStyle, headingStyle}) => {

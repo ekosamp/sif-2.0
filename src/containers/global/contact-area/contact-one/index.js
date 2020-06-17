@@ -31,21 +31,22 @@ const ContactArea = ({
                 siteMetadata {
                   contact {
                     phone
+                    email
                   }
                 }
             }
         } 
     `);
     const imageData = contactQueryData.sectionBg.childImageSharp.fluid;
-    const {phone} = contactQueryData.contactData.siteMetadata.contact
+    const {phone, email} = contactQueryData.contactData.siteMetadata.contact
     return (
         <SectionWrap fluid={imageData}>
             <Container>
                 <Row alignitems="center">
                     <Col lg={6}>
                         <ContactTextBox>
-                            <Heading {...headingStyle}>Obtaining further information by <span>make a contact</span> with our experienced IT staffs.</Heading>
-                            <Text {...descStyle}>We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan</Text>
+                            <Heading {...headingStyle}>Contact our experienced and friendly staff to obtain further information</Heading>
+                            <Text {...descStyle}>We’re available 8 hours a day! <br/> We look forward to hearing from you</Text>
                         </ContactTextBox>
                     </Col>
                     <Col lg={6}>
@@ -53,9 +54,9 @@ const ContactArea = ({
                             <MdPhone className="icon"/>
                             <Heading {...titleStyle}>REACH OUT NOW!</Heading>
                             {phone && (
-                                <Heading><Anchor path="/" {...phoneAnchorStyle}>{phone}</Anchor></Heading>
+                                <Heading><Anchor path={`tel:${phone}`} {...phoneAnchorStyle}>{phone}</Anchor></Heading>
                             )}
-                            <Button {...btnStyle}>Contact Us</Button>
+                            <Button to={`mailto:${email}`} {...btnStyle}>Email Us</Button>
                         </ContactInfoBox>
                     </Col>
                 </Row>
