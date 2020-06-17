@@ -10,7 +10,7 @@ const GoogleMapSection = () => {
             <Container>
                 <Row>
                     <Col lg={12}>
-                        <Heading as="h3" mb="40px" textalign="center">Default Style</Heading>
+                        {/* <Heading as="h5" mb="40px" textalign="center">Come check out our showroom</Heading> */}
                         <GoogleMap />
                     </Col>
                 </Row>
