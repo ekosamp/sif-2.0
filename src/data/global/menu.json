@@ -28,29 +28,29 @@
     },
     {
         "text": "Products",
-        "link": "/case-studies",
+        "link": "/products",
         "isSubmenu": true,
         "submenu": [
             {
-                "text": "BBQs",
-                "link": "/"
-            },
-            {
                 "text": "Wood",
-                "link": "/"
+                "link": "/products/wood"
             },
             {
                 "text": "Gas",
-                "link": "/"
+                "link": "/products/gas"
+            },
+            {
+                "text": "Electric",
+                "link": "/products/electric"
             },
             {
                 "text": "Outdoor",
-                "link": "/"
+                "link": "/products/outdoor"
             }
         ]
     },
     {
-        "text": "Company",
+        "text": "About",
         "link": "/about-us",
         "isSubmenu": true,
         "submenu": [
@@ -73,6 +73,18 @@
         "link": "/it-services",
         "isSubmenu": true,
         "submenu": [
+            {
+                "text": "Gas Service",
+                "link": "/gas-service"
+            },
+            {
+                "text": "Replacement Parts",
+                "link": "/parts"
+            },
+            {
+                "text": "Financing",
+                "link": "/financing"
+            },
             {
                 "text": "IT Services",
                 "link": "/it-services"

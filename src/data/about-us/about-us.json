@@ -8,13 +8,13 @@
     {
         "id": "about-page-intro",
         "section_title": {
-            "title": "We run all kinds of IT services that vow your <span>success</span>",
+            "title": "Visit our store as we are regularly upgrading our modern showroom",
             "subtitle": "our company"
         },
-        "heading": "<mark>30</mark> YEARS’ EXPERIENCE IN IT",
+        "heading": "<mark>30</mark> YEARS EXPERIENCE",
         "text": "",
         "desc": "We provide installation and on-going service for all our customers. Our large and dedicated sales and service staff are trained in all the products we sell, ensuring you get the appliance best suited for you and your home.",
-        "path": "/it-services"
+        "path": "products"
     },
     {
         "id": "about-page-resources",
