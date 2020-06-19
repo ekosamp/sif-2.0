@@ -104,7 +104,7 @@ module.exports = {
         "display": "standalone",
         "scope": "/",
         "start_url": "/",
-        "icon": "src/assets/images/favicon.png",
+        "icon": "src/assets/images/favicon.ico",
         "icons": [
           {
             "src": "/icons/icon-72x72.png",
