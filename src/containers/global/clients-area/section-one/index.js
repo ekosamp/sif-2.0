@@ -8,37 +8,31 @@ import SwiperSlider from '../../../../components/ui/swiper'
 const ClientsArea = (props) => {
     const partnersQueryData = useStaticQuery(graphql `
         query AboutPartnersDataQuery{
-            allPartnersJson {
+            allWordpressWpBrands {
                 edges {
-                  node {
-                    id
-                    path
-                    image {
-                      childImageSharp {
-                        fluid(quality: 100) {
-                          ...GatsbyImageSharpFluid_tracedSVG
-                          presentationWidth
-                          presentationHeight
-                          aspectRatio
+                    node {
+                        id
+                        acf {
+                            path
+                            img {
+                                localFile {
+                                    childImageSharp {
+                                        fluid(quality: 100) {
+                                            ...GatsbyImageSharpFluid_tracedSVG
+                                            presentationWidth
+                                            presentationHeight
+                                            aspectRatio
+                                        }
+                                    }
+                                }
+                            }
                         }
-                      }
                     }
-                    hover_image {
-                      childImageSharp {
-                        fluid(quality: 100) {
-                            ...GatsbyImageSharpFluid_tracedSVG
-                            presentationWidth
-                            presentationHeight
-                            aspectRatio
-                        }
-                      }
-                    }
-                  }
                 }
             }
         }
     `); 
-    const partnersData = partnersQueryData.allPartnersJson.edges;
+    const partnersData = partnersQueryData.allWordpressWpBrands.edges;
     const {sectionStyle, slider, sliderStyle, clientLogoWrap} = props
     return (
         <Section {...sectionStyle}>
@@ -51,9 +45,9 @@ const ClientsArea = (props) => {
                                     <ClientLogo
                                         layout={1}
                                         title={data.node.id}
-                                        path={data.node.path}
-                                        brandImage={data.node.image.childImageSharp}
-                                        hoverImage={data.node.hover_image.childImageSharp}
+                                        path={data.node.acf.path}
+                                        brandImage={data.node.acf.img.localFile.childImageSharp}
+                                        hoverImage={data.node.acf.img.localFile.childImageSharp}
                                     />
                                 </Box>
                             )
@@ -64,6 +58,68 @@ const ClientsArea = (props) => {
         </Section>
     )
 }
+
+// query AboutPartnersDataQuery{
+//     allWordpressWpBrands {
+//         edges {
+//           node {
+//               id
+//               acf {
+//                   path
+//                   image {
+//                     childImageSharp {
+//                       fluid(quality: 100) {
+//                         ...GatsbyImageSharpFluid_tracedSVG
+//                         presentationWidth
+//                         presentationHeight
+//                         aspectRatio
+//                       }
+//                     }
+//                   }
+//                   hover_image {
+//                     childImageSharp {
+//                       fluid(quality: 100) {
+//                           ...GatsbyImageSharpFluid_tracedSVG
+//                           presentationWidth
+//                           presentationHeight
+//                           aspectRatio
+//                       }
+//                     }
+//                   }
+//               }
+//           }
+//         }
+//     }
+// }
+
+// allPartnersJson {
+//     edges {
+//       node {
+//         id
+//         path
+//         image {
+//           childImageSharp {
+//             fluid(quality: 100) {
+//               ...GatsbyImageSharpFluid_tracedSVG
+//               presentationWidth
+//               presentationHeight
+//               aspectRatio
+//             }
+//           }
+//         }
+//         hover_image {
+//           childImageSharp {
+//             fluid(quality: 100) {
+//                 ...GatsbyImageSharpFluid_tracedSVG
+//                 presentationWidth
+//                 presentationHeight
+//                 aspectRatio
+//             }
+//           }
+//         }
+//       }
+//     }
+// }
 
 ClientsArea.propTypes = {
     sectionStyle: PropTypes.object,

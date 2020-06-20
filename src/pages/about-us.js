@@ -6,9 +6,6 @@ import Footer from '../containers/layout/footer/footer-one'
 import PageHeader from '../containers/about-us/page-header'
 import AboutArea from '../containers/about-us/about-area'
 import ServicesArea from '../containers/about-us/services-area'
-// import ResourcesArea from '../containers/about-us/resources-area'
-// import SolutionsArea from '../containers/about-us/solutions-area'
-// import FunFactArea from '../containers/global/funfact-area/section-one'
 import TestimonialArea from '../containers/global/testimonial-area/section-one'
 import ClientsArea from '../containers/global/clients-area/section-one'
 import ContactArea from '../containers/global/contact-area/contact-one'
@@ -21,9 +18,6 @@ const AboutPage = ({location}) => (
         <PageHeader/>
         <AboutArea/>
         <ServicesArea/>
-        {/* <ResourcesArea/> */}
-        {/* <SolutionsArea/> */}
-        {/* <FunFactArea/> */}
         <TestimonialArea/>
         <ClientsArea/>
         <ContactArea/>
