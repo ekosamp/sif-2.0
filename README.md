@@ -16,6 +16,7 @@ Company website revamped 2020
 
 * React (v16.12.0)
 * Gatsby (v2.18.4)
-* Bootstrap 4.4.1
+* Bootstrap (v4.4.1)
+* React Helmet (v5.2.1)
 * Font Awesome Icons
 * Data from Wordpress headless CMS
