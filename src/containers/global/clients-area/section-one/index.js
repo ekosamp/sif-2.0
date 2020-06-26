@@ -18,7 +18,7 @@ const ClientsArea = (props) => {
                                 localFile {
                                     childImageSharp {
                                         fluid(quality: 100) {
-                                            ...GatsbyImageSharpFluid_tracedSVG
+                                            ...GatsbyImageSharpFluid
                                             presentationWidth
                                             presentationHeight
                                             aspectRatio

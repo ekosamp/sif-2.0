@@ -68,7 +68,7 @@ BoxLargeImage.propTypes = {
 
 BoxLargeImage.defaultProps={
     path: '/',
-    btnText: 'Discover Now',
+    btnText: 'See our selection',
     btnStyle: {
         iconposition: "right",
         icondistance: "4px",

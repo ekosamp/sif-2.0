@@ -20,9 +20,9 @@ const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
     const {headingStyle, descStyle, buttonStyle, ...restStyles} = boxStyles;
     let boxImage;
     if(imageSrc.fixed && typeof imageSrc.fixed !== 'function'){
-        boxImage = <Img fixed={imageSrc.fixed} alt={title}/>;
+        boxImage = <Img fixed={imageSrc.fixed} alt={title} style={{display: "block"}}/>;
     } else if(imageSrc.fluid){
-        boxImage = <Image fluid={imageSrc.fluid} alt={title}/>
+        boxImage = <Image fluid={imageSrc.fluid} alt={title} style={{display: "block"}}/>
     } else{
         boxImage = <img src={imageSrc} alt={title}/>
     }
@@ -35,7 +35,7 @@ const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
                         {boxImage}
                         <BoxLargeImgBtnWrap>
                             <BoxLargeImgBtnInner>
-                                <Button {...buttonStyle} to={path}>Learn more</Button>
+                                <Button {...buttonStyle} to={path}>GO</Button>
                             </BoxLargeImgBtnInner>
                         </BoxLargeImgBtnWrap>
                         <BoxLargeImgHeading>
@@ -44,9 +44,9 @@ const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
                         <BoxLargeImgLink path={path}>{title}</BoxLargeImgLink>
                     </BoxLargeImgMedia>
                 )}
-                <BoxLargeImgContent>
+                {/* <BoxLargeImgContent>
                     {desc && <TextWrap {...descStyle}>{parse(desc)}</TextWrap>}
-                </BoxLargeImgContent>
+                </BoxLargeImgContent> */}
             </BoxLargeImgInner>
         </BoxLargeImgWrap>
     )

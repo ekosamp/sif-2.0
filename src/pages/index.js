@@ -4,8 +4,9 @@ import Layout from '../containers/layout/layout'
 import Header from '../containers/layout/header/header-two'
 import Footer from '../containers/layout/footer/footer-one'
 import Hero from '../containers/landing/hero'
-import ServicesArea from '../containers/it-services/services-area'
+import ProductsArea from '../containers/products'
 import ContactArea from '../containers/global/contact-area/contact-two'
+import ClientsArea from '../containers/global/clients-area/section-one'
 
 const IndexPage = ({location}) => (
   <Layout location={location}>
@@ -13,7 +14,8 @@ const IndexPage = ({location}) => (
     <Header />
     <main className="site-wrapper-reveal">
         <Hero />
-        <ServicesArea/>
+        <ClientsArea/>
+        <ProductsArea/>
         <ContactArea/>
     </main>
     <Footer/>

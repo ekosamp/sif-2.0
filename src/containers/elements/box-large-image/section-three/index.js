@@ -6,28 +6,28 @@ import {Container, Row, Col} from '../../../../components/ui/wrapper'
 import {SectionWrap} from './section.style'
 import BoxLargeImage from '../../../../components/box-large-image/layout-two'
 
-import image1 from '../../../../data/images/box-image/image-03-480x298.jpg'
-import image2 from '../../../../data/images/box-image/image-06-480x298.jpg'
-import image3 from '../../../../data/images/box-image/image-05-480x298.jpg'
+import stove from '../../../../data/images/products/wood-stove.jpg'
+import insert from '../../../../data/images/products/wood-insert.jpg'
+import fireplace from '../../../../data/images/products/wood-fireplace.jpg'
 
 const BoxSection = ({linkStyle, sectionTitleStyle, sectionBottomStyle, boxStyles}) => {
     const boxContents = [
         {
             id: 1,
-            imageSrc: image1,
-            title: 'Info Security Management',
+            imageSrc: stove,
+            title: 'Wood Stoves',
             desc: 'At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution.'
         },
         {
             id: 2,
-            imageSrc: image2,
-            title: 'Highly Professional Staffs',
+            imageSrc: insert,
+            title: 'Wood Inserts',
             desc: 'Having obtained the official & formal training in IT technology and technical fields, our staffs know best.'
         },
         {
             id: 3,
-            imageSrc: image3,
-            title: 'Info Security Management',
+            imageSrc: fireplace,
+            title: 'Wood Fireplaces',
             desc: 'At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution.'
         }
     ]

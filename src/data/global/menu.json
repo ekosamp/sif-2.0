@@ -5,24 +5,8 @@
         "isSubmenu": false,
         "submenu": [
             {
-                "text": "Infotechno",
-                "link": "/index-infotechno"
-            },
-            {
-                "text": "Appointment",
-                "link": "/index-appointment"
-            },
-            {
-                "text": "Processing",
-                "link": "/index-processing"
-            },
-            {
                 "text": "Services",
                 "link": "/index-services"
-            },
-            {
-                "text": "Resolutions",
-                "link": "/index-resolutions"
             }
         ]
     },

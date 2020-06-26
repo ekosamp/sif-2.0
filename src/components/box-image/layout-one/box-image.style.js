@@ -18,9 +18,10 @@ export const BoxImgInner = styled.div `
     }
 `;
 
+// margin-bottom: 41px;
 export const BoxImgWrap = styled.figure `
     text-align: center;
-    margin-bottom: 41px;
+    margin-bottom: 20px;
     @media ${device.xsmall}{
         margin-bottom: 25px;
     }

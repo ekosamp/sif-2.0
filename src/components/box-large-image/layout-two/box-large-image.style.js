@@ -23,7 +23,7 @@ export const BoxLargeImgContent = styled.div `
     padding-top: ${props => props.pt || '32px'};
     padding-left: ${props => props.pt || '35px'};
     padding-right: ${props => props.pt || '35px'};
-    padding-bottom: ${props => props.pb || '88px'};;
+    padding-bottom: ${props => props.pb || '35px'};;
     text-align: ${props => props.textalign || 'center'};;
 `;
  

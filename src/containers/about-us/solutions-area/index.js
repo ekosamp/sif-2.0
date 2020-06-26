@@ -19,22 +19,9 @@ const Solutions = ({headingStyle}) => {
                     text
                 }
             }
-            allWordpressWpTests {
-                edges {
-                  node {
-                    acf {
-                      brochure
-                    }
-                    id
-                    slug
-                    title
-                    }
-                }
-            }
         }      
     `);
     const {title, solutions} = solutionsData.aboutUsJson;
-    // console.log(solutionsData.allWordpressWpTests.edges);
     return (
         <SolutionsWrapper>
             <Container>
