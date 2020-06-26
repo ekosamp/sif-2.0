@@ -1,54 +1,62 @@
 {
     "id": "products-tiles",
-    "title": "Select a category to see </br> the quality products we offer.",
+    "title": "Select a category to see </br> the quality products we offer",
     "categories": [
         {
             "id": "gas-fireplaces",
             "title": "Gas Fireplaces",
             "desc": "",
-            "image": "../../images/products/gas-fire-tile.png"
+            "image": "../images/products/gas-fireplace.jpg",
+            "path": "/products"
         },
         {
             "id": "gas-inserts",
             "title": "Gas Inserts",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/gas-insert.jpg",
+            "path": "/products"
         },
         {
             "id": "gas-stoves",
             "title": "Gas Stoves",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/gas-stove.jpg",
+            "path": "/products"
         },
         {
             "id": "wood-fireplaces",
             "title": "Wood Fireplaces",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/wood-fireplace.jpg",
+            "path": "/products"
         },
         {
             "id": "wood-inserts",
             "title": "Wood Inserts",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/wood-insert.jpg",
+            "path": "/products"
         },
         {
             "id": "wood-stoves",
             "title": "Wood Stoves",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/wood-stove.jpg",
+            "path": "/products"
         },
         {
             "id": "electric-fireplaces",
             "title": "Electric Fireplaces",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/electric.jpg",
+            "path": "/products"
         },
         {
-            "id": "bbqs-grills",
-            "title": "Barbecues, Grills",
+            "id": "outdoor",
+            "title": "Outdoor, BBQs",
             "desc": "",
-            "image": "../../images/products/"
+            "image": "../images/products/outdoor.jpg",
+            "path": "/products"
         }
     ]
 }

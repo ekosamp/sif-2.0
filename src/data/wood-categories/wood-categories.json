@@ -1,0 +1,28 @@
+{
+    "id": "wood-categories",
+    "title": "Select a category to see </br> the quality products we offer",
+    "subtitle": "subtitle",
+    "categories": [
+        {
+            "id": "wood-fireplaces",
+            "title": "Wood Fireplaces",
+            "desc": "Our wood burning stove lineup includes hybrid catalytic, non-catalytic, steel and cast-iron stoves in a variety of styles including traditional, contemporary, and modern.",
+            "image": "../images/products/wood-fireplace.jpg",
+            "path": "/products/wood/fireplaces"
+        },
+        {
+            "id": "wood-inserts",
+            "title": "Wood Inserts",
+            "desc": "Our wood burning stove lineup includes hybrid catalytic, non-catalytic, steel and cast-iron stoves in a variety of styles including traditional, contemporary, and modern.",
+            "image": "../images/products/wood-insert.jpg",
+            "path": "/products/wood/inserts"
+        },
+        {
+            "id": "wood-stoves",
+            "title": "Wood Stoves",
+            "desc": "Our wood burning stove lineup includes hybrid catalytic, non-catalytic, steel and cast-iron stoves in a variety of styles including traditional, contemporary, and modern.",
+            "image": "../images/products/wood-stove.jpg",
+            "path": "/products/wood/stoves"
+        }
+    ]
+}

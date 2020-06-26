@@ -1,0 +1,27 @@
+{
+    "id": "gas-categories",
+    "title": "Select a category to see </br> the quality products we offer",
+    "categories": [
+        {
+            "id": "gas-fireplaces",
+            "title": "Gas Fireplaces",
+            "desc": "",
+            "image": "../images/products/gas-fireplace.jpg",
+            "path": "/products/gas/fireplaces"
+        },
+        {
+            "id": "gas-inserts",
+            "title": "Gas Inserts",
+            "desc": "",
+            "image": "../images/products/gas-insert.jpg",
+            "path": "/products/gas/inserts"
+        },
+        {
+            "id": "gas-stoves",
+            "title": "Gas Stoves",
+            "desc": "",
+            "image": "../images/products/gas-stove.jpg",
+            "path": "/products/gas/stoves"
+        }
+    ]
+}
