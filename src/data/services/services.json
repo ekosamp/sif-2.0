@@ -71,5 +71,127 @@
         "id": "services-blog-contnet",
         "title": "Latest news are <span>on top all times</span>",
         "subtitle": "LATEST NEWS"
+    },
+    {
+        "id": "services-gas-service",
+        "title": "Latest news are <span>on top all times</span>",
+        "subtitle": "LATEST NEWS",
+        "annual_service": "All gas fireplaces should be cleaned and serviced by a licensed and qualified service technician on an annual basis to keep operating at peak performance. A simple cleaning and tune-up can help avoid costly repairs later and provides the peace of mind the fireplace is ready for that next chilly evening.",
+        "warning_signs": [
+            {
+                "id": 1,
+                "title": "pilot light outages"
+            },
+            {
+                "id": 2,
+                "title": "\"booming\" noises on ignition"
+            },
+            {
+                "id": 3,
+                "title": "delayed ignition (slow to start up)"
+            },
+            {
+                "id": 4,
+                "title": "excessive soot or corrosion inside the fireplace or on the vent"
+            },
+            {
+                "id": 5,
+                "title": "the smell of rotten eggs or sulphur, or a sharp odour that causes your eyes to sting"
+            }
+        ],
+        "annual_service_steps": [
+            {
+                "id": 1,
+                "title":"Replace all batteries with fresh alkaline batteries (4 AA’s in receiver and 9v in handset)."
+            },
+            {
+                "id": 2,
+                "title":"Test total voltage at receiver box – should be 6+ volts."
+            },
+            {
+                "id": 3,
+                "title":"Check all gas connections for leaks with fireplace running on high."
+            },
+            {
+                "id": 4,
+                "title":"Clean/vacuum any lint and dust build-up around valve and controls."
+            },
+            {
+                "id": 5,
+                "title":"Inspect for signs of wear or damage."
+            },
+            {
+                "id": 6,
+                "title":"Inspect and clean convective hot air outlet grills or louvers."
+            },
+            {
+                "id": 7,
+                "title":"Remove logs/coals/rocks; vacuum lint and carbon build-up from firebox, burner and logs/coals/rocks. A natural bristle paintbrush can be used to brush off logs/coals/rocks and firebox ceramic liner."
+            },
+            {
+                "id": 8,
+                "title":"Ceramic fuel bed (logs, rocks or coals) can be touched up with high temp paint."
+            },
+            {
+                "id": 9,
+                "title":"Re-install logs/coals/rocks ensuring correct factory location spec."
+            },
+            {
+                "id": 10,
+                "title":"Fine tune the fireplace for optimal flame appearance and fuel efficiency (burner air shutter setting to factory spec and proper air restrictors installed)."
+            },
+            {
+                "id": 11,
+                "title":"Clean glass of any soot buildup and whiting deposits with ammonia free glass cleaner. Stubborn stains can be removed with “Gas Fireplace Window Cleaner” product."
+            },
+            {
+                "id": 12,
+                "title":"Visually inspect window gasket."
+            },
+            {
+                "id": 13,
+                "title":"Check window pressure relief spring action.  Lubricate with high temp grease if stiff."
+            },
+            {
+                "id": 14,
+                "title":"Where possible, inspect vent system for secure connections, blockages and proper draft."
+            },
+            {
+                "id": 15,
+                "title":"Visually inspect outside vent terminal for insects, damage and clearances to combustibles including landscape shrubbing."
+            },
+            {
+                "id": 16,
+                "title":"Check thermocouple millivolt reading is to factory spec (min 8mv)."
+            },
+            {
+                "id": 17,
+                "title":"Perform timed thermocouple dropout test (min 20 sec)."
+            },
+            {
+                "id": 18,
+                "title":"Check inlet pressure with manometer is to factory spec (see rating plate). (unit turning on high)"
+            },
+            {
+                "id": 19,
+                "title":"Check manifold pressure with manometer, with fireplace running on high, is to factory spec (see rating plate)."
+            },
+            {
+                "id": 20,
+                "title":"Check safety clearances to a combustible mantle and to room furnishings."
+            },
+            {
+                "id": 21,
+                "title":"Review proper remote handset operating procedures with homeowner"
+            },
+            {
+                "id": 22,
+                "title":"Review proper location for remote handset."
+            },
+            {
+                "id": 23,
+                "title":"Check for smooth burning ignition, flame stability"
+            }
+        ]
     }
 ]
