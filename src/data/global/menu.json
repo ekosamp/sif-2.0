@@ -1,14 +1,7 @@
 [
     {
         "text": "Home",
-        "link": "/",
-        "isSubmenu": false,
-        "submenu": [
-            {
-                "text": "Services",
-                "link": "/index-services"
-            }
-        ]
+        "link": "/"
     },
     {
         "text": "Products",
@@ -54,20 +47,20 @@
     },
     {
         "text": "Services",
-        "link": "/it-services",
+        "link": "/services",
         "isSubmenu": true,
         "submenu": [
             {
                 "text": "Gas Service",
-                "link": "/gas-service"
+                "link": "/services/gas-service"
             },
             {
                 "text": "Replacement Parts",
-                "link": "/parts"
+                "link": "/services/parts"
             },
             {
                 "text": "Financing",
-                "link": "/financing"
+                "link": "/services/financing"
             },
             {
                 "text": "IT Services",

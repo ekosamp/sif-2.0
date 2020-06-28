@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const singleBlogPage = path.resolve("./src/templates/blog-template/blog-template.js")
     const blogList = path.resolve("./src/templates/blog-list/blog-list.js");
     const tagPage = path.resolve("./src/templates/tag-template/tag-template.js");
-    const categoryPage = path.resolve("./src/templates/category-template/category-template.js");
+    // const categoryPage = path.resolve("./src/templates/category-template/category-template.js");
     const authorPage = path.resolve("./src/templates/author-template/author-template.js");
     const datePage = path.resolve("./src/templates/date-template/date-template.js");
     
@@ -290,23 +290,23 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Create Categories Page
 
-    let categories = []
-    _.each(posts, edge => {
-        if(_.get(edge, 'node.frontmatter.categories')){
-            categories = categories.concat(edge.node.frontmatter.categories)
-        }
-    })
+    // let categories = []
+    // _.each(posts, edge => {
+    //     if(_.get(edge, 'node.frontmatter.categories')){
+    //         categories = categories.concat(edge.node.frontmatter.categories)
+    //     }
+    // })
 
-    categories = _.uniq(categories)
-    categories.forEach(category => {
-        createPage({
-            path: `/category/${slugify(category)}`,
-            component: categoryPage,
-            context: {
-                category
-            }
-        })
-    })
+    // categories = _.uniq(categories)
+    // categories.forEach(category => {
+    //     createPage({
+    //         path: `/category/${slugify(category)}`,
+    //         component: categoryPage,
+    //         context: {
+    //             category
+    //         }
+    //     })
+    // })
 
     // Create Authors Page
 

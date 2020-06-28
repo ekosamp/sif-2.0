@@ -30,7 +30,7 @@ const CategoryArea = ({
                             path
                             image{
                                 childImageSharp {
-                                    fluid(maxWidth: 480, maxHeight: 298, quality: 100){
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
                                         ...GatsbyImageSharpFluid
                                         presentationWidth
                                         presentationHeight
@@ -53,7 +53,7 @@ const CategoryArea = ({
                             path
                             image{
                                 childImageSharp {
-                                    fluid(maxWidth: 480, maxHeight: 298, quality: 100){
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
                                         ...GatsbyImageSharpFluid
                                         presentationWidth
                                         presentationHeight

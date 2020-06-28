@@ -2,7 +2,7 @@ import React, {Fragment, useState, useRef, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Container, Row, Col} from 'react-bootstrap'
 import { useStaticQuery, graphql } from "gatsby"
-import { MdPlace, MdAvTimer, MdComment, MdPhone, MdMoreHoriz } from "react-icons/md";
+import { MdPlace, MdAvTimer, MdPhone, MdMoreHoriz } from "react-icons/md";
 import { TiSocialFacebook, TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
 import Logo from '../../../../components/logo'
 import SwiperSlider from '../../../../components/ui/swiper'

@@ -1,19 +1,19 @@
 {
     "id": "wood-categories",
-    "title": "Select a category to see </br> the quality products we offer",
+    "title": "Select a type to see the brands </br> and models we can offer",
     "subtitle": "subtitle",
     "categories": [
         {
             "id": "wood-fireplaces",
             "title": "Wood Fireplaces",
-            "desc": "Our wood burning stove lineup includes hybrid catalytic, non-catalytic, steel and cast-iron stoves in a variety of styles including traditional, contemporary, and modern.",
+            "desc": "A wood burning fireplace provides more than warmth; it provides comfort, nostalgia, and helps create memories that will last a lifetime. We offer a number of brands and sizes to fit your needs and style.",
             "image": "../images/products/wood-fireplace.jpg",
             "path": "/products/wood/fireplaces"
         },
         {
             "id": "wood-inserts",
             "title": "Wood Inserts",
-            "desc": "Our wood burning stove lineup includes hybrid catalytic, non-catalytic, steel and cast-iron stoves in a variety of styles including traditional, contemporary, and modern.",
+            "desc": "Wood inserts are designed to be placed inside an existing wood fireplace allowing you to update your drafty, open wood fireplace, dramatically increase heating capacity and wood burning efficiency.",
             "image": "../images/products/wood-insert.jpg",
             "path": "/products/wood/inserts"
         },

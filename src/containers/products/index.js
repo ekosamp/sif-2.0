@@ -22,7 +22,7 @@ const ProductsArea = (props) => {
                             image {
                                 childImageSharp{
                                     fixed(width:400, height: 250, quality: 100 ){
-                                        ...GatsbyImageSharpFixed
+                                        ...GatsbyImageSharpFixed_noBase64
                                     }
                                 }
                             }
@@ -59,7 +59,7 @@ const ProductsArea = (props) => {
                 <Row>
                     <Col lg={12}>
                         <SectionBottom>
-                            <Heading {...headingStyle}>Challenges are just opportunities in disguise. <Anchor {...linkStyle} path="/">Take the challenge!</Anchor></Heading>
+                            <Heading {...headingStyle}><Anchor {...linkStyle} path="/contact-us">Contact us</Anchor> if you can't find exactly what you're looking for. </Heading>
                         </SectionBottom>
                     </Col>
                 </Row>
