@@ -68,10 +68,10 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
             <Container>
                 <Row>
                     <Col lg={12}>
-                        <Heading {...headingStyle}>We hire staffs who know more than what they show <br/>of <span> IT services</span></Heading>
+                        <Heading {...headingStyle}>Meet our <span>team</span></Heading>
                     </Col>
                 </Row>
-                <Row {...headTeamRowStyle}>
+                {/* <Row {...headTeamRowStyle}>
                     {headMembers && headMembers.map(headMember => (
                         <Col md={4} key={headMember.node.id}>
                             <TeamMember
@@ -84,10 +84,10 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
                             />
                         </Col>
                     ))}
-                </Row>
+                </Row> */}
                 <Row>
                     {executives && executives.map(executive => (
-                        <Col lg={3} md={6} key={executive.node.id}>
+                        <Col md={4} key={executive.node.id}>
                             <TeamMember
                                 {...teamStyle}
                                 {...executiveStyle}
@@ -117,7 +117,7 @@ TeamArea.defaultProps = {
         textalign: "center",
         mb: "85px",
         child: {
-            color: "primary"
+            color: "secondary"
         },
         responsive: {
             large: {
