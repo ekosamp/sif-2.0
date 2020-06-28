@@ -10,12 +10,12 @@ import ContactArea from '../../containers/global/contact-area/contact-one'
 const WoodProductsPage = ({ pageContext, location }) => {
     return (
         <Layout location={location}>
-            <SEO title="Wood Burning Categories" />
+            <SEO title="Wood Burning Units" />
             <Header />
             <PageHeader
                 pageContext={pageContext}
                 location={location}
-                title="Wood Burning Categories"
+                title="Wood Burning Units"
             />
             <main className="site-wrapper-reveal">
                 <CategoryArea category="wood"/>

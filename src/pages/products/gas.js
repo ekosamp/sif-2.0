@@ -9,12 +9,12 @@ import CategoryArea from '../../containers/products/category-area'
 const GasProductsPage = ({ pageContext, location }) => {
     return (
         <Layout location={location}>
-            <SEO title="Gas Categories" />
+            <SEO title="Natural Gas & Propane Units" />
             <Header />
             <PageHeader
                 pageContext={pageContext}
                 location={location}
-                title="Gas Categories"
+                title="Natural Gas & Propane Units"
             />
             <main className="site-wrapper-reveal">
                 <CategoryArea category="gas"/>
