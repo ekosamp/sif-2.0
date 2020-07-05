@@ -61,19 +61,11 @@
             {
                 "text": "Financing",
                 "link": "/services/financing"
-            },
-            {
-                "text": "IT Services",
-                "link": "/it-services"
-            },
-            {
-                "text": "IT Solutions",
-                "link": "/it-solutions"
             }
         ]
     },
     {
         "text": "Special Offers",
-        "link": "/blogs/list-large-image"
+        "link": "/#"
     }
 ]

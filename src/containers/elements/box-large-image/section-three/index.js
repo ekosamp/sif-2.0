@@ -5,30 +5,31 @@ import Anchor from '../../../../components/ui/anchor'
 import {Container, Row, Col} from '../../../../components/ui/wrapper'
 import {SectionWrap} from './section.style'
 import BoxLargeImage from '../../../../components/box-large-image/layout-two'
+import Heading from '../../../../components/ui/heading'
 
 import stove from '../../../../data/images/products/wood-stove.jpg'
 import insert from '../../../../data/images/products/wood-insert.jpg'
 import fireplace from '../../../../data/images/products/wood-fireplace.jpg'
 
-const BoxSection = ({linkStyle, sectionTitleStyle, sectionBottomStyle, boxStyles}) => {
+const BoxSection = ({linkStyle, sectionTitleStyle, sectionBottomStyle, boxStyles, headingStyle}) => {
     const boxContents = [
         {
             id: 1,
             imageSrc: stove,
             title: 'Wood Stoves',
-            desc: 'At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution.'
+            desc: '...'
         },
         {
             id: 2,
             imageSrc: insert,
             title: 'Wood Inserts',
-            desc: 'Having obtained the official & formal training in IT technology and technical fields, our staffs know best.'
+            desc: '...'
         },
         {
             id: 3,
             imageSrc: fireplace,
             title: 'Wood Fireplaces',
-            desc: 'At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution.'
+            desc: '...'
         }
     ]
     return(
@@ -38,8 +39,8 @@ const BoxSection = ({linkStyle, sectionTitleStyle, sectionBottomStyle, boxStyles
                     <Col xl={12}>
                         <SectionTitle
                             {...sectionTitleStyle}
-                            subtitle="HIRE US, WHY NOT?"
-                            title="What make us <span>excel?</span>"
+                            subtitle="Our Products"
+                            title="[work in progress]"
                         />
                     </Col>
                 </Row>
@@ -61,7 +62,7 @@ const BoxSection = ({linkStyle, sectionTitleStyle, sectionBottomStyle, boxStyles
                 </Row>
                 <Row {...sectionBottomStyle}>
                     <Col lg={12}>
-                        <Anchor {...linkStyle} path="/">Learn more about how we work span <i className="icon far fa-long-arrow-right"></i></Anchor>
+                        <Heading {...headingStyle}><Anchor {...linkStyle} path="/contact-us">Contact us</Anchor> if you can't find exactly what you're looking for. </Heading>
                     </Col>
                 </Row>
             </Container>
@@ -103,6 +104,13 @@ BoxSection.defaultProps = {
     sectionBottomStyle: {
         mt: '40px',
         align: 'center'
+    },
+    headingStyle: {
+        as: 'h3',
+        fontSize: '18px',
+        fontweight: 500,
+        lineHeight: 1.40,
+        color: '#333333'
     }
 }
 

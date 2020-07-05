@@ -62,6 +62,9 @@ module.exports = {
         "excerpt_separator": `<!-- endexcerpt -->`,
         plugins: [
           {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,

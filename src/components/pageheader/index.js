@@ -14,8 +14,7 @@ const PageHeader = ({pageContext, location, title}) => {
         "/page", 
         "/blog", 
         "/blog/page", 
-        "/blogs",
-        "/services"
+        "/blogs"
     ]
     const customCrumbLabel = location.pathname.toLowerCase();
     const crumbLabelArr = customCrumbLabel.split('/');
@@ -31,7 +30,6 @@ const PageHeader = ({pageContext, location, title}) => {
                 }
             }
         }
-      
     `);
     return (
         <PageHeaderWrap fluid={imageData.file.childImageSharp.fluid}>

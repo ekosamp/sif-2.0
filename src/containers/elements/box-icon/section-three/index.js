@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from '../../../../components/ui/wrapper'
 import BoxIcon from '../../../../components/box-icon/layout-three'
-// import { data } from './data'
 import { SectionWrap } from './style'
 
 const BoxIconSection = ({ data }) => {
@@ -16,7 +15,7 @@ const BoxIconSection = ({ data }) => {
                                 title={item.title}
                                 desc={item.desc}
                                 path={item.path}
-                                // icon={item.icon}
+                                icon={item.icon}
                             />
                         </Col>
                     ))}

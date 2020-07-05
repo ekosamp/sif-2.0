@@ -7,56 +7,56 @@
             "title": "Gas Fireplaces",
             "desc": "",
             "image": "../images/products/gas-fireplace.jpg",
-            "path": "/products"
+            "path": "/products/gas/fireplaces"
         },
         {
             "id": "gas-inserts",
             "title": "Gas Inserts",
             "desc": "",
             "image": "../images/products/gas-insert.jpg",
-            "path": "/products"
+            "path": "/products/gas/inserts"
         },
         {
             "id": "gas-stoves",
             "title": "Gas Stoves",
             "desc": "",
             "image": "../images/products/gas-stove.jpg",
-            "path": "/products"
+            "path": "/products/gas/stoves"
         },
         {
             "id": "wood-fireplaces",
             "title": "Wood Fireplaces",
             "desc": "",
             "image": "../images/products/wood-fireplace.jpg",
-            "path": "/products"
+            "path": "/products/wood/fireplaces"
         },
         {
             "id": "wood-inserts",
             "title": "Wood Inserts",
             "desc": "",
             "image": "../images/products/wood-insert.jpg",
-            "path": "/products"
+            "path": "/products/wood/inserts"
         },
         {
             "id": "wood-stoves",
             "title": "Wood Stoves",
             "desc": "",
             "image": "../images/products/wood-stove.jpg",
-            "path": "/products"
+            "path": "/products/wood/stoves"
         },
         {
             "id": "electric-fireplaces",
             "title": "Electric Fireplaces",
             "desc": "",
             "image": "../images/products/electric.jpg",
-            "path": "/products"
+            "path": "/products/electric"
         },
         {
             "id": "outdoor",
             "title": "Outdoor, BBQs",
             "desc": "",
             "image": "../images/products/outdoor.jpg",
-            "path": "/products"
+            "path": "/products/outdoor"
         }
     ]
 }

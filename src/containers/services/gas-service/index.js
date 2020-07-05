@@ -5,9 +5,19 @@ import { useStaticQuery, graphql } from "gatsby"
 import {SectionWrap, ListGroupWrap} from './section.style'
 import Heading from '../../../components/ui/heading'
 import Text from '../../../components/ui/text'
+import Image from '../../../components/image'
 import Anchor from '../../../components/ui/anchor'
 import List, {ListItem} from '../../../components/ui/list'
+import One from '../../../components/forms/appointment-form'
 import { MdCheck } from "react-icons/md";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel,
+} from 'react-accessible-accordion';
+import AccordionWrap from '../../../components/ui/accordion'
 
 const GasServiceList = ({HeadingStyle, WarningListStyle, StepsListStyle}) => {
     const serviceQueryData = useStaticQuery(graphql `
@@ -16,14 +26,22 @@ const GasServiceList = ({HeadingStyle, WarningListStyle, StepsListStyle}) => {
                 title
                 subtitle
                 annual_service
-                warning_signs{
+                accordion{
                     id
-                    title
+                    heading
+                    list{
+                        id
+                        title
+                    }
                 }
-                annual_service_steps{
-                    id
-                    title
+                img{
+                    childImageSharp {
+                        fluid(maxWidth: 600, quality: 100){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
                 }
+                form_message
             }
         }
     `);
@@ -36,39 +54,52 @@ const GasServiceList = ({HeadingStyle, WarningListStyle, StepsListStyle}) => {
                 <Row>
                     <Col sm={12} md={8}>
                         <Heading {...HeadingStyle}>Recommended Annual Service</Heading>
-                        <Text>{secdata.annual_service}</Text>
+                        <Text className="upper-section">{secdata.annual_service}</Text>
+                        <AccordionWrap layout="two">
+                            <Accordion allowZeroExpanded>
+                                {
+                                    secdata.accordion.map((el, index) => {
+                                        return (
+                                            <AccordionItem id={el.id} key={index}>
+                                                <AccordionItemHeading>
+                                                    <AccordionItemButton>
+                                                        {el.heading}
+                                                    </AccordionItemButton>
+                                                </AccordionItemHeading>
+                                                <AccordionItemPanel>
+                                                    <ListGroupWrap>
+                                                        {/* <Heading {...HeadingStyle}>Our annual service involves these steps (when applicable):</Heading> */}
+                                                        <List {...StepsListStyle}>
+                                                            {el.list.map((item, index) => {
+                                                                return(
+                                                                    <ListItem key={`list-${index}`}>
+                                                                        <MdCheck className="icon"/>{item.title}
+                                                                    </ListItem>
+                                                                )
+                                                            })}
+                                                        </List>
+                                                    </ListGroupWrap>
+                                                </AccordionItemPanel>
+                                            </AccordionItem>
+                                        )
+                                    })
+                                }
+                                <AccordionItem>
+                                    <AccordionItemHeading>
+                                        <AccordionItemButton>
+                                            Service call inquiry form...
+                                        </AccordionItemButton>
+                                    </AccordionItemHeading>
+                                    <AccordionItemPanel>
+                                        <Text>{secdata.form_message}</Text>
+                                        <One/>
+                                    </AccordionItemPanel>
+                                </AccordionItem>
+                            </Accordion>     
+                        </AccordionWrap>
                     </Col>
-                </Row>
-                <Row>
-                    <Col lg={8} md={12}>
-                        <ListGroupWrap>
-                            <Heading {...HeadingStyle}>Warning Signs:</Heading>
-                            <Text>There are almost always warning signs that a fireplace isn’t working properly, including:</Text>
-                            <List {...WarningListStyle}>
-                                {secdata.warning_signs.map((item, index) => {
-                                    return(
-                                        <ListItem key={`list-${index}`}>{item.title}</ListItem>
-                                    )
-                                })}
-                                <ListItem>symptoms of <Anchor path="https://www.fortisbc.com/safety-outages/natural-gas-safety/carbon-monoxide-safety">carbon monoxide poisoning</Anchor>: nausea, headaches, lethargy or other flu-like symptoms</ListItem>
-                            </List>
-                        </ListGroupWrap>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col lg={8} md={12}>
-                        <ListGroupWrap>
-                            <Heading {...HeadingStyle}>Our annual service involves these steps (when applicable):</Heading>
-                            <List {...StepsListStyle}>
-                                {secdata.annual_service_steps.map((item, index) => {
-                                    return(
-                                        <ListItem key={`list-${index}`}>
-                                            <MdCheck className="icon"/>{item.title}
-                                        </ListItem>
-                                    )
-                                })}
-                            </List>
-                        </ListGroupWrap>
+                    <Col lg={4}>
+                        <Image fluid={secdata.img.childImageSharp}></Image>
                     </Col>
                 </Row>
             </Container>

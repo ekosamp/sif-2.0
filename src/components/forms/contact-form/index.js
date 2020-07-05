@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import {Row, Col} from '../../ui/wrapper'
 import Form, {FormGroup, Input, Textarea, Error} from '../../ui/form'
 import Button from '../../ui/button'
+import Text from '../../ui/text'
  
 const ContactForm = () => {
     const { register, handleSubmit, errors } = useForm({
@@ -19,18 +20,19 @@ const ContactForm = () => {
         xhr.onreadystatechange = () => {
             if (xhr.readyState !== XMLHttpRequest.DONE) return
             if (xhr.status === 200) {
-                formStatus = "SUCCESS"
+                setFormStatus("SUCCESS")
+                document.getElementById("cForm").reset()
             } else {
-                formStatus = "ERROR"
+                setFormStatus("ERROR")
             }
         };
         xhr.send(form_data)
     }
-
-    let formStatus = ""
+    
+    const [formStatus, setFormStatus] = useState("")
 
     return(
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form id="cForm" onSubmit={handleSubmit(onSubmit)}>
             <Row gutters={{lg: 20}}>
                 <Col lg={6}>
                     <FormGroup mb="20px">
@@ -103,8 +105,10 @@ const ContactForm = () => {
             <Row>
                 <Col lg={12}>
                     <input type="text" name="_gotcha" style={{display:"none"}} />
-                    {formStatus === "SUCCESS" ? <p>Thanks!</p> : <Button skin="primary" type="submit">Send Message</Button>}
+                    {formStatus === "SUCCESS" ? <Text as="strong">Thanks!</Text> : <Button skin="primary" type="submit">Send Message</Button>}
                     {formStatus === "ERROR" && <Error>Error, please try again</Error>}
+                    {'   '}
+                    <Button skin="secondary" type="reset" id="resetBtn">Reset</Button>
                 </Col>
             </Row>
         </Form>

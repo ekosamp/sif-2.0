@@ -67,19 +67,19 @@ const Hero = ({headingSecondary, headingPrimary, buttonStyle}) => {
                         <HeroWrapperText>
                             {subtitle && <Heading {...headingSecondary}>{subtitle}</Heading>}
                             {title && <Heading {...headingPrimary}>{title}</Heading>}
-                            <Button {...buttonStyle} to="/case-studies">Browse products</Button>
+                            <Button {...buttonStyle} to="/products">Browse products</Button>
                         </HeroWrapperText>
                     </Col>
-                    <Col lg={6}>
+                    {/* <Col lg={6}>
                         <PreviewInnerImg>
                             <Img fluid={image1.childImageSharp.fluid} className="img-fluid min-img animation_images one wow fadeInDown" alt="Preview Hero"/>
                         </PreviewInnerImg>
-                    </Col>
+                    </Col> */}
                 </Row>
-                <Img fluid={image2.childImageSharp.fluid} className="img-fluid pr-img-01 animation_images two wow fadeInDown" alt="Preview Hero"/>
+                {/* <Img fluid={image2.childImageSharp.fluid} className="img-fluid pr-img-01 animation_images two wow fadeInDown" alt="Preview Hero"/>
                 <Img fluid={image3.childImageSharp.fluid} className="img-fluid pr-img-02 animation_images two wow fadeInDown" alt="Preview Hero"/>
                 <Img fluid={image4.childImageSharp.fluid} className="img-fluid pr-img-03 animation_images two wow fadeInDown" alt="Preview Hero"/>
-                <Img fluid={image5.childImageSharp.fluid} className="img-fluid pr-img-04 animation_images two wow fadeInDown" alt="Preview Hero"/>
+                <Img fluid={image5.childImageSharp.fluid} className="img-fluid pr-img-04 animation_images two wow fadeInDown" alt="Preview Hero"/> */}
             </Container>
         </HeroWrapper>
     )
