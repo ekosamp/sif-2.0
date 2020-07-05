@@ -64,6 +64,52 @@ const CategoryArea = ({
                     }
                 }
             }
+            allElectricCategoriesJson {
+                edges {
+                    node {
+                        id
+                        title
+                        categories {
+                            id
+                            title
+                            desc
+                            path
+                            image{
+                                childImageSharp {
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
+                                        ...GatsbyImageSharpFluid
+                                        presentationWidth
+                                        presentationHeight
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            allOutdoorCategoriesJson {
+                edges {
+                    node {
+                        id
+                        title
+                        categories {
+                            id
+                            title
+                            desc
+                            path
+                            image{
+                                childImageSharp {
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
+                                        ...GatsbyImageSharpFluid
+                                        presentationWidth
+                                        presentationHeight
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     `);
 
@@ -77,8 +123,16 @@ const CategoryArea = ({
             productCategories = categoryData.allGasCategoriesJson.edges[0].node;
             break;
         }
+        case 'electric': {
+            productCategories = categoryData.allElectricCategoriesJson.edges[0].node;
+            break;
+        }
+        case 'outdoor': {
+            productCategories = categoryData.allOutdoorCategoriesJson.edges[0].node;
+            break;
+        }
         default: {
-            //statements;
+            // tbd
             break;
         }
     }
@@ -95,7 +149,7 @@ const CategoryArea = ({
                         />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="justify-content-center">
                     {productCategories.categories.map((category, index) => (
                         <Col lg={4} md={6} className="box-item" key={`${index}-${category.id}`}>
                             <CategoryBox

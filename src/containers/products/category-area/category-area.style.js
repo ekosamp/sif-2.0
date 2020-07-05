@@ -7,14 +7,15 @@ export const SectionWrap = styled.section `
     background-position: bottom left;
     background-size: auto;
     @media ${device.medium}{
-        padding-top: '80px';
+        padding-top: '40px';
         padding-bottom: '80px';
     }
     @media ${device.small}{
-        padding-top: '60px';
+        padding-top: '30px';
         padding-bottom: '60px';
     }
     .box-item{
+        margin-bottom: 28px;
         @media ${device.medium}{
             margin-bottom: 48px;
         }

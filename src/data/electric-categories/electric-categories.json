@@ -1,0 +1,34 @@
+{
+    "id": "electric-categories",
+    "title": "Select a type to see the brands </br> and models we can offer",
+    "categories": [
+        {
+            "id": "zero-clearance",
+            "title": "Zero Clearance",
+            "desc": "Zero-clearance gas fireplaces offer a number of designs to customize your fireplace to your home's look and feel. Zero-clearance fireplaces can be installed almost directly against combustible materials like wood, walls, or paneling.",
+            "image": "../images/products/electric/zero-clearance.jpg",
+            "path": "/products/electric/zero-clearance"
+        },
+        {
+            "id": "wall-mount",
+            "title": "Wall Mount/Flush Mount",
+            "desc": "Zero-clearance gas fireplaces offer a number of designs to customize your fireplace to your home's look and feel. Zero-clearance fireplaces can be installed almost directly against combustible materials like wood, walls, or paneling.",
+            "image": "../images/products/electric/wall-mount.jpg",
+            "path": "/products/electric/mount"
+        },
+        {
+            "id": "inserts",
+            "title": "Inserts",
+            "desc": "Gas inserts are designed to be installed within an existing masonry cavity or fireplace and uses the existing chimney as structure to run venting for the unit. Inserts are typically a lower cost option compared to a zero-clearance renovation, or replacement of your existing masonry fireplace.",
+            "image": "../images/products/electric/insert.jpg",
+            "path": "/products/electric/inserts"
+        },
+        {
+            "id": "free-standing",
+            "title": "Free Standing",
+            "desc": "Freestanding gas stoves can vent through existing chimneys, through the roof with new venting, or out the wall via a direct vent installation. Continuously warming objects in its path, a gas stove provides radiant heat that will satisfy your comfort needs while using less energy compared to forced air systems.",
+            "image": "../images/products/electric/free-standing.jpg",
+            "path": "/products/electric/stoves"
+        }
+    ]
+}
