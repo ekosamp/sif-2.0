@@ -6,28 +6,28 @@
             "id": "bbqs",
             "title": "BBQs, Grills",
             "desc": "We stock an extensive selection of gas grills, pellet grills, grill accessories, BBQ tools, BBQ sauces, BBQ rubs, and charcoal.",
-            "image": "../images/products/gas-fireplace.jpg",
+            "image": "../images/products/outdoor/bbqs.jpg",
             "path": "/products/outdoor/bbqs"
         },
         {
             "id": "fire-pits",
             "title": "Fire Pits",
             "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
-            "image": "../images/products/gas-fireplace.jpg",
+            "image": "../images/products/outdoor/fire-pit.jpg",
             "path": "/products/outdoor/firepits"
         },
         {
             "id": "heaters",
             "title": "Heaters",
             "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
-            "image": "../images/products/gas-insert.jpg",
+            "image": "../images/products/outdoor/heaters.png",
             "path": "/products/outdoor/heaters"
         },
         {
-            "id": "gas-fireplaces",
+            "id": "outdoor-fireplaces",
             "title": "Outdoor Fireplaces",
             "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
-            "image": "../images/products/gas-stove.jpg",
+            "image": "../images/products/outdoor/outdoor-fireplace.jpg",
             "path": "/products/outdoor/gas-fireplaces"
         }
     ]
