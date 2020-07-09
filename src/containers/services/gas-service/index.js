@@ -6,7 +6,6 @@ import {SectionWrap, ListGroupWrap} from './section.style'
 import Heading from '../../../components/ui/heading'
 import Text from '../../../components/ui/text'
 import Image from '../../../components/image'
-import Anchor from '../../../components/ui/anchor'
 import List, {ListItem} from '../../../components/ui/list'
 import One from '../../../components/forms/appointment-form'
 import { MdCheck } from "react-icons/md";

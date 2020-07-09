@@ -61,7 +61,7 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
             }
         }
     `)
-    const headMembers = teamData.headTeamMember.edges;
+    // const headMembers = teamData.headTeamMember.edges;
     const executives = teamData.executiveMember.edges;
     return (
         <TeamWrapper>

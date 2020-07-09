@@ -132,7 +132,7 @@ const Header = (props) => {
                                                             </InfoIcon>
                                                             <InfoContent>
                                                                 <Heading {...infoHeading}>9:00AM - 5:00PM</Heading>
-                                                                <Text {...infoText}>Mon - Fri (4pm Sat)</Text>
+                                                                <Text {...infoText}>Mon - Sat (4pm Sat)</Text>
                                                             </InfoContent>
                                                         </InfoItem>
                                                     </div>

@@ -32,7 +32,7 @@ const ContactArea = ({sectionStyle, imgBoxStyle, rightBoxStyle, boxIconStyle, ra
                     }
                 }
             }
-            contactImg: file(relativePath: {eq: "images/contact-image.png"}) {
+            contactImg: file(relativePath: {eq: "images/flame.jpg"}) {
                 childImageSharp {
                     fluid(maxHeight: 572, maxWidth: 587, quality: 100) {
                         ...GatsbyImageSharpFluid_tracedSVG
