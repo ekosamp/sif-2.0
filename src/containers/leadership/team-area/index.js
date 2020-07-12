@@ -1,4 +1,5 @@
 import React from 'react'
+import Typed from 'react-typed'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
 import {Container, Row, Col} from '../../../components/ui/wrapper'
@@ -68,7 +69,16 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
             <Container>
                 <Row>
                     <Col lg={12}>
-                        <Heading {...headingStyle}>Meet our <span>team</span></Heading>
+                        <Heading {...headingStyle}>
+                            <span className="not-typical">Meet our </span>
+                                <Typed
+                                    strings={['professional', 'knowledgeable', 'friendly', 'awesome']}
+                                    typeSpeed={55}
+                                    backSpeed={70}
+                                    loop
+                                />
+                            <span className="not-typical"> team</span>
+                        </Heading>
                     </Col>
                 </Row>
                 {/* <Row {...headTeamRowStyle}>

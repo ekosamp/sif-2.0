@@ -183,16 +183,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Create Single IT Service page
  
-    const itservices = result.data.allItServicesJson.edges;
-    itservices.forEach(({node}) => {
-        createPage({
-            path: `it-service/${node.fields.slug}`,
-            component: servicePage,
-            context: {
-                slug: node.fields.slug
-            }
-        })
-    });
+    // const itservices = result.data.allItServicesJson.edges;
+    // itservices.forEach(({node}) => {
+    //     createPage({
+    //         path: `it-service/${node.fields.slug}`,
+    //         component: servicePage,
+    //         context: {
+    //             slug: node.fields.slug
+    //         }
+    //     })
+    // });
 
     // Create Single IT Solution page
     // const itsolutions = result.data.allItSolutionsJson.edges;

@@ -12,4 +12,10 @@ export const TeamWrapper = styled.section `
         padding-top: 52px;
         padding-bottom: 20px;  
     }
+    span{
+        &:not(.not-typical){
+            color: ${props => props.theme.colors.themeColor};
+            font-style: italic;
+        }
+    }
 `;

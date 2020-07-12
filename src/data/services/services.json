@@ -231,5 +231,13 @@
                 ]
             }
         ]
+    },
+    {
+        "id": "services-parts",
+        "title": "Looking for replacement parts?",
+        "img": "../images/service/esteem.jpg",
+        "parts_img1": "../images/service/parts1.jpg",
+        "parts_img2": "../images/service/parts2.jpg",
+        "form_message": "We're here to help! Please fill out this form with your information, the type of product, make/brand, model number, serial number (very important!), and a brief description of what you're looking for. If you are having trouble finding the model or serial number, please give us a call for assistance."
     }
 ]
