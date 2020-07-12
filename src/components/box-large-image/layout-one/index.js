@@ -20,13 +20,13 @@ const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
     const {headingStyle, descStyle, buttonStyle, ...restStyles} = boxStyles;
     let boxImage;
     if(imageSrc.fixed && typeof imageSrc.fixed !== 'function'){
-        boxImage = <Img fixed={imageSrc.fixed} alt={title} style={{display: "block"}}/>;
+        boxImage = <Img fixed={imageSrc.fixed} alt={title} style={{display: "block", position: "unset"}}/>;
     } else if(imageSrc.fluid){
-        boxImage = <Image fluid={imageSrc.fluid} alt={title} style={{display: "block"}}/>
+        boxImage = <Image fluid={imageSrc.fluid} alt={title} style={{display: "block", position: "unset"    }}/>
     } else{
         boxImage = <img src={imageSrc} alt={title}/>
     }
-     
+    
     return (
         <BoxLargeImgWrap {...restStyles}>
             <BoxLargeImgInner>
@@ -51,7 +51,7 @@ const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
         </BoxLargeImgWrap>
     )
 }
-   
+
 BoxLargeImage.propTypes = {
     title: PropTypes.string,
     imageSrc: PropTypes.oneOfType([

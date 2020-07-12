@@ -4,7 +4,7 @@ import Form, {FormGroup, Input, Select, Error, Textarea} from '../../ui/form'
 import Button from '../../ui/button'
 import Text from '../../ui/text'
 
-const AppointmentForm = () => {
+const ReplacementPartsForm = () => {
     const { register, handleSubmit, errors } = useForm({
         mode: "onBlur"
     })
@@ -71,12 +71,12 @@ const AppointmentForm = () => {
             </FormGroup>
             <FormGroup mb="20px">
                 <Select 
-                    name="service_type"
-                    id="service_type"
+                    name="product_type"
+                    id="product_type"
                     hover="2"
-                    ref={register({ required: "Please select a service" })}
+                    ref={register({ required: "Please select a product type" })}
                 >
-                    <option value="">Type of service required</option>
+                    <option value="">Type of product *</option>
                     <option value="Gas">Gas stove, fireplace, ot insert</option>
                     <option value="Wood">Wood stove, fireplace, or insert</option>
                     <option value="Pellet">Pellet stove, fireplace or insert</option>
@@ -85,15 +85,16 @@ const AppointmentForm = () => {
                     <option value="Hot tub">Hot tub or spa</option>
                     <option value="Other">Other</option>
                 </Select>
-                <Error>{errors.service_type && errors.service_type.message}</Error>
+                <Error>{errors.product_type && errors.product_type.message}</Error>
             </FormGroup>
             <FormGroup mb="20px">
                 <Input
                     name="make"
                     id="make"
                     type="text"
-                    placeholder="Make"
+                    placeholder="Make *"
                     hover="2"
+                    ref={register({ required: 'Make is required' })}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -101,8 +102,9 @@ const AppointmentForm = () => {
                     name="model"
                     id="model"
                     type="text"
-                    placeholder="Model"
+                    placeholder="Model *"
                     hover="2"
+                    ref={register({ required: 'Model is required' })}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -118,7 +120,7 @@ const AppointmentForm = () => {
                 <Textarea 
                     name="message" 
                     id="message" 
-                    placeholder="Please add any additional info including current issues you are experiencing"
+                    placeholder="Please describe what part(s) you are looking for, quantities, and any additional info"
                     hover="2"
                 ></Textarea>
             </FormGroup>
@@ -139,4 +141,4 @@ const AppointmentForm = () => {
 } 
 
 
-export default AppointmentForm;
+export default ReplacementPartsForm;
