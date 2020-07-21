@@ -46,7 +46,7 @@ const ContactArea = ({
                     <Col lg={6}>
                         <ContactTextBox>
                             <Heading {...headingStyle}>Contact our experienced and friendly staff to obtain further information</Heading>
-                            <Text {...descStyle}>We’re available 8 hours a day! <br/> We look forward to hearing from you</Text>
+                            <Text {...descStyle}>We’re available 8 hours a day! <br/> We look forward to hearing from you.</Text>
                         </ContactTextBox>
                     </Col>
                     <Col lg={6}>

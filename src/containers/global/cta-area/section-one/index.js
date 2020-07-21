@@ -31,7 +31,7 @@ const CTASection = ({
             <Container>
                 <Row className="align-items-center text-lg-left text-center">
                     <Col xl={7} lg={7}>
-                        <Heading {...heading}>Visit our showroom today to view all <span>30 models on display! </span> </Heading> 
+                        <Heading {...heading}>Visit our showroom today to view all <span>30 display models! </span> </Heading> 
                     </Col> 
                     <Col xl={5} lg={5} className="text-center">
                         <Button 
