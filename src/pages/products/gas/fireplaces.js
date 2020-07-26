@@ -9,9 +9,12 @@ import Section, {Row, Col} from '../../../components/ui/wrapper'
 import Heading from '../../../components/ui/heading'
 import ProductInfoArea from '../../../containers/product-list'
 import CTA from '../../../containers/global/cta-area/section-one'
+import { ProdQuery } from '../../../data/hooks/all-product-data'
 
 const GasFireplaces = ({ pageContext, location, ...restProps }) => {
     const {sectionStyle, headingStyle} = restProps;
+    const allProducts = ProdQuery();
+
     return (
         <Layout location={location}>
             <SEO title="Gas Fireplaces" />
@@ -25,8 +28,11 @@ const GasFireplaces = ({ pageContext, location, ...restProps }) => {
                 <Section {...sectionStyle}>
                     <Row>
                         <Col lg={{span: 12, order: 2}} xs={{span: 12, order: 1}}>
-                            <Heading {...headingStyle}>Gas Fireplaces Heading</Heading>
-                            <ProductInfoArea filter="Fireplace" />
+                            {/* <Heading {...headingStyle}>Gas Fireplaces</Heading> */}
+                            <ProductInfoArea
+                                products={allProducts}
+                                productType="Fireplace"
+                                fuelType="Gas" />
                         </Col>
                     </Row>
                 </Section>
@@ -44,7 +50,7 @@ GasFireplaces.propTypes = {
 
 GasFireplaces.defaultProps = {
     sectionStyle: {
-        pt: '89px',
+        pt: '15px',
         pb: '100px',
         responsive: {
             medium: {

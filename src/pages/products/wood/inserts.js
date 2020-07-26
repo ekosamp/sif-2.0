@@ -11,28 +11,28 @@ import ProductInfoArea from '../../../containers/product-list'
 import CTA from '../../../containers/global/cta-area/section-one'
 import { ProdQuery } from '../../../data/hooks/all-product-data'
 
-const GasStoves = ({ pageContext, location, ...restProps }) => {
+const WoodInserts = ({ pageContext, location, ...restProps }) => {
     const {sectionStyle, headingStyle} = restProps;
     const allProducts = ProdQuery();
 
     return (
         <Layout location={location}>
-            <SEO title="Gas Stoves" />
+            <SEO title="Wood Inserts" />
             <Header/>
             <PageHeader 
                 pageContext={pageContext} 
                 location={location}
-                title="Gas Stoves"
+                title="Wood Inserts"
             />
             <main className="site-wrapper-reveal">
                 <Section {...sectionStyle}>
                     <Row>
                         <Col lg={{span: 12, order: 2}} xs={{span: 12, order: 1}}>
-                            {/* <Heading {...headingStyle}>Gas Inserts</Heading> */}
+                            {/* <Heading {...headingStyle}>Wood Inserts</Heading> */}
                             <ProductInfoArea
                                 products={allProducts}
-                                productType="Stove"
-                                fuelType="Gas" />
+                                productType="Insert"
+                                fuelType="Wood" />
                         </Col>
                     </Row>
                 </Section>
@@ -44,11 +44,11 @@ const GasStoves = ({ pageContext, location, ...restProps }) => {
 }
 
 
-GasStoves.propTypes = {
+WoodInserts.propTypes = {
     sectionStyle: PropTypes.object
 }
 
-GasStoves.defaultProps = {
+WoodInserts.defaultProps = {
     sectionStyle: {
         pt: '15px',
         pb: '100px',
@@ -78,4 +78,4 @@ GasStoves.defaultProps = {
     }
 }
 
-export default GasStoves;
+export default WoodInserts;
