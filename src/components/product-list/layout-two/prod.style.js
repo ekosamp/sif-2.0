@@ -29,6 +29,16 @@ export const ProdMiniThumbs = styled.div `
     }
 `;
 
+export const ProdMiniThumb = styled.div `
+    margin-top: 8px;
+    display: flex !important;
+    img{
+        width: 47%;
+        border-radius: 5px;
+        transition: all .3s;
+    }
+`;
+
 export const ProdQuote = styled.blockquote `
     position: relative;
     padding: 45px 30px 40px;

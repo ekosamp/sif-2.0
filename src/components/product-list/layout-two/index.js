@@ -13,6 +13,7 @@ import {
     ProdMedia,
     ProdThumb,
     ProdMiniThumbs,
+    ProdMiniThumb,
     ProdInfo,
     ProdHeader,
     ProdTitle,
@@ -55,14 +56,14 @@ const List = ({data, ...restProps}) => {
                                 />
                             )}
                             {!!img2 && !img3 && (
-                                <ProdMiniThumbs>
+                                <ProdMiniThumb>
                                     <ImageThumb
                                         onClick={() => modalImageOpen(img2.localFile.childImageSharp.fluid)}
-                                        poster={img2.localFile.childImageSharp}
+                                        poster={img2.localFile.childImageSharp.fluid.src}
                                         title={title}
                                         thumb={true}
                                     />
-                                </ProdMiniThumbs>
+                                </ProdMiniThumb>
                             )}
                             {!!img2 && !!img3 && (
                                 <ProdMiniThumbs>
