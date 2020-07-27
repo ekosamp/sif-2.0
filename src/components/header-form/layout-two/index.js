@@ -1,24 +1,39 @@
 import React from 'react'
+import { navigate } from "gatsby"
+import { useForm } from 'react-hook-form'
 import { MdSearch } from "react-icons/md";
 import {HeaderFormWrap, ButtonWrap} from './header-form.style'
 import Form, {Input} from '../../ui/form'
 import Button from '../../ui/button'
-
+import { ProdQuery } from '../../../data/hooks/all-product-data'
 
 const HeaderForm = ({input, inputId, ...restProps}) => {
-    const onChangeHandler = e => {
-        
+    const { register, handleSubmit, errors } = useForm({
+        mode: "onBlur"
+    })
+    const allProducts = ProdQuery();
+    const onSubmit = data => {
+        navigate(
+            "/search-results/",
+            {
+                state: {
+                    products: allProducts,
+                    keyword: data.keyword
+                }
+            }
+        )
     }
     return (
         <HeaderFormWrap {...restProps}>
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
                 <Input 
-                    onChange={onChangeHandler}
+                    name="keyword"
                     type="text"
                     placeholder="Search..."
                     hover="false"
                     id={inputId}
                     {...input}
+                    ref={register({ required: 'Enter a search keyword' })}
                 />
                 <ButtonWrap>
                     <Button 

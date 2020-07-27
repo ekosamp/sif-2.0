@@ -20,7 +20,8 @@ class ProductInfoArea extends React.Component {
             brandFilter: '',
             brands: [],
             sizeFilter: '',
-            sizes: []
+            sizes: [],
+            isLoading: true
         }
     }
 
@@ -29,28 +30,7 @@ class ProductInfoArea extends React.Component {
     }
     
     componentDidMount() {
-        const allProducts = this.props.products;
-        if (this.props.fuelType && this.props.productType) {
-            const p = allProducts.edges.filter(n =>
-                n.node.acf.type.post_title === this.props.productType
-                && n.node.acf.fuel === this.props.fuelType);
-            this.setState({
-                products: p,
-                filteredProducts: p,
-                brands: [...new Set(p.map(item => item.node.acf.brand.post_title))],
-                sizes: [...new Set(p.map(item => item.node.acf.size))]
-            });
-        } else {
-            this.setState({
-                products: allProducts.edges,
-                filteredProducts: allProducts.edges
-            });
-        }
-
-        this.setState({
-            totalCount: allProducts.totalCount,
-            numberOfPages: Math.ceil(this.state.totalCount/this.state.postsPerPage)
-        })
+        this.loadData();
     }
 
     applyFilter = () => {
@@ -77,40 +57,87 @@ class ProductInfoArea extends React.Component {
         })
     }
 
+    loadData() {
+        const allProducts = this.props.products;
+        console.log(allProducts);
+        if (this.props.fuelType && this.props.productType) {
+            const p = allProducts.edges.filter(n => n.node.acf.type.post_title === this.props.productType
+                && n.node.acf.fuel === this.props.fuelType);
+            this.setState({
+                products: p,
+                filteredProducts: p,
+                brands: [...new Set(p.map(item => item.node.acf.brand.post_title))],
+                sizes: [...new Set(p.map(item => item.node.acf.size))],
+                totalCount: allProducts.totalCount,
+                numberOfPages: Math.ceil(this.state.totalCount / this.state.postsPerPage),
+                isLoading: false
+            });
+        }
+        else {
+            this.setState({
+                products: allProducts,
+                filteredProducts: allProducts,
+                brands: [...new Set(allProducts.map(item => item.node.acf.brand.post_title))],
+                sizes: [...new Set(allProducts.map(item => item.node.acf.size))],
+                totalCount: allProducts.length,
+                numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
+                isLoading: false
+            });
+        }
+    }
+
     render() {
-        return (
-            <Fragment>
-                <Filter
-                    handleChange={this.handleChange}
-                    keyword={this.state.keyword}
-                    applyFilter={this.applyFilter}
-                    clearFilters={this.clearFilters}
-                    brands={this.state.brands}
-                    sizes={this.state.sizes}
-                />
-                <ProdWrapper>
-                    <Transition
-                        items={this.state.filteredProducts} keys={item => item.node.id}
-                        initial={null}
-                        from={{ overflow: 'hidden', height: 0, opacity: 0 }}
-                        enter={{ height: `100%`, opacity: 1 }}
-                        leave={{ opacity: 0 }}
-                        config={{ duration: 300, tension: 50, friction: 25 }}
-                    >
-                        {item => props => 
-                            <ProdBox style={props} key={item.node.id}>
-                                <List style={props} data={item.node} />
-                            </ProdBox>
-                        }
-                    </Transition>
-                </ProdWrapper>
-                <Pagination
-                    rootPage="/products/"
-                    currentPage={1}
-                    numberOfPages={this.state.numberOfPages}
-                />
-            </Fragment>
-        )
+        const {
+            keyword,
+            brands,
+            sizes,
+            numberOfPages,
+            filteredProducts,
+            isLoading
+        } = this.state
+        console.log(filteredProducts)
+        if (isLoading) {
+            return (
+                <div></div>
+            )
+        }
+        if (!isLoading) {
+            return (
+                <Fragment>
+                    <Filter
+                        handleChange={this.handleChange}
+                        keyword={keyword}
+                        applyFilter={this.applyFilter}
+                        clearFilters={this.clearFilters}
+                        brands={brands}
+                        sizes={sizes}
+                    />
+                    <ProdWrapper>
+                        <Transition
+                            items={filteredProducts} keys={item => item.node.id}
+                            initial={null}
+                            from={{ overflow: 'hidden', height: 0, opacity: 0 }}
+                            enter={{ height: `100%`, opacity: 1 }}
+                            leave={{ opacity: 0 }}
+                            config={{ duration: 300, tension: 50, friction: 25 }}
+                        >
+                            {item => props => 
+                                <ProdBox style={props} key={item.node.id}>
+                                    <List style={props} data={item.node} />
+                                </ProdBox>
+                            }
+                        </Transition>
+                    </ProdWrapper>
+                    {numberOfPages > 1 && (
+                        <Pagination
+                            rootPage="/products/"
+                            currentPage={1}
+                            numberOfPages={numberOfPages}
+                        />
+                    )}
+                </Fragment>
+            )
+        }
     }
 }
 
