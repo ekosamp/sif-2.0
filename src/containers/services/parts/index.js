@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Container, Row, Col} from 'react-bootstrap'
 import { useStaticQuery, graphql } from "gatsby"
-import {SectionWrap, ListGroupWrap} from './section.style'
+import {SectionWrap} from './section.style'
 import Heading from '../../../components/ui/heading'
 import Text from '../../../components/ui/text'
 import Image from '../../../components/image'
@@ -52,7 +52,6 @@ const PartsFormArea = ({HeadingStyle}) => {
                     </Col>
                     <Col sm={0} md={4}>
                         <Image fluid={secdata.img.childImageSharp}></Image>
-                        {/* <Image fluid={secdata.parts_img1.childImageSharp}></Image> */}
                         <Image fluid={secdata.parts_img2.childImageSharp}></Image>
                     </Col>
                 </Row>

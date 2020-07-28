@@ -1,6 +1,6 @@
-import React from "react"
-import * as JsSearch from "js-search"
+import React, {Fragment} from "react"
 import ProductInfoArea from '../containers/product-list'
+import SearchForm from '../components/forms/search-form/layout-three'
 
 class Search extends React.Component {
   state = {
@@ -12,8 +12,12 @@ class Search extends React.Component {
     searchQuery: ``,
   }
 
+  handleChange = (name) => (event) => {
+    this.setState({ ...this.state, [name]: event.target.value });
+  }
+
   /**
-   * Fetch all product data
+   * Ser all product data from props
    */
   componentDidMount() {
     if (this.props.products && this.props.keyword) {
@@ -22,20 +26,36 @@ class Search extends React.Component {
         searchQuery: this.props.keyword
       }, () => {this.searchData(this.state.searchQuery)})
     } else {
-      this.setState({ isError: true })
+      this.setState({
+        productList: this.props.products,
+        isLoading: false
+      })
     }
   }
 
   /**
-   * handles the input change and perform a search with js-search
-   * in which the results will be added to the state
+   * handles the input change and performs a search and
+   * the results will be added to state
    */
   searchData = (keyword) => {
-    // const { search } = this.state
-    // const queryResult = search.search(keyword)
     const queryResult = this.state.productList.edges
       .filter(item => item.node.title.toLowerCase().includes(keyword.toLowerCase()))
     this.setState({ searchQuery: keyword, searchResults: queryResult, isLoading: false })
+  }
+
+  newSearch = () => {
+    const { searchQuery } = this.state
+    if (searchQuery === '') {
+      alert(`Enter a model name or brand to search`)
+    } else {
+      this.setState({ isLoading: true}, () => {
+        const queryResult = this.state.productList.edges
+          .filter(item => item.node.title.toLowerCase().includes(searchQuery.toLowerCase()))
+        this.setState({ searchResults: queryResult }, () => {
+          this.setState({ isLoading: false })
+        })
+      })
+    }
   }
 
   render() {
@@ -44,39 +64,42 @@ class Search extends React.Component {
       isLoading,
       productList,
       searchResults,
-      searchQuery,
+      searchQuery
     } = this.state
     const queryResults = searchQuery === `` ? productList : searchResults
+    const noResults = (searchResults.length === 0)
 
     if (isLoading) {
       return (
-        <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
-          <h4 style={{ marginTop: `3em`, textAlign: `center` }}>
-            Getting the search all setup
-          </h4>
-        </div>
+        // TODO: show loading circle
+        <div></div>
       )
     }
     if (isError) {
       return (
-        <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
-          <h1 style={{ marginTop: `3em`, textAlign: `center` }}>Ohh no!!!!!</h1>
-          <h3
-            style={{
-              marginTop: `2em`,
-              padding: `2em 0em`,
-              textAlign: `center`,
-            }}
-          >
-            Something really bad happened
-          </h3>
-        </div>
+        // TODO: show create error section
+        <div></div>
       )
     }
-    return (
-      <ProductInfoArea
-        products={queryResults} />
-    )
+    if (!isLoading) {
+      return (
+        <Fragment>
+          <SearchForm
+            searchQuery={searchQuery}
+            handleChange={this.handleChange}
+            newSearch={this.newSearch} />
+
+          {noResults && (
+            <div>No results found</div>
+          )}
+
+          {!noResults && (
+            <ProductInfoArea
+              products={queryResults} />
+          )}
+        </Fragment>
+      )
+    }
   }
 }
 

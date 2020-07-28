@@ -59,7 +59,6 @@ class ProductInfoArea extends React.Component {
 
     loadData() {
         const allProducts = this.props.products;
-        console.log(allProducts);
         if (this.props.fuelType && this.props.productType) {
             const p = allProducts.edges.filter(n => n.node.acf.type.post_title === this.props.productType
                 && n.node.acf.fuel === this.props.fuelType);
@@ -69,7 +68,7 @@ class ProductInfoArea extends React.Component {
                 brands: [...new Set(p.map(item => item.node.acf.brand.post_title))],
                 sizes: [...new Set(p.map(item => item.node.acf.size))],
                 totalCount: allProducts.totalCount,
-                numberOfPages: Math.ceil(this.state.totalCount / this.state.postsPerPage),
+                numberOfPages: 2,
                 isLoading: false
             });
         }
@@ -95,7 +94,6 @@ class ProductInfoArea extends React.Component {
             filteredProducts,
             isLoading
         } = this.state
-        console.log(filteredProducts)
         if (isLoading) {
             return (
                 <div></div>
