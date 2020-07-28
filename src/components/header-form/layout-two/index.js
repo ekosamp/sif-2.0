@@ -23,6 +23,7 @@ const HeaderForm = ({input, inputId, ...restProps}) => {
             }
         )
     }
+    
     return (
         <HeaderFormWrap {...restProps}>
             <Form onSubmit={handleSubmit(onSubmit)}>

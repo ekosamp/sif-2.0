@@ -94,6 +94,7 @@ const Header = (props) => {
     const menuArr = headerData.allMenuJson.edges;
     const {facebook, instagram, linkedin} = headerData.site.siteMetadata.social;
     const {slider, headerTopStyles, menuStyle} = props;
+    const isNotSearchResults = props.isSearchResults ? false : true;
     const {infoHeading, infoText, burgerBtnElStyle, clickAbleElStyle, clickAble, innerElementStyle} = headerTopStyles;
  
     return(
@@ -224,7 +225,9 @@ const Header = (props) => {
                                         </HeaderNavigation>
                                     </HeaderBottomLeft>
                                     <HeaderBottomRight>
-                                        <HeaderForm layout={sticky && 'white'}  inputId="header-search-2"/>
+                                        {isNotSearchResults && (
+                                            <HeaderForm layout={sticky && 'white'}  inputId="header-search-2"/>
+                                        )}
                                     </HeaderBottomRight>
                                 </HeaderMain>
                             </Col>

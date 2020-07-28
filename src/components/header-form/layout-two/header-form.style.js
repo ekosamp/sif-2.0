@@ -3,7 +3,7 @@ import {device} from '../../../theme';
 
 export const HeaderFormWrap = styled.div `
     height: 100%;
-    max-width: 270px;
+    max-width: 300px;
     display: flex;
     margin-left: auto;
     align-items: center;
