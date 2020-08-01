@@ -1,15 +1,10 @@
 import React from 'react'
-import Form, {FormGroup, Input} from '../../../ui/form'
-import { useForm } from 'react-hook-form'
+import Form, {Input} from '../../../ui/form'
 import Button from '../../../ui/button'
 import { MdSearch } from "react-icons/md";
 import {SearchFromWrap, ButtonWrap} from './search-form.style'
 
 class SearchForm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
     onSubmit = (e) => {
         e.preventDefault()
         return false

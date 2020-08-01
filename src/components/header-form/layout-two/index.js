@@ -8,7 +8,7 @@ import Button from '../../ui/button'
 import { ProdQuery } from '../../../data/hooks/all-product-data'
 
 const HeaderForm = ({input, inputId, ...restProps}) => {
-    const { register, handleSubmit, errors } = useForm({
+    const { register, handleSubmit } = useForm({
         mode: "onBlur"
     })
     const allProducts = ProdQuery();

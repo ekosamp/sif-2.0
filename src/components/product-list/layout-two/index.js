@@ -142,9 +142,7 @@ List.propTypes = {
     imageSrc: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.object
-    ]),
-    // excerpt: PropTypes.string,
-    // format: PropTypes.string
+    ])
 }
 
 List.defaultProps = {

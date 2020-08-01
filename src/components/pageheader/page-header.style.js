@@ -7,8 +7,8 @@ export const PageHeaderWrap = styled(BackgroundImage) `
     background-repeat: no-repeat;
     background-position: center center;
     border-bottom-width: 0px;
-    padding-top: 136px;
-    padding-bottom: 131px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-size: cover;
     text-align: center;
     @media ${device.large}{
@@ -57,6 +57,7 @@ export const PageHeaderWrap = styled(BackgroundImage) `
             }
         }
         &__title{
+            background: rgba(255,255,255, 0.7);
             font-size: 56px;
             font-weight: 700;
             color: ${props => props.theme.colors.themeColor};

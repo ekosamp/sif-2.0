@@ -11,7 +11,7 @@ import Categories from '../categories'
 import VideoThumb from '../video-thumb'
 import Image from '../../image'
 import ModalVideo from '../../ui/modal-video'
-import Section, {Row, Col} from '../../ui/wrapper'
+import {Row, Col} from '../../ui/wrapper'
 
 import {
     BlogWrapper,

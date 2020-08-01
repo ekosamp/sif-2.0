@@ -3,7 +3,6 @@ import classnames from 'classnames'
 import {Row, Col} from '../ui/wrapper'
 import Form, {FormGroup, Select, Input} from '../ui/form'
 import Button from '../ui/button'
-import Text from '../ui/text'
 import styles from './styles.module.css'
 import {
   Accordion,
@@ -14,10 +13,6 @@ import {
 } from 'react-accessible-accordion';
 
 class Filter extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   stopSubmit = (e) => {
     e.preventDefault()
     return false

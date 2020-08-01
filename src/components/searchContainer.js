@@ -1,6 +1,9 @@
 import React, {Fragment} from "react"
 import ProductInfoArea from '../containers/product-list'
+import Heading from '../components/ui/heading'
+import Emoji from '../components/ui/emojis'
 import SearchForm from '../components/forms/search-form/layout-three'
+import PropTypes from 'prop-types'
 
 class Search extends React.Component {
   state = {
@@ -10,6 +13,7 @@ class Search extends React.Component {
     isLoading: true,
     isError: false,
     searchQuery: ``,
+    searchTitle: ``
   }
 
   handleChange = (name) => (event) => {
@@ -23,7 +27,8 @@ class Search extends React.Component {
     if (this.props.products && this.props.keyword) {
       this.setState({
         productList: this.props.products,
-        searchQuery: this.props.keyword
+        searchQuery: this.props.keyword,
+        searchTitle: this.props.keyword
       }, () => {this.searchData(this.state.searchQuery)})
     } else {
       this.setState({
@@ -44,14 +49,14 @@ class Search extends React.Component {
   }
 
   newSearch = () => {
-    const { searchQuery } = this.state
+    const { searchQuery, searchTitle } = this.state
     if (searchQuery === '') {
       alert(`Enter a model name or brand to search`)
     } else {
       this.setState({ isLoading: true}, () => {
         const queryResult = this.state.productList.edges
           .filter(item => item.node.title.toLowerCase().includes(searchQuery.toLowerCase()))
-        this.setState({ searchResults: queryResult }, () => {
+        this.setState({ searchResults: queryResult, searchTitle: searchQuery }, () => {
           this.setState({ isLoading: false })
         })
       })
@@ -59,14 +64,17 @@ class Search extends React.Component {
   }
 
   render() {
+    const { headingStyle } = this.props;
     const {
       isError,
       isLoading,
       productList,
       searchResults,
-      searchQuery
+      searchQuery,
+      searchTitle
     } = this.state
-    const queryResults = searchQuery === `` ? productList : searchResults
+    const emptyQuery = searchTitle === ``
+    const queryResults = emptyQuery ? productList : searchResults
     const noResults = (searchResults.length === 0)
 
     if (isLoading) {
@@ -84,6 +92,13 @@ class Search extends React.Component {
     if (!isLoading) {
       return (
         <Fragment>
+          {emptyQuery && (
+            <Heading {...headingStyle}>Search results for: "{<Emoji symbol="🤔"/>}"</Heading>
+          )}
+          {!emptyQuery && (
+            <Heading {...headingStyle}>Search results for: "{searchTitle}"</Heading>
+          )}
+          
           <SearchForm
             searchQuery={searchQuery}
             handleChange={this.handleChange}
@@ -100,6 +115,23 @@ class Search extends React.Component {
         </Fragment>
       )
     }
+  }
+}
+
+Search.defaultProps = {
+  headingStyle: {
+      as: 'h3',
+      mb: '20px',
+      mt: '15px',
+      textalign: 'center',
+      child: {
+          color: 'primary'
+      },
+      responsive: {
+          medium: {
+              mb: '20px'
+          }
+      }
   }
 }
 
