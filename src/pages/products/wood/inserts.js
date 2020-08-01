@@ -6,13 +6,12 @@ import Header from '../../../containers/layout/header/header-two'
 import Footer from '../../../containers/layout/footer/footer-one'
 import PageHeader from '../../../components/pageheader'
 import Section, {Row, Col} from '../../../components/ui/wrapper'
-import Heading from '../../../components/ui/heading'
 import ProductInfoArea from '../../../containers/product-list'
 import CTA from '../../../containers/global/cta-area/section-one'
 import { ProdQuery } from '../../../data/hooks/all-product-data'
 
 const WoodInserts = ({ pageContext, location, ...restProps }) => {
-    const {sectionStyle, headingStyle} = restProps;
+    const {sectionStyle} = restProps;
     const allProducts = ProdQuery();
 
     return (
@@ -28,7 +27,6 @@ const WoodInserts = ({ pageContext, location, ...restProps }) => {
                 <Section {...sectionStyle}>
                     <Row>
                         <Col lg={{span: 12, order: 2}} xs={{span: 12, order: 1}}>
-                            {/* <Heading {...headingStyle}>Wood Inserts</Heading> */}
                             <ProductInfoArea
                                 products={allProducts}
                                 productType="Insert"

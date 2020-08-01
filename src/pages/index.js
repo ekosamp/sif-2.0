@@ -11,7 +11,7 @@ import CTAArea from '../containers/global/cta-area/section-two'
 
 const IndexPage = ({location}) => (
   <Layout location={location}>
-    <SEO/>
+    <SEO title="Your local hearth dealer - Duncan, BC" />
     <Header />
     <main className="site-wrapper-reveal">
         <Hero />
