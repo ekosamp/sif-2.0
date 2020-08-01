@@ -2,8 +2,9 @@ module.exports = {
   pathPrefix: `/dev`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
-    titleTemplate: ``,
-    description: ``,
+    titleTemplate: `South Island Fireplace & Spas`,
+    description: `Vancouver Island's largest retailer of fireplaces and stoves. We provide installation and on-going service for all our customers. Our large and dedicated sales and service staff are trained in all the products we sell, ensuring you get the appliance best suited for you and your home.`,
+    keywords: `south island fireplace, pacific energy, hearthstone, fireplaces, woodstoves, wood stoves, gas fireplaces, gas insert, jotul, scan, alderlea, true north, rsf fireplace, lennox fireplace, kingsman fireplace, valor, lennox, town and country, town & country, traeger pellet grill, outdoor fire pit, firepit, jackson grills, infratech, warmland, heartland cooking stove, bbq accessories, bbq grills, outdoor kitchen, custom outdoor kitchens, outdoor fireplace, outdoor firepits, ambiance, fireplaces duncan, hearth duncan bc, fireplaces cowichan valley, chimney, fireplace service, service gas fireplace`,
     author: `Danny Di Iorio`,
     authorContact: `https://www.linkedin.com/in/danielrdiiorio/`,
     twitterUsername: ``,
