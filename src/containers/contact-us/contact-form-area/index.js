@@ -13,7 +13,7 @@ const ContactFormArea = ({headingStyle, textStyle}) => {
                 <Row alignitems="center">
                     <Col lg={6}>
                         <LeftBox>
-                            <Heading {...headingStyle}>Looking for help with<br/> a purchase? Can't find a <br/> product? We're here to help.</Heading>
+                            <Heading {...headingStyle}>Looking for help with<br/> a purchase? Can't find a <br/> product? <span>We're here to help.</span></Heading>
                             <Text {...textStyle}>Fill out the form and we'll get in touch with you as soon as we can. You can also contact us via our social
                                 media channels.</Text>
                         </LeftBox>
@@ -40,7 +40,7 @@ ContactFormArea.defaultProps = {
         lineheight: 1.67,
         fontweight: 600,
         child: {
-            color: 'primary'
+            color: 'secondary'
         },
         layout: 'quote',
         before: {

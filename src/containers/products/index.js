@@ -6,7 +6,7 @@ import Anchor from '../../components/ui/anchor'
 import {Container, Row, Col} from '../../components/ui/wrapper'
 import SectionTitle from '../../components/ui/section-title'
 import BoxLargeImage from '../../components/box-large-image/layout-one'
-import {SectionWrap, SectionBottom, OuterWrapper} from './products-area.style'
+import {SectionWrap, SectionBottom} from './products-area.style'
 
 const ProductsArea = (props) => {
     const featuredDataQuery = useStaticQuery(graphql `

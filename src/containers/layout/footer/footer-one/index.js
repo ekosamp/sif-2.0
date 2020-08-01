@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from "gatsby"
-import { TiSocialFacebook, TiSocialTwitter, TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
+import { TiSocialFacebook, TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
 import parse from 'html-react-parser'
 import {Container} from 'react-bootstrap'
 import Logo from '../../../../assets/images/logo/dark-logo-160x48.png'

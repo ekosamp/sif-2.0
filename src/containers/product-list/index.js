@@ -68,7 +68,7 @@ class ProductInfoArea extends React.Component {
                 brands: [...new Set(p.map(item => item.node.acf.brand.post_title))],
                 sizes: [...new Set(p.map(item => item.node.acf.size))],
                 totalCount: allProducts.totalCount,
-                numberOfPages: 2,
+                numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
                 isLoading: false
             });
         }

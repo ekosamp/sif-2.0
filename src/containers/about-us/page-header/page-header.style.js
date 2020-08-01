@@ -3,8 +3,8 @@ import {device} from '../../../theme'
 import BackgroundImage from 'gatsby-background-image'
 
 export const PageHeaderWrap = styled(BackgroundImage) `
-    padding-top: 192px;
-    padding-bottom: 165px;
+    padding-top: 125px;
+    padding-bottom: 125px;
     @media ${device.medium}{
         padding-top: 100px;
         padding-bottom: 100px;

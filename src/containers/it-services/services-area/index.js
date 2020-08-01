@@ -5,7 +5,6 @@ import Heading from '../../../components/ui/heading'
 import Anchor from '../../../components/ui/anchor'
 import {Container, Row, Col} from '../../../components/ui/wrapper'
 import SectionTitle from '../../../components/ui/section-title'
-import FeatureBox from '../../../components/box-image/layout-one'
 import BoxLargeImage from '../../../components/box-large-image/layout-one'
 import {SectionWrap, SectionBottom} from './services-area.style'
 
