@@ -91,6 +91,7 @@ class Filter extends React.Component {
                   <Col xs={6}>
                     <Button
                       size="xsmall"
+                      hover={false}
                       onClick={this.props.applyFilter}
                     >
                       Apply filter
