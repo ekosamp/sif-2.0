@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import List from '../../components/product-list/layout-two'
-import Pagination from '../../components/blog/pagination'
+import Pagination from '../../components/pagination'
 import {ProdWrapper, ProdBox} from './prod-area.style'
 import Filter from '../../components/filter'
 import {Transition} from 'react-spring/renderprops'
@@ -21,12 +21,20 @@ class ProductInfoArea extends React.Component {
             brands: [],
             sizeFilter: '',
             sizes: [],
+            pageOfItems: [],
             isLoading: true
         }
+
+        this.onChangePage = this.onChangePage.bind(this);
     }
 
     handleChange = (name) => (event) => {
         this.setState({ ...this.state, [name]: event.target.value });
+    }
+
+    onChangePage(pageOfItems) {
+        // update state with new page of items
+        this.setState({ pageOfItems: pageOfItems });
     }
     
     componentDidMount() {
@@ -90,8 +98,9 @@ class ProductInfoArea extends React.Component {
             keyword,
             brands,
             sizes,
-            numberOfPages,
+            postsPerPage,
             filteredProducts,
+            pageOfItems,
             isLoading
         } = this.state
         if (isLoading) {
@@ -112,7 +121,7 @@ class ProductInfoArea extends React.Component {
                     />
                     <ProdWrapper>
                         <Transition
-                            items={filteredProducts} keys={item => item.node.id}
+                            items={pageOfItems} keys={item => item.node.id}
                             initial={null}
                             from={{ overflow: 'hidden', height: 0, opacity: 0 }}
                             enter={{ height: `100%`, opacity: 1 }}
@@ -126,13 +135,10 @@ class ProductInfoArea extends React.Component {
                             }
                         </Transition>
                     </ProdWrapper>
-                    {numberOfPages > 1 && (
-                        <Pagination
-                            rootPage="/products/"
-                            currentPage={1}
-                            numberOfPages={numberOfPages}
-                        />
-                    )}
+                    <Pagination
+                        items={filteredProducts}
+                        pageSize={postsPerPage}
+                        onChangePage={this.onChangePage} />
                 </Fragment>
             )
         }
