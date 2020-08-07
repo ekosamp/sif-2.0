@@ -9,6 +9,7 @@ export const ProdMedia = styled.div `
     }
     margin-bottom: 20px;
     transition: ${props => props.theme.transition};
+    
 `;
 
 export const ProdThumb = styled.figure `
@@ -98,11 +99,6 @@ export const ProdWrapper = styled.div `
             } 
         `}
     `} 
-    &:hover{
-        ${ProdMedia}{
-            transform: translateY(-5px);
-        }
-    }
 `;
 
 export const TagsWrap = styled.div `
