@@ -22,13 +22,6 @@
             "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
             "image": "../images/products/outdoor/heaters.png",
             "path": "/products/outdoor/heaters"
-        },
-        {
-            "id": "outdoor-fireplaces",
-            "title": "Outdoor Fireplaces",
-            "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
-            "image": "../images/products/outdoor/outdoor-fireplace.jpg",
-            "path": "/products/outdoor/gas-fireplaces"
         }
     ]
 }
