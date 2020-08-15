@@ -4,6 +4,7 @@ import {device} from '../../../theme'
 export const SectionTitleWrap = styled.div `
     text-align: ${props => props.align};
     margin-bottom: ${props => props.mb};
+    margin-top: ${props => props.mt};
     ${props => props.responsive && css `
         ${props => props.responsive.medium && css `
             @media ${device.medium}{

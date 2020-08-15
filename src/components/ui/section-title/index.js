@@ -21,7 +21,8 @@ const SectionTitle = ({title, subtitle, layout, ...props}) => {
 
 SectionTitle.propTypes = {
     align: PropTypes.oneOf(['left', 'center', 'right']),
-    mb: PropTypes.string
+    mb: PropTypes.string,
+    mt: PropTypes.string
 }
 
 SectionTitle.defaultProps = {
