@@ -9,7 +9,7 @@ import FinancingSection from '../../containers/services/financing'
 const FinancingPage = ({ pageContext, location }) => {
     return (
         <Layout location={location}>
-            <SEO title="Financing" />
+            <SEO title="Financing from Financeit" />
             <Header />
             <PageHeader
                 pageContext={pageContext}

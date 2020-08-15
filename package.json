@@ -1,7 +1,7 @@
 {
   "name": "sif-website",
   "private": true,
-  "homepage": "http://southislandfireplace.com/dev",
+  "homepage": "https://southislandfireplace.com/dev",
   "description": "Re-designed company website",
   "version": "0.1.0",
   "author": "Danny Di Iorio <ddiiorio.dev@gmail.com>",
@@ -50,6 +50,7 @@
     "react-modal-image": "^2.5.0",
     "react-modal-video": "^1.2.3",
     "react-spring": "^8.0.27",
+    "react-toast-notifications": "^2.4.0",
     "react-typed": "^1.2.0",
     "react-visibility-sensor": "^5.1.1",
     "react-vivus": "0.0.2",

@@ -3,7 +3,14 @@ import ProductInfoArea from '../containers/product-list'
 import Heading from '../components/ui/heading'
 import Emoji from '../components/ui/emojis'
 import SearchForm from '../components/forms/search-form/layout-three'
-import PropTypes from 'prop-types'
+import { useToasts } from 'react-toast-notifications'
+
+function withToast(Component) {
+  return function WrappedComponent(props) {
+    const toastFuncs = useToasts()
+    return <Component {...props} {...toastFuncs} />;
+  }
+}
 
 class Search extends React.Component {
   state = {
@@ -44,18 +51,23 @@ class Search extends React.Component {
    */
   searchData = (keyword) => {
     const queryResult = this.state.productList.edges
-      .filter(item => item.node.title.toLowerCase().includes(keyword.toLowerCase()))
+      .filter(item => item.node.acf.name.toLowerCase().includes(keyword.toLowerCase()))
     this.setState({ searchQuery: keyword, searchResults: queryResult, isLoading: false })
   }
 
   newSearch = () => {
     const { searchQuery, searchTitle } = this.state
-    if (searchQuery === '') {
-      alert(`Enter a model name or brand to search`)
+    if (searchQuery === '' || searchQuery.length < 2) {
+      this.props.addToast(`Enter a model name or brand to search, minimum 2 letters`, {
+        appearance: 'error'
+      })
+    } 
+    if (searchQuery === searchTitle) {
+      return
     } else {
       this.setState({ isLoading: true}, () => {
         const queryResult = this.state.productList.edges
-          .filter(item => item.node.title.toLowerCase().includes(searchQuery.toLowerCase()))
+          .filter(item => item.node.acf.name.toLowerCase().includes(searchQuery.toLowerCase()))
         this.setState({ searchResults: queryResult, searchTitle: searchQuery }, () => {
           this.setState({ isLoading: false })
         })
@@ -135,4 +147,4 @@ Search.defaultProps = {
   }
 }
 
-export default Search
+export default withToast(Search)

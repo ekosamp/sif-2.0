@@ -124,7 +124,7 @@ const ReplacementPartsForm = () => {
                     hover="2"
                 ></Textarea>
             </FormGroup>
-            <FormGroup textalign="center">
+            <FormGroup textalign="center" mb="20px">
                 <input type="text" name="_gotcha" style={{display:"none"}} />
                 {formStatus === "SUCCESS" ? <Text as="strong">Thanks!</Text> : 
                 <Button 

@@ -8,6 +8,7 @@ import Search from '../components/searchContainer'
 import Section, {Row, Col} from '../components/ui/wrapper'
 import CTAArea from '../containers/global/cta-area/section-one'
 import { ProdQuery } from '../data/hooks/all-product-data'
+import { ToastProvider } from 'react-toast-notifications'
 
 const SearchResults = ({ pageContext, location, ...restProps }) => {
     const {sectionStyle} = restProps;
@@ -16,9 +17,11 @@ const SearchResults = ({ pageContext, location, ...restProps }) => {
     const hasState = () => {
         return (
             <Col xs={12}>
-                <Search
-                    products={location.state.products}
-                    keyword={location.state.keyword} />
+                <ToastProvider autoDismiss placement="top-center">
+                    <Search
+                        products={location.state.products}
+                        keyword={location.state.keyword} />
+                </ToastProvider>
             </Col>
         )
     }
@@ -26,9 +29,11 @@ const SearchResults = ({ pageContext, location, ...restProps }) => {
     const noState = () => {
         return (
             <Col xs={12}>
-                <Search
-                    products={allProducts}
-                    keyword={``} />
+                <ToastProvider autoDismiss placement="top-center">
+                    <Search
+                        products={allProducts}
+                        keyword={``} />
+                </ToastProvider>
             </Col>
         )
     }

@@ -9,8 +9,8 @@ module.exports = {
     authorContact: `https://www.linkedin.com/in/danielrdiiorio/`,
     twitterUsername: ``,
     image: 'landing.png',
-    siteUrl: 'http://www.southislandfireplace.com/',
-    copyright: "South Island Fireplace & Spas. <a href='' target='_blank' rel='noopener noreferrer'>All Rights Reserved. </a>",
+    siteUrl: 'https://www.southislandfireplace.com/',
+    copyright: "South Island Fireplace & Spas. All Rights Reserved. ",
     social: {
       facebook: "https://www.facebook.com/southislandfireplace/",
       // twitter: "https://www.twitter.com",
@@ -21,7 +21,7 @@ module.exports = {
       phone: '250-746-0123',
       address: "2939 Boys Road, Duncan, BC, Canada. V9L 6W4",
       email: 'sales@southislandfireplace.com',
-      website: "http://www.southislandfireplace.com/",
+      website: "https://www.southislandfireplace.com/",
       rating: "5.0",
       customers: "700",
       clients: "3200",
@@ -169,8 +169,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'http://southislandfireplace.com',
-        sitemap: 'http://southislandfireplace.com/sitemap.xml',
+        host: 'https://southislandfireplace.com',
+        sitemap: 'https://southislandfireplace.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
@@ -178,8 +178,8 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // your WordPress source - TODO: UPDATE
-        baseUrl: `http://www.southislandfireplace.com/wp/`,
-        protocol: `http`,
+        baseUrl: `https://www.southislandfireplace.com/wp/`,
+        protocol: `https`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
