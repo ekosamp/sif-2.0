@@ -14,6 +14,7 @@ import HeaderForm from '../../../../components/header-form/layout-two'
 import BurgerButton from '../../../../components/ui/burger-button'
 import Clickable from '../../../../components/ui/clickable'
 import OffCanvas, {OffCanvasHeader, OffCanvasBody} from '../../../../components/ui/off-canvas';
+import { ToastProvider } from 'react-toast-notifications'
 import {
     HeaderWrap,
     HeaderTop,
@@ -224,11 +225,13 @@ const Header = (props) => {
                                             />
                                         </HeaderNavigation>
                                     </HeaderBottomLeft>
-                                    <HeaderBottomRight>
-                                        {isNotSearchResults && (
-                                            <HeaderForm layout={sticky && 'white'}  inputId="header-search-2"/>
-                                        )}
-                                    </HeaderBottomRight>
+                                    <ToastProvider autoDismiss placement="top-center">
+                                        <HeaderBottomRight>
+                                            {isNotSearchResults && (
+                                                <HeaderForm layout={sticky && 'white'}  inputId="header-search-2"/>
+                                            )}
+                                        </HeaderBottomRight>
+                                    </ToastProvider>
                                 </HeaderMain>
                             </Col>
                         </Row>

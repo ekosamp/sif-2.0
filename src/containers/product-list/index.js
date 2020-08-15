@@ -14,7 +14,7 @@ class ProductInfoArea extends React.Component {
             products: [],
             filteredProducts: [],
             totalCount: 1,
-            postsPerPage: 10,
+            postsPerPage: 20,
             numberOfPages: 1,
             keyword: '',
             brandFilter: '',
@@ -44,13 +44,13 @@ class ProductInfoArea extends React.Component {
     applyFilter = () => {
         if (this.state.keyword) {
             this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.title.toLowerCase().includes(this.state.keyword.toLowerCase())) })
+                .filter(item => item.node.acf.name.toLowerCase().includes(this.state.keyword.toLowerCase())) })
         }
-        if (this.state.brandFilter) {
+        else if (this.state.brandFilter) {
             this.setState({ filteredProducts: this.state.products
                 .filter(item => item.node.acf.brand.post_title === this.state.brandFilter) })
         }
-        if (this.state.sizeFilter) {
+        else if (this.state.sizeFilter) {
             this.setState({ filteredProducts: this.state.products
                 .filter(item => item.node.acf.size === this.state.sizeFilter) })
         }
@@ -123,7 +123,7 @@ class ProductInfoArea extends React.Component {
                         <Transition
                             items={pageOfItems} keys={item => item.node.id}
                             initial={null}
-                            from={{ overflow: 'hidden', height: 0, opacity: 0 }}
+                            from={{ overflow: 'hidden', height: `0%`, opacity: 0 }}
                             enter={{ height: `100%`, opacity: 1 }}
                             leave={{ opacity: 0 }}
                             config={{ duration: 300, tension: 50, friction: 25 }}

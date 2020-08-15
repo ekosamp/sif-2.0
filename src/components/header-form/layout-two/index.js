@@ -34,7 +34,17 @@ const HeaderForm = ({input, inputId, ...restProps}) => {
                     hover="false"
                     id={inputId}
                     {...input}
-                    ref={register({ required: 'Enter a search keyword' })}
+                    ref={register({
+                        required: 'Enter a search keyword',
+                        maxLength: {
+                            value: 20,
+                            message: "Maximum length is 20"
+                        },
+                        minLength: {
+                            value: 2,
+                            message: "Minimum length is 2"
+                        }
+                    })}
                 />
                 <ButtonWrap>
                     <Button 
@@ -43,7 +53,7 @@ const HeaderForm = ({input, inputId, ...restProps}) => {
                         hover="false"
                         varient='onlyIcon'
                         color="#fff"
-                    >
+                        >
                         <MdSearch/>
                     </Button>
                 </ButtonWrap>
