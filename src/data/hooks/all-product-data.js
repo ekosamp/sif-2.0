@@ -3,15 +3,16 @@ import { useStaticQuery, graphql } from "gatsby"
 export const ProdQuery = () => {
     const { allWordpressWpProducts } = useStaticQuery(graphql `
         query ProductInfoQuery {
-            allWordpressWpProducts(sort: {fields: title, order: DESC}) {
+            allWordpressWpProducts(sort: {fields: [ acf___brand___post_title, acf___name ]}) {
                 totalCount
                 edges {
                     node {
                         id
                         slug
                         title
-                        content
                         acf {
+                            name
+                            description
                             brochure_url
                             fuel
                             models
@@ -27,7 +28,7 @@ export const ProdQuery = () => {
                             img1{
                                 localFile{
                                     childImageSharp {
-                                        fluid(maxWidth: 1500, quality: 100){
+                                        fluid(maxWidth: 1500, quality: 90){
                                             ...GatsbyImageSharpFluid
                                         }
                                     }
@@ -36,7 +37,7 @@ export const ProdQuery = () => {
                             img2{
                                 localFile{
                                     childImageSharp {
-                                        fluid(maxWidth: 1500, quality: 100){
+                                        fluid(maxWidth: 1500, quality: 90){
                                             ...GatsbyImageSharpFluid
                                         }
                                     }
@@ -45,7 +46,7 @@ export const ProdQuery = () => {
                             img3{
                                 localFile{
                                     childImageSharp {
-                                        fluid(maxWidth: 1500, quality: 100){
+                                        fluid(maxWidth: 1500, quality: 90){
                                             ...GatsbyImageSharpFluid
                                         }
                                     }
