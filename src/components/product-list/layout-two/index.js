@@ -33,7 +33,6 @@ const List = ({data, ...restProps}) => {
     const [viewImage, setViewImage] = useState('');
     
     const modalImageOpen = (img) => {
-        console.log(img)
         setViewImage(img.src);
         setImageOpen(true);
     }
@@ -100,7 +99,7 @@ const List = ({data, ...restProps}) => {
                             )}
                             {models && (
                                 <ProdExcerpt>
-                                    <Text>Models: {models}</Text>
+                                    <Text>Model(s): {models}</Text>
                                 </ProdExcerpt>
                             )}
                             {output && (
@@ -153,12 +152,7 @@ List.defaultProps = {
         pr: '16px',
         hover: "false",
         icondistance: "4px",
-        iconsize: "16px",
-        // border: {
-        //     bottom: {
-        //         width: '1px'
-        //     }
-        // }
+        iconsize: "16px"
     }
 }
 

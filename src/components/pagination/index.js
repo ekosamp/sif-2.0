@@ -2,7 +2,6 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Button from '../ui/button'
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
-import { wrap } from 'lodash';
 
 const propTypes = {
     items: PropTypes.array.isRequired,
@@ -17,7 +16,7 @@ class Pagination extends React.Component {
         this.state = { pager: {} };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         // set page if items array isn't empty
         if (this.props.items && this.props.items.length) {
             this.setPage(this.props.initialPage);
