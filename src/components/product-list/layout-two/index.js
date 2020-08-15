@@ -25,9 +25,8 @@ import {
 
 const List = ({data, ...restProps}) => {
     const {
-        slug, title, content,
         acf: {brochure_url, fuel, models, output, size, manual_url, brand,
-            type, img1, img2, img3}
+            type, img1, img2, img3, name, description}
     } = data;
     const {wrapStyle, metaStyle, buttonStyle} = restProps;
     const [imageOpen, setImageOpen] = useState(false);
@@ -51,7 +50,7 @@ const List = ({data, ...restProps}) => {
                                 <ImageThumb
                                     onClick={() => modalImageOpen(img1.localFile.childImageSharp.fluid)}
                                     poster={img1.localFile.childImageSharp}
-                                    title={title}
+                                    title={`${brand.post_title} ${name}`}
                                     thumb={false}
                                 />
                             )}
@@ -60,7 +59,7 @@ const List = ({data, ...restProps}) => {
                                     <ImageThumb
                                         onClick={() => modalImageOpen(img2.localFile.childImageSharp.fluid)}
                                         poster={img2.localFile.childImageSharp.fluid.src}
-                                        title={title}
+                                        title={`${brand.post_title} ${name}`}
                                         thumb={true}
                                     />
                                 </ProdMiniThumb>
@@ -70,13 +69,13 @@ const List = ({data, ...restProps}) => {
                                     <ImageThumb
                                         onClick={() => modalImageOpen(img2.localFile.childImageSharp.fluid)}
                                         poster={img2.localFile.childImageSharp.fluid.src}
-                                        title={title}
+                                        title={`${brand.post_title} ${name}`}
                                         thumb={true}
                                     />
                                     <ImageThumb
                                         onClick={() => modalImageOpen(img3.localFile.childImageSharp.fluid)}
                                         poster={img3.localFile.childImageSharp.fluid.src}
-                                        title={title}
+                                        title={`${brand.post_title} ${name}`}
                                         thumb={true}
                                     />
                                 </ProdMiniThumbs>
@@ -87,16 +86,16 @@ const List = ({data, ...restProps}) => {
                     <Col lg={8}>
                         <ProdInfo>
                             <ProdHeader>
-                                {title && <ProdTitle><Text>{brand.post_title} {title}</Text></ProdTitle>}
+                                {name && <ProdTitle><Text>{brand.post_title} {name}</Text></ProdTitle>}
                             </ProdHeader>
                             {type && size && fuel && (
                                 <TagsWrap>
                                     <Text>{type.post_title}, {size}, {fuel}</Text>
                                 </TagsWrap>
                             )}
-                            {content && (
+                            {description && (
                                 <ProdExcerpt>
-                                    <Text>{content}</Text>
+                                    <Text>{description}</Text>
                                 </ProdExcerpt>
                             )}
                             {models && (
@@ -106,20 +105,17 @@ const List = ({data, ...restProps}) => {
                             )}
                             {output && (
                                 <ProdExcerpt>
-                                    <Text>Output: {output} BTU</Text>
+                                    <Text>Output (max BTU): {output}</Text>
                                 </ProdExcerpt>
                             )}
-                            {manual_url && (
                                 <LinkBtn>
-                                    <Button icon={<MdTrendingFlat/>} to={manual_url} {...buttonStyle}>Manual PDF</Button>
-                                    <Button icon={<MdTrendingFlat/>} to={brochure_url} {...buttonStyle}>Brochure PDF</Button>
+                                    {manual_url && (
+                                        <Button icon={<MdTrendingFlat/>} to={manual_url} {...buttonStyle}>Manual PDF</Button>
+                                    )}
+                                    {brochure_url && (
+                                        <Button icon={<MdTrendingFlat/>} to={brochure_url} {...buttonStyle}>Brochure PDF</Button>
+                                    )}
                                 </LinkBtn>
-                            )}
-                            {/* {brochure_url && (
-                                <LinkBtn>
-                                    <Button icon={<MdTrendingFlat/>} to={brochure_url} {...buttonStyle}>Brochure PDF</Button>
-                                </LinkBtn>
-                            )} */}
                         </ProdInfo>
                     </Col>
                 </Row>

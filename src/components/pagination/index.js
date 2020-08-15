@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import Button from '../ui/button'
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import { wrap } from 'lodash';
 
 const propTypes = {
     items: PropTypes.array.isRequired,
@@ -48,6 +50,8 @@ class Pagination extends React.Component {
 
         // call change page function in parent component
         this.props.onChangePage(pageOfItems);
+
+        window.scrollTo({ top: 300, behavior: 'smooth' });
     }
 
     getPager(totalItems, currentPage, pageSize) {
@@ -111,41 +115,37 @@ class Pagination extends React.Component {
         }
 
         return (
-            <ul className="pagination">
-                {/* <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-                    <a onClick={() => this.setPage(1)}>First</a>
-                </li> */}
-                <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-                    <Button
-                        size="xsmall"
-                        onClick={() => this.setPage(pager.currentPage - 1)}
-                        {...ButtonStyle}>
-                        Previous
-                    </Button>
-                </li>
-                {pager.pages.map((page, index) =>
-                    <li key={index}>
+            <Fragment>
+                <ul className="pagination" style={{flexWrap: "wrap"}}>
+                    <li className={pager.currentPage === 1 ? 'disabled' : ''}>
                         <Button
-                            size="xsmall" 
-                            {...ButtonStyle}
-                            onClick={() => this.setPage(page)}
-                            varient={pager.currentPage === page ? 'outlined' : ''}>
-                            {page}
+                            size="xsmall"
+                            onClick={() => this.setPage(pager.currentPage - 1)}
+                            {...ButtonStyle}>
+                            <MdNavigateBefore className="icon"/>
                         </Button>
                     </li>
-                )}
-                <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-                    <Button
-                        size="xsmall"
-                        onClick={() => this.setPage(pager.currentPage + 1)}
-                        {...ButtonStyle}>
-                        Next
-                    </Button>
-                </li>
-                {/* <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-                    <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
-                </li> */}
-            </ul>
+                    {pager.pages.map((page, index) =>
+                        <li key={index}>
+                            <Button
+                                size="xsmall" 
+                                {...ButtonStyle}
+                                onClick={() => this.setPage(page)}
+                                varient={pager.currentPage === page ? 'outlined' : null}>
+                                {page}
+                            </Button>
+                        </li>
+                    )}
+                    <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
+                        <Button
+                            size="xsmall"
+                            onClick={() => this.setPage(pager.currentPage + 1)}
+                            {...ButtonStyle}>
+                            <MdNavigateNext className="icon"/>
+                        </Button>
+                    </li>
+                </ul>
+            </Fragment>
         );
     }
 }
