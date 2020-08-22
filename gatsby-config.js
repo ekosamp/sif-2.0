@@ -177,13 +177,22 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        // your WordPress source - TODO: UPDATE
+        // your WordPress source
         baseUrl: `https://www.southislandfireplace.com/wp/`,
         protocol: `https`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
-        useACF: true
+        useACF: true,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/products",
+          "**/brands",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+        ]
       }
     },
     {

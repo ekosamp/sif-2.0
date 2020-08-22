@@ -4,7 +4,6 @@ export const ProdQuery = () => {
     const { allWordpressWpProducts } = useStaticQuery(graphql `
         query ProductInfoQuery {
             allWordpressWpProducts(sort: {fields: [ acf___brand___post_title, acf___name ]}) {
-                totalCount
                 edges {
                     node {
                         id
@@ -13,18 +12,18 @@ export const ProdQuery = () => {
                         acf {
                             name
                             description
-                            brochure_url
-                            fuel
-                            models
-                            output
-                            size
-                            manual_url
                             type {
                                 post_title
                             }
                             brand {
                                 post_title
                             }
+                            fuel
+                            size
+                            models
+                            output
+                            brochure_url
+                            manual_url
                             img1{
                                 localFile{
                                     childImageSharp {
@@ -55,6 +54,7 @@ export const ProdQuery = () => {
                         }
                     }
                 }
+                totalCount
             }
         }      
     `)

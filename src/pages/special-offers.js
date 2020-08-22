@@ -36,8 +36,9 @@ const SpecialOffersPage = ({ pageContext, location, ...restProps }) => {
                             />
                             <SpecialOffersArea
                                 products={allProducts}
-                                productType="Insert"
-                                fuelType="Wood" />
+                                productType="Stove"
+                                fuelType="Gas"
+                            />
                         </Col>
                     </Row>
                 </Section>
