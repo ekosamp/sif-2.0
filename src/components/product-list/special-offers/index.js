@@ -20,8 +20,8 @@ import {
 
 const SpecialOffersList = ({data, ...restProps}) => {
     const {
-        acf: {brochure_url, fuel, models, output, size, manual_url, brand,
-            type, img1, name, description}
+        productBrochure, productFuel, productModels, productOutput, productSize, productManual,
+        Brand, productType, productimage1, name, description
     } = data;
     const {wrapStyle, metaStyle, buttonStyle} = restProps;
     const [imageOpen, setImageOpen] = useState(false);
@@ -40,11 +40,11 @@ const SpecialOffersList = ({data, ...restProps}) => {
                 <Row>
                     <Col xs={12}>
                         <ProdMedia>
-                            {!!img1 && (
+                            {!!productimage1.img1 && (
                                 <ImageThumb
-                                    onClick={() => modalImageOpen(img1.localFile.childImageSharp.fluid)}
-                                    poster={img1.localFile.childImageSharp}
-                                    title={`${brand.post_title} ${name}`}
+                                    onClick={() => modalImageOpen(productimage1.img1.localFile.childImageSharp.fluid)}
+                                    poster={productimage1.img1.localFile.childImageSharp}
+                                    title={`${Brand.brand.title} ${name.name}`}
                                     thumb={false}
                                 />
                             )}
@@ -56,34 +56,34 @@ const SpecialOffersList = ({data, ...restProps}) => {
                     <Col xs={12}>
                         <ProdInfo>
                             <ProdHeader>
-                                {name && <ProdTitle><Text>{brand.post_title} {name}</Text></ProdTitle>}
+                                {name.name && <ProdTitle><Text>{Brand.brand.title} {name.name}</Text></ProdTitle>}
                             </ProdHeader>
-                            {type && size && fuel && (
+                            {productType.type.title && productSize.size && productFuel.fuel && (
                                 <TagsWrap>
-                                    <Text>{type.post_title}, {size}, {fuel}</Text>
+                                    <Text>{productType.type.title.post_title}, {productSize.size}, {productFuel.fuel}</Text>
                                 </TagsWrap>
                             )}
-                            {description && (
+                            {description.description && (
                                 <ProdExcerpt>
-                                    <Text>{description}</Text>
+                                    <Text>{description.description}</Text>
                                 </ProdExcerpt>
                             )}
-                            {models && (
+                            {productModels.models && (
                                 <ProdExcerpt>
-                                    <Text>Model(s): {models}</Text>
+                                    <Text>Model(s): {productModels.models}</Text>
                                 </ProdExcerpt>
                             )}
-                            {output && (
+                            {productOutput.output && (
                                 <ProdExcerpt>
-                                    <Text>Output (max BTU): {output}</Text>
+                                    <Text>Output (max BTU): {productOutput.output}</Text>
                                 </ProdExcerpt>
                             )}
                                 <LinkBtn>
-                                    {manual_url && (
-                                        <Button icon={<MdTrendingFlat/>} to={manual_url} {...buttonStyle}>Manual PDF</Button>
+                                    {productManual.manualUrl && (
+                                        <Button icon={<MdTrendingFlat/>} to={productManual.manualUrl} {...buttonStyle}>Manual PDF</Button>
                                     )}
-                                    {brochure_url && (
-                                        <Button icon={<MdTrendingFlat/>} to={brochure_url} {...buttonStyle}>Brochure PDF</Button>
+                                    {productBrochure.brochureUrl && (
+                                        <Button icon={<MdTrendingFlat/>} to={productBrochure.brochureUrl} {...buttonStyle}>Brochure PDF</Button>
                                     )}
                                 </LinkBtn>
                         </ProdInfo>

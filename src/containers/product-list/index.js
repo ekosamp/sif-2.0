@@ -44,15 +44,15 @@ class ProductInfoArea extends React.Component {
     applyFilter = () => {
         if (this.state.keyword) {
             this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.acf.name.toLowerCase().includes(this.state.keyword.toLowerCase())) })
+                .filter(item => item.node.name.name.toLowerCase().includes(this.state.keyword.toLowerCase())) })
         }
         else if (this.state.brandFilter) {
             this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.acf.brand.post_title === this.state.brandFilter) })
+                .filter(item => item.node.Brand.brand.title === this.state.brandFilter) })
         }
         else if (this.state.sizeFilter) {
             this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.acf.size === this.state.sizeFilter) })
+                .filter(item => item.node.productSize.size === this.state.sizeFilter) })
         }
     }
 
@@ -68,13 +68,13 @@ class ProductInfoArea extends React.Component {
     loadData() {
         const allProducts = this.props.products;
         if (this.props.fuelType && this.props.productType) {
-            const p = allProducts.edges.filter(n => n.node.acf.type.post_title === this.props.productType
-                && n.node.acf.fuel === this.props.fuelType);
+            const p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
+                && n.node.productFuel.fuel === this.props.fuelType);
             this.setState({
                 products: p,
                 filteredProducts: p,
-                brands: [...new Set(p.map(item => item.node.acf.brand.post_title))],
-                sizes: [...new Set(p.map(item => item.node.acf.size))],
+                brands: [...new Set(p.map(item => item.node.Brand.brand.title))],
+                sizes: [...new Set(p.map(item => item.node.productSize.size))],
                 totalCount: allProducts.totalCount,
                 numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
                 isLoading: false
@@ -84,8 +84,8 @@ class ProductInfoArea extends React.Component {
             this.setState({
                 products: allProducts,
                 filteredProducts: allProducts,
-                brands: [...new Set(allProducts.map(item => item.node.acf.brand.post_title))],
-                sizes: [...new Set(allProducts.map(item => item.node.acf.size))],
+                brands: [...new Set(allProducts.map(item => item.node.Brand.brand.title))],
+                sizes: [...new Set(allProducts.map(item => item.node.productSize.size))],
                 totalCount: allProducts.length,
                 numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
                 isLoading: false

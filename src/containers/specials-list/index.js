@@ -23,13 +23,13 @@ class SpecialOffersArea extends React.Component {
     loadData() {
         const allProducts = this.props.products;
         if (this.props.fuelType && this.props.productType) {
-            const p = allProducts.edges.filter(n => n.node.acf.type.post_title === this.props.productType
-                && n.node.acf.fuel === this.props.fuelType);
+            const p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
+                && n.node.productFuel.fuel === this.props.fuelType);
             this.setState({
                 products: p,
                 filteredProducts: p,
-                brands: [...new Set(p.map(item => item.node.acf.brand.post_title))],
-                sizes: [...new Set(p.map(item => item.node.acf.size))],
+                brands: [...new Set(p.map(item => item.node.Brand.brand.title))],
+                sizes: [...new Set(p.map(item => item.node.productSize.size))],
                 totalCount: allProducts.totalCount,
                 numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
                 isLoading: false

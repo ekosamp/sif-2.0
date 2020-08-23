@@ -7,17 +7,19 @@ import SwiperSlider from '../../../../components/ui/swiper'
 
 const ClientsArea = (props) => {
     const partnersQueryData = useStaticQuery(graphql `
-        query AboutPartnersDataQuery{
-            allWordpressWpBrands {
+        query AboutPartnersDataQuery {
+            allWpBrand {
                 edges {
                     node {
                         id
-                        acf {
+                        path {
                             path
+                        }
+                        img {
                             img {
                                 localFile {
                                     childImageSharp {
-                                        fluid(quality: 100) {
+                                        fluid(quality: 60) {
                                             ...GatsbyImageSharpFluid
                                             presentationWidth
                                             presentationHeight
@@ -32,7 +34,7 @@ const ClientsArea = (props) => {
             }
         }
     `); 
-    const partnersData = partnersQueryData.allWordpressWpBrands.edges;
+    const partnersData = partnersQueryData.allWpBrand.edges;
     const {sectionStyle, slider, sliderStyle, clientLogoWrap} = props
     return (
         <Section {...sectionStyle}>
@@ -45,9 +47,9 @@ const ClientsArea = (props) => {
                                     <ClientLogo
                                         layout={1}
                                         title={data.node.id}
-                                        path={data.node.acf.path}
-                                        brandImage={data.node.acf.img.localFile.childImageSharp}
-                                        hoverImage={data.node.acf.img.localFile.childImageSharp}
+                                        path={data.node.path.path}
+                                        brandImage={data.node.img.img.localFile.childImageSharp}
+                                        hoverImage={data.node.img.img.localFile.childImageSharp}
                                     />
                                 </Box>
                             )
@@ -58,68 +60,6 @@ const ClientsArea = (props) => {
         </Section>
     )
 }
-
-// query AboutPartnersDataQuery{
-//     allWordpressWpBrands {
-//         edges {
-//           node {
-//               id
-//               acf {
-//                   path
-//                   image {
-//                     childImageSharp {
-//                       fluid(quality: 100) {
-//                         ...GatsbyImageSharpFluid_tracedSVG
-//                         presentationWidth
-//                         presentationHeight
-//                         aspectRatio
-//                       }
-//                     }
-//                   }
-//                   hover_image {
-//                     childImageSharp {
-//                       fluid(quality: 100) {
-//                           ...GatsbyImageSharpFluid_tracedSVG
-//                           presentationWidth
-//                           presentationHeight
-//                           aspectRatio
-//                       }
-//                     }
-//                   }
-//               }
-//           }
-//         }
-//     }
-// }
-
-// allPartnersJson {
-//     edges {
-//       node {
-//         id
-//         path
-//         image {
-//           childImageSharp {
-//             fluid(quality: 100) {
-//               ...GatsbyImageSharpFluid_tracedSVG
-//               presentationWidth
-//               presentationHeight
-//               aspectRatio
-//             }
-//           }
-//         }
-//         hover_image {
-//           childImageSharp {
-//             fluid(quality: 100) {
-//                 ...GatsbyImageSharpFluid_tracedSVG
-//                 presentationWidth
-//                 presentationHeight
-//                 aspectRatio
-//             }
-//           }
-//         }
-//       }
-//     }
-// }
 
 ClientsArea.propTypes = {
     sectionStyle: PropTypes.object,
