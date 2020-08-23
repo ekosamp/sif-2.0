@@ -1,9 +1,11 @@
 node_modules
 public
 package-lock.json
+Wordpress
 .DS_Store
 .env
 .env.development
 .env.production
 .cache
 .git
+.wordpress-cache
