@@ -175,25 +175,24 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        // your WordPress source
-        baseUrl: `https://www.southislandfireplace.com/wp/`,
-        protocol: `https`,
-        // is it hosted on wordpress.com, or self-hosted?
-        hostingWPCOM: false,
-        // does your site use the Advanced Custom Fields Plugin?
-        useACF: true,
-        includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/products",
-          "**/brands",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-        ]
-      }
+        url: process.env.REACT_APP_WORDPRESS_URL_DEV || `https://www.southislandfireplace.com/wp/graphql`,
+        verbose: true,
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+        debug: {
+          graphql: {
+            writeQueriesToDisk: true,
+          },
+        },
+        options: {
+          develop: {
+            nodeUpdateInterval: 10000
+          },
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-hotjar`,
