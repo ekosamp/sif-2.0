@@ -1,5 +1,7 @@
+require("dotenv").config()
+
 module.exports = {
-  pathPrefix: process.env.NODE_ENV === `Production` ? `/test` : `/dev`,
+  pathPrefix: process.env.NODE_ENV === `production` ? `/test` : `/dev`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
@@ -177,7 +179,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: process.env.REACT_APP_WORDPRESS_URL_DEV || `https://www.southislandfireplace.com/wp/graphql`,
+        url: process.env.GATSBY_WORDPRESS_URL_DEV || `https://www.southislandfireplace.com/wp/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
