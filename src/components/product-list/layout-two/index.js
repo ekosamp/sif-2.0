@@ -89,7 +89,7 @@ const List = ({data, ...restProps}) => {
                             </ProdHeader>
                             {productType.type.title && productSize.size && productFuel.fuel && (
                                 <TagsWrap>
-                                    <Text>{productType.type.title.post_title}, {productSize.size}, {productFuel.fuel}</Text>
+                                    <Text>{productType.type.title}, {productSize.size}, {productFuel.fuel}</Text>
                                 </TagsWrap>
                             )}
                             {description.description && (

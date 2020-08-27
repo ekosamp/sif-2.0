@@ -20,8 +20,9 @@ import {
 
 const SpecialOffersList = ({data, ...restProps}) => {
     const {
-        productBrochure, productFuel, productModels, productOutput, productSize, productManual,
-        Brand, productType, productimage1, name, description
+        so_details: {
+            brand, model, description, price, modelNumber, image, fuel
+        }
     } = data;
     const {wrapStyle, metaStyle, buttonStyle} = restProps;
     const [imageOpen, setImageOpen] = useState(false);
@@ -40,11 +41,11 @@ const SpecialOffersList = ({data, ...restProps}) => {
                 <Row>
                     <Col xs={12}>
                         <ProdMedia>
-                            {!!productimage1.img1 && (
+                            {!!image && (
                                 <ImageThumb
-                                    onClick={() => modalImageOpen(productimage1.img1.localFile.childImageSharp.fluid)}
-                                    poster={productimage1.img1.localFile.childImageSharp}
-                                    title={`${Brand.brand.title} ${name.name}`}
+                                    onClick={() => modalImageOpen(image.localFile.childImageSharp.fluid)}
+                                    poster={image.localFile.childImageSharp}
+                                    title={`${brand} ${model}`}
                                     thumb={false}
                                 />
                             )}
@@ -56,36 +57,36 @@ const SpecialOffersList = ({data, ...restProps}) => {
                     <Col xs={12}>
                         <ProdInfo>
                             <ProdHeader>
-                                {name.name && <ProdTitle><Text>{Brand.brand.title} {name.name}</Text></ProdTitle>}
+                                {brand && model && <ProdTitle><Text>{brand} {model}</Text></ProdTitle>}
                             </ProdHeader>
-                            {productType.type.title && productSize.size && productFuel.fuel && (
+                            {fuel && (
                                 <TagsWrap>
-                                    <Text>{productType.type.title.post_title}, {productSize.size}, {productFuel.fuel}</Text>
+                                    <Text>{fuel}</Text>
                                 </TagsWrap>
                             )}
-                            {description.description && (
+                            {description && (
                                 <ProdExcerpt>
-                                    <Text>{description.description}</Text>
+                                    <Text>{description}</Text>
                                 </ProdExcerpt>
                             )}
-                            {productModels.models && (
+                            {modelNumber && (
                                 <ProdExcerpt>
-                                    <Text>Model(s): {productModels.models}</Text>
+                                    <Text>Model: {modelNumber}</Text>
                                 </ProdExcerpt>
                             )}
-                            {productOutput.output && (
+                            {price && (
                                 <ProdExcerpt>
-                                    <Text>Output (max BTU): {productOutput.output}</Text>
+                                    <Text>Price: ${price}</Text>
                                 </ProdExcerpt>
                             )}
-                                <LinkBtn>
+                                {/* <LinkBtn>
                                     {productManual.manualUrl && (
                                         <Button icon={<MdTrendingFlat/>} to={productManual.manualUrl} {...buttonStyle}>Manual PDF</Button>
                                     )}
                                     {productBrochure.brochureUrl && (
                                         <Button icon={<MdTrendingFlat/>} to={productBrochure.brochureUrl} {...buttonStyle}>Brochure PDF</Button>
                                     )}
-                                </LinkBtn>
+                                </LinkBtn> */}
                         </ProdInfo>
                     </Col>
                 </Row>

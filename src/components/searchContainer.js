@@ -51,7 +51,7 @@ class Search extends React.Component {
    */
   searchData = (keyword) => {
     const queryResult = this.state.productList.edges
-      .filter(item => item.node.acf.name.toLowerCase().includes(keyword.toLowerCase()))
+      .filter(item => item.node.name.name.toLowerCase().includes(keyword.toLowerCase()))
     this.setState({ searchQuery: keyword, searchResults: queryResult, isLoading: false })
   }
 
@@ -67,7 +67,7 @@ class Search extends React.Component {
     } else {
       this.setState({ isLoading: true}, () => {
         const queryResult = this.state.productList.edges
-          .filter(item => item.node.acf.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .filter(item => item.node.name.name.toLowerCase().includes(searchQuery.toLowerCase()))
         this.setState({ searchResults: queryResult, searchTitle: searchQuery }, () => {
           this.setState({ isLoading: false })
         })

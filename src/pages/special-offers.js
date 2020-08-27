@@ -9,11 +9,11 @@ import Section, {Row, Col} from '../components/ui/wrapper'
 import SectionTitle from '../components/ui/section-title'
 import SpecialOffersArea from '../containers/specials-list'
 import CTA from '../containers/global/cta-area/section-one'
-import { ProdQuery } from '../data/hooks/all-product-data'
+import { SpecialsQuery } from "../data/hooks/all-specials-data"
 
 const SpecialOffersPage = ({ pageContext, location, ...restProps }) => {
     const {sectionStyle, sectionTitleStyle} = restProps;
-    const allProducts = ProdQuery();
+    const allWpSpecialOffer = SpecialsQuery();
     
     return (
         <Layout location={location}>
@@ -35,9 +35,7 @@ const SpecialOffersPage = ({ pageContext, location, ...restProps }) => {
                                 layout="2"
                             />
                             <SpecialOffersArea
-                                products={allProducts}
-                                productType="Stove"
-                                fuelType="Gas"
+                                products={allWpSpecialOffer}
                             />
                         </Col>
                     </Row>

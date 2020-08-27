@@ -66,10 +66,16 @@ class ProductInfoArea extends React.Component {
     }
 
     loadData() {
-        const allProducts = this.props.products;
+        let allProducts = this.props.products;
         if (this.props.fuelType && this.props.productType) {
-            const p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
+            let p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
                 && n.node.productFuel.fuel === this.props.fuelType);
+            p = p.sort(function (a, b) {
+                if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
+                    return a.node.name.name.localeCompare(b.node.name.name);
+                }
+                return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
+            });
             this.setState({
                 products: p,
                 filteredProducts: p,
@@ -81,6 +87,14 @@ class ProductInfoArea extends React.Component {
             });
         }
         else {
+            if (allProducts.length > 1) {
+                allProducts = allProducts.sort(function (a, b) {
+                    if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
+                        return a.node.name.name.localeCompare(b.node.name.name);
+                    }
+                    return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
+                });
+            }
             this.setState({
                 products: allProducts,
                 filteredProducts: allProducts,
@@ -105,7 +119,7 @@ class ProductInfoArea extends React.Component {
         } = this.state
         if (isLoading) {
             return (
-                <div></div>
+                <div>Loading</div>
             )
         }
         if (!isLoading) {

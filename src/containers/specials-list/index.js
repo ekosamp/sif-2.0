@@ -21,20 +21,11 @@ class SpecialOffersArea extends React.Component {
     }
 
     loadData() {
-        const allProducts = this.props.products;
-        if (this.props.fuelType && this.props.productType) {
-            const p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
-                && n.node.productFuel.fuel === this.props.fuelType);
-            this.setState({
-                products: p,
-                filteredProducts: p,
-                brands: [...new Set(p.map(item => item.node.Brand.brand.title))],
-                sizes: [...new Set(p.map(item => item.node.productSize.size))],
-                totalCount: allProducts.totalCount,
-                numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
-                isLoading: false
-            });
-        }
+        const allProducts = this.props.products.edges;
+        this.setState({
+            products: allProducts,
+            isLoading: false
+        });
     }
 
     render() {
@@ -44,7 +35,7 @@ class SpecialOffersArea extends React.Component {
         } = this.state
         if (isLoading) {
             return (
-                <div></div>
+                <div>Loading...</div>
             )
         }
         if (!isLoading) {

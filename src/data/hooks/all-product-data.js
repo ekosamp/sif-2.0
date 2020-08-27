@@ -52,7 +52,7 @@ export const ProdQuery = () => {
               img1 {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90){
+                    fluid(maxWidth: 1500, quality: 90) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -63,7 +63,7 @@ export const ProdQuery = () => {
               img2 {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90){
+                    fluid(maxWidth: 1500, quality: 90) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -74,7 +74,7 @@ export const ProdQuery = () => {
               img3 {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90){
+                    fluid(maxWidth: 1500, quality: 90) {
                       ...GatsbyImageSharpFluid
                     }
                   }
