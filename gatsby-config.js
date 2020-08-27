@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/dev`,
+  pathPrefix: process.env.NODE_ENV === `Production` ? `/test` : `/dev`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
@@ -191,6 +191,7 @@ module.exports = {
           develop: {
             nodeUpdateInterval: 10000
           },
+          excludeFieldNames: [`UserRole`, `Menu`, `Tag`, `PostFormat`, `MenuItem`, `Comment`],
         },
       },
     },
