@@ -8,4 +8,5 @@ Wordpress
 .env.production
 .cache
 .git
+.github
 .wordpress-cache
