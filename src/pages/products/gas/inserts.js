@@ -26,7 +26,7 @@ const GasInserts = ({ pageContext, location, ...restProps }) => {
             <main className="site-wrapper-reveal">
                 <Section {...sectionStyle}>
                     <Row>
-                        <Col lg={{span: 12, order: 2}} xs={{span: 12, order: 1}}>
+                        <Col xs={12}>
                             <ProductInfoArea
                                 products={allProducts}
                                 productType="Insert"
