@@ -85,6 +85,23 @@ class ProductInfoArea extends React.Component {
                 numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
                 isLoading: false
             });
+        } else if (this.props.productType) {
+            let p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType);
+            p = p.sort(function (a, b) {
+                if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
+                    return a.node.name.name.localeCompare(b.node.name.name);
+                }
+                return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
+            });
+            this.setState({
+                products: p,
+                filteredProducts: p,
+                brands: [...new Set(p.map(item => item.node.Brand.brand.title))],
+                sizes: [...new Set(p.map(item => item.node.productSize.size))],
+                totalCount: allProducts.totalCount,
+                numberOfPages: Math.ceil(allProducts.length / this.state.postsPerPage),
+                isLoading: false
+            });
         }
         else {
             if (allProducts.length > 1) {

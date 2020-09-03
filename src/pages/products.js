@@ -5,7 +5,6 @@ import Header from '../containers/layout/header/header-two'
 import Footer from '../containers/layout/footer/footer-one'
 import ProductsArea from '../containers/products'
 import PageHeader from '../components/pageheader'
-import SectionThree from '../containers/elements/box-large-image/section-three'
 
 const ProductsPage = ({ pageContext, location }) => {
     return (
@@ -19,7 +18,6 @@ const ProductsPage = ({ pageContext, location }) => {
             />
             <main className="site-wrapper-reveal">
                 <ProductsArea/>
-                <SectionThree />
             </main>
             <Footer />
         </Layout>

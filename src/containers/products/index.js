@@ -47,7 +47,7 @@ const ProductsArea = (props) => {
                 </Row>
                 <Row>
                     {productsData[0].node.categories.map((product, index) => (
-                        <Col lg={3} md={6} className="box-item" key={`${index}-${product.id}`}>
+                        <Col lg={4} md={6} className="box-item" key={`${index}-${product.id}`}>
                             <BoxLargeImage 
                                 title={product.title}
                                 imageSrc={product.image.childImageSharp}
