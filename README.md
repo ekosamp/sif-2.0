@@ -18,5 +18,6 @@ Company website revamped 2020
 * Gatsby (v2.18.4)
 * Bootstrap (v4.4.1)
 * React Helmet (v5.2.1)
+* Gatsby source wordpress@v4 (BETA)
 * Font Awesome Icons
-* Data from Wordpress headless CMS
+* Data from Wordpress headless CMS via WPGraphQL plugin
