@@ -57,6 +57,13 @@
             "desc": "",
             "image": "../images/products/outdoor.jpg",
             "path": "/products/outdoor"
+        },
+        {
+            "id": "hottubs",
+            "title": "Hot Tubs",
+            "desc": "",
+            "image": "../images/products/hot-tubs.jpg",
+            "path": "/products/outdoor"
         }
     ]
 }
