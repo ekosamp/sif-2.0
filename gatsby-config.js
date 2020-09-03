@@ -1,7 +1,7 @@
 require("dotenv").config()
 
 module.exports = {
-  pathPrefix: process.env.NODE_ENV === `production` ? `/test` : `/dev`,
+  pathPrefix: `/dev`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
