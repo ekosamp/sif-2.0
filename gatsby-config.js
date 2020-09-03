@@ -1,7 +1,7 @@
 require("dotenv").config()
 
 module.exports = {
-  pathPrefix: `/dev`,
+  pathPrefix: `/test`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
@@ -187,11 +187,16 @@ module.exports = {
         debug: {
           graphql: {
             writeQueriesToDisk: true,
+            showQueryVarsOnError: true,
           },
         },
         options: {
           develop: {
             nodeUpdateInterval: 10000
+          },
+          schema: {
+            timeout: 90000,
+            perPage: 5,
           },
           excludeFieldNames: [`UserRole`, `Menu`, `Tag`, `PostFormat`, `MenuItem`, `Comment`],
         },
