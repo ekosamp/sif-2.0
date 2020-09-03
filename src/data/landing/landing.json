@@ -3,12 +3,7 @@
         "id": "landing-hero-content",
         "title": "South Island Fireplace & Spas",
         "subtitle": "Your local hearth dealer",
-        "bgImage": "../images/hero/hero-h4.jpg",
-        "image1": "../images/hero/mitech-landing-main-slider-slide-01-image-04.png",
-        "image2": "../images/hero/mitech-landing-main-slider-slide-01-image-01.png",
-        "image3": "../images/hero/mitech-landing-main-slider-slide-01-image-02.png",
-        "image4": "../images/hero/mitech-landing-main-slider-slide-01-image-03.png",
-        "image5": "../images/hero/mitech-landing-main-slider-slide-01-image-05.png"
+        "bgImage": "../images/hero/stuv.jpg"
     },
     {
         "id": "site_features",

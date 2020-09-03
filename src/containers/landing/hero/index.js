@@ -62,8 +62,8 @@ Hero.defaultProps = {
         mb: '30px'
     },
     buttonStyle: {
+        size: 'large',
         to: '#section-demos',
-        skin: 'light',
         mt: '40px',
         responsive: {
             xlarge: {

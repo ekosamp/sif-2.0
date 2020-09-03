@@ -4,10 +4,10 @@ import {animateUpDown} from '../../../assets/css/animations'
 import {device} from '../../../theme'
 
 export const HeroWrapper = styled(BackgroundImage) `
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 0px;
+    padding-bottom: 250px;
     position: relative;
-    height: 1020px;
+    height: 800px;
     display: flex;
     align-items: center;
     overflow: hidden;
