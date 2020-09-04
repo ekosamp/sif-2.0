@@ -1,7 +1,5 @@
-require("dotenv").config()
-
 module.exports = {
-  pathPrefix: `/test`,
+  pathPrefix: `/stage`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
@@ -10,7 +8,6 @@ module.exports = {
     author: `Danny Di Iorio`,
     authorContact: `https://www.linkedin.com/in/danielrdiiorio/`,
     twitterUsername: ``,
-    image: 'landing.png',
     siteUrl: 'https://www.southislandfireplace.com/',
     copyright: "South Island Fireplace & Spas. All Rights Reserved. ",
     social: {
