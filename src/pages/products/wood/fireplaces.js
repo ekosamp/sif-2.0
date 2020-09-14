@@ -29,7 +29,7 @@ const WoodFireplaces = ({ pageContext, location, ...restProps }) => {
                         <Col xs={12}>
                             <ProductInfoArea
                                 products={allProducts}
-                                productType="Fireplaces"
+                                productType="Fireplace"
                                 fuelType="Wood" />
                         </Col>
                     </Row>
