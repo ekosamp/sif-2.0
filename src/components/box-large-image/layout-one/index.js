@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import parse from 'html-react-parser';
 import Img from 'gatsby-image'
 import Button from '../../ui/button'
 import Image from '../../image'
@@ -12,9 +11,8 @@ import {
     BoxLargeImgBtnInner,
     BoxLargeImgHeading,
     HeadingWrap,
-    TextWrap,
     BoxLargeImgLink,
-    BoxLargeImgContent} from './box-large-image.style'
+    } from './box-large-image.style'
 
 const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
     const {headingStyle, descStyle, buttonStyle, ...restStyles} = boxStyles;
@@ -44,9 +42,6 @@ const BoxLargeImage = ({imageSrc, title, desc, path, ...boxStyles}) => {
                         <BoxLargeImgLink path={path}>{title}</BoxLargeImgLink>
                     </BoxLargeImgMedia>
                 )}
-                {/* <BoxLargeImgContent>
-                    {desc && <TextWrap {...descStyle}>{parse(desc)}</TextWrap>}
-                </BoxLargeImgContent> */}
             </BoxLargeImgInner>
         </BoxLargeImgWrap>
     )

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Link from '../../ui/anchor'
 import Image from '../../image'
-import {BoxIconWrap, BoxIconInner, BoxIconTop, IconWrap, Heading, linkStyle, BoxIconBottom, Text} from './box-icon.style'
+import {BoxIconWrap, BoxIconInner, BoxIconTop, IconWrap, Heading, BoxIconBottom, Text} from './box-icon.style'
 
-const BoxIcon = ({icon, title, desc, path}) => {
+const BoxIcon = ({icon, title, desc, path, linkStyle}) => {
     let boxImage;
     if(icon.fixed && typeof icon.fixed !== 'function'){
         boxImage = <Img fixed={icon.fixed} alt={title}/>;

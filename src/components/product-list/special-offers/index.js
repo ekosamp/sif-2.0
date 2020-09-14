@@ -1,8 +1,8 @@
 import React, {Fragment, useState} from 'react'
 import PropTypes from 'prop-types'
-import { MdTrendingFlat } from "react-icons/md";
-import Anchor from '../../ui/anchor'
-import Button from '../../ui/button'
+// import { MdTrendingFlat } from "react-icons/md";
+// import Anchor from '../../ui/anchor'
+// import Button from '../../ui/button'
 import Text from '../../ui/text'
 import ImageThumb from '../image-thumb'
 import ImageModal from '../../ui/modal-image'
@@ -14,9 +14,13 @@ import {
     ProdHeader,
     ProdTitle,
     ProdExcerpt,
-    LinkBtn,
     TagsWrap
 } from './prod.style'
+
+const propertyStyle ={
+    fontWeight: 500,
+    fontSize: '14px',
+}
 
 const SpecialOffersList = ({data, ...restProps}) => {
     const {
@@ -24,7 +28,7 @@ const SpecialOffersList = ({data, ...restProps}) => {
             brand, model, description, price, modelNumber, image, fuel
         }
     } = data;
-    const {wrapStyle, metaStyle, buttonStyle} = restProps;
+    const {wrapStyle} = restProps;
     const [imageOpen, setImageOpen] = useState(false);
     const [viewImage, setViewImage] = useState('');
     
@@ -71,12 +75,12 @@ const SpecialOffersList = ({data, ...restProps}) => {
                             )}
                             {modelNumber && (
                                 <ProdExcerpt>
-                                    <Text>Model: {modelNumber}</Text>
+                                    <Text><span style={propertyStyle}>Model:</span> {modelNumber}</Text>
                                 </ProdExcerpt>
                             )}
                             {price && (
                                 <ProdExcerpt>
-                                    <Text>Price: ${price}</Text>
+                                    <Text><span style={propertyStyle}>Price:</span> ${price}</Text>
                                 </ProdExcerpt>
                             )}
                                 {/* <LinkBtn>

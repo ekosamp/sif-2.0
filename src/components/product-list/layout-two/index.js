@@ -1,17 +1,14 @@
 import React, {Fragment, useState} from 'react'
 import PropTypes from 'prop-types'
 import { MdTrendingFlat } from "react-icons/md";
-import Anchor from '../../ui/anchor'
 import Button from '../../ui/button'
 import Text from '../../ui/text'
-import Image from '../../image'
 import ImageThumb from '../image-thumb'
 import ImageModal from '../../ui/modal-image'
 import {Row, Col} from '../../ui/wrapper'
 import {
     ProdWrapper,
     ProdMedia,
-    ProdThumb,
     ProdMiniThumbs,
     ProdMiniThumb,
     ProdInfo,
@@ -19,16 +16,20 @@ import {
     ProdTitle,
     ProdExcerpt,
     LinkBtn,
-    ProdQuote,
     TagsWrap
 } from './prod.style'
+
+const propertyStyle ={
+    fontWeight: 500,
+    fontSize: '14px',
+}
 
 const List = ({data, ...restProps}) => {
     const {
         productBrochure, productFuel, productModels, productOutput, productSize, productManual,
         Brand, productType, productimage1, productimage2, productimage3, name, description
     } = data;
-    const {wrapStyle, metaStyle, buttonStyle} = restProps;
+    const {wrapStyle, buttonStyle} = restProps;
     const [imageOpen, setImageOpen] = useState(false);
     const [viewImage, setViewImage] = useState('');
     
@@ -94,17 +95,17 @@ const List = ({data, ...restProps}) => {
                             )}
                             {description.description && (
                                 <ProdExcerpt>
-                                    <Text>{description.description}</Text>
+                                    <Text style={{whiteSpace: 'pre-line'}}>{description.description}</Text>
                                 </ProdExcerpt>
                             )}
                             {productModels.models && (
                                 <ProdExcerpt>
-                                    <Text>Model(s): {productModels.models}</Text>
+                                    <Text><span style={propertyStyle}>Model(s):</span> {productModels.models}</Text>
                                 </ProdExcerpt>
                             )}
                             {productOutput.output && (
                                 <ProdExcerpt>
-                                    <Text>Output (max BTU): {productOutput.output}</Text>
+                                    <Text><span style={propertyStyle}>Output (max BTU):</span> {productOutput.output}</Text>
                                 </ProdExcerpt>
                             )}
                                 <LinkBtn>

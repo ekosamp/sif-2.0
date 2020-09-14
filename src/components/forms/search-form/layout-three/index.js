@@ -1,5 +1,5 @@
 import React from 'react'
-import Form, {Input, Error} from '../../../ui/form'
+import Form, {Input} from '../../../ui/form'
 import Button from '../../../ui/button'
 import { MdSearch } from "react-icons/md";
 import {SearchFromWrap, ButtonWrap} from './search-form.style'

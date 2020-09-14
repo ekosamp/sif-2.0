@@ -61,6 +61,7 @@ class Search extends React.Component {
       this.props.addToast(`Enter a model name or brand to search, minimum 2 letters`, {
         appearance: 'error'
       })
+      return
     } 
     if (searchQuery === searchTitle) {
       return
@@ -92,7 +93,7 @@ class Search extends React.Component {
     if (isLoading) {
       return (
         // TODO: show loading circle
-        <div></div>
+        <div>Loading...</div>
       )
     }
     if (isError) {
