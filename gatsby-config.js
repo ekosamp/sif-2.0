@@ -193,8 +193,11 @@ module.exports = {
             nodeUpdateInterval: 10000
           },
           schema: {
-            timeout: 90000,
+            timeout: process.env.GATSBY_SCHEMA_TIMEOUT || 100000,
             perPage: 5,
+          },
+          html: {
+            imageQuality: 60,
           },
           excludeFieldNames: [`UserRole`, `Menu`, `Tag`, `PostFormat`, `MenuItem`, `Comment`],
         },
