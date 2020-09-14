@@ -22,7 +22,7 @@ const Services = ({serviceBoxStyle, linkStyle, headingStyle}) => {
                     icon {
                       img{
                         childImageSharp{
-                            fixed(width:100, height: 108, quality: 100 ){
+                            fixed(width:100, height: 108, quality: 90 ){
                                 ...GatsbyImageSharpFixed_tracedSVG
                             }
                         }

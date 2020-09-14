@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from '../../../components/ui/wrapper'
 import SectionTitle from '../../../components/ui/section-title'
-import Text from '../../../components/ui/text'
-import Anchor from '../../../components/ui/anchor'
 import CategoryBox from '../../../components/box-large-image/layout-two'
 import { SectionWrap } from './category-area.style'
 
@@ -163,14 +161,6 @@ const CategoryArea = ({
                         </Col>
                     ))}
                 </Row>
-                {/* <Row>
-                    <Col lg={12}>
-                        <Text {...bottomTextStyle}>
-                            {categorySecData.bottom_text}
-                            <Anchor {...bottoTextLinkStyle} path={categorySecData.bottom_link}>{categorySecData.bottom_link_text}</Anchor>
-                        </Text>
-                    </Col>
-                </Row> */}
             </Container>
         </SectionWrap>
     )

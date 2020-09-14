@@ -18,7 +18,7 @@ const CTASection = ({
         query CtaTwoImgQuery {
             file(relativePath: {eq: "images/bg/cta-bg.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 779, maxHeight: 746, quality: 100) {
+                    fluid(maxWidth: 779, maxHeight: 746, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }

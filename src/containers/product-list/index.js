@@ -41,30 +41,6 @@ class ProductInfoArea extends React.Component {
         this.loadData();
     }
 
-    applyFilter = () => {
-        if (this.state.keyword) {
-            this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.name.name.toLowerCase().includes(this.state.keyword.toLowerCase())) })
-        }
-        else if (this.state.brandFilter) {
-            this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.Brand.brand.title === this.state.brandFilter) })
-        }
-        else if (this.state.sizeFilter) {
-            this.setState({ filteredProducts: this.state.products
-                .filter(item => item.node.productSize.size === this.state.sizeFilter) })
-        }
-    }
-
-    clearFilters = () => {
-        this.setState({
-            filteredProducts: this.state.products,
-            keyword: '',
-            brandFilter: '',
-            sizeFilter: ''
-        })
-    }
-
     loadData() {
         let allProducts = this.props.products;
         if (this.props.fuelType && this.props.productType) {
@@ -122,6 +98,30 @@ class ProductInfoArea extends React.Component {
                 isLoading: false
             });
         }
+    }
+
+    // FIXME: fix filter so it can apply one at a time or multiple
+    applyFilter = () => {
+        let results = this.state.products
+        if (this.state.keyword) {
+            results = results.filter(item => item.node.name.name.toLowerCase().includes(this.state.keyword.toLowerCase()))
+        }
+        if (this.state.brandFilter) {
+            results = results.filter(item => item.node.Brand.brand.title === this.state.brandFilter)
+        }
+        if (this.state.sizeFilter) {
+            results = results.filter(item => item.node.productSize.size === this.state.sizeFilter)
+        }
+        this.setState({ filteredProducts: results })
+    }
+
+    clearFilters = () => {
+        this.setState({
+            filteredProducts: this.state.products,
+            keyword: '',
+            brandFilter: '',
+            sizeFilter: ''
+        })
     }
 
     render() {

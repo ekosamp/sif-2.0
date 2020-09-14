@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import SpecialOffersList from '../../components/product-list/special-offers'
-import {ProdWrapper, ProdBox} from './specials-area.style'
+import {ProdWrapper} from './specials-area.style'
 import {Row, Col} from '../../components/ui/wrapper'
 
 class SpecialOffersArea extends React.Component {

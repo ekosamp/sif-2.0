@@ -4,17 +4,10 @@
     "categories": [
         {
             "id": "zero-clearance",
-            "title": "Zero Clearance",
+            "title": "Zero Clearance, Wall/Flush Mount",
             "desc": "Zero-clearance gas fireplaces offer a number of designs to customize your fireplace to your home's look and feel. Zero-clearance fireplaces can be installed almost directly against combustible materials like wood, walls, or paneling.",
             "image": "../images/products/electric/zero-clearance.jpg",
-            "path": "/products/electric/zero-clearance"
-        },
-        {
-            "id": "wall-mount",
-            "title": "Wall Mount/Flush Mount",
-            "desc": "Zero-clearance gas fireplaces offer a number of designs to customize your fireplace to your home's look and feel. Zero-clearance fireplaces can be installed almost directly against combustible materials like wood, walls, or paneling.",
-            "image": "../images/products/electric/wall-mount.jpg",
-            "path": "/products/electric/mount"
+            "path": "/products/electric/fireplaces"
         },
         {
             "id": "inserts",
