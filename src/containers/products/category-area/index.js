@@ -21,6 +21,7 @@ const CategoryArea = ({
                     node {
                         id
                         title
+                        description
                         categories {
                             id
                             title
@@ -44,6 +45,7 @@ const CategoryArea = ({
                     node {
                         id
                         title
+                        description
                         categories {
                             id
                             title
@@ -67,6 +69,7 @@ const CategoryArea = ({
                     node {
                         id
                         title
+                        description
                         categories {
                             id
                             title
@@ -90,6 +93,7 @@ const CategoryArea = ({
                     node {
                         id
                         title
+                        description
                         categories {
                             id
                             title
