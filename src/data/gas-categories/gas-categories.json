@@ -1,6 +1,7 @@
 {
     "id": "gas-categories",
     "title": "Select a type to see the </br> brands and models we can offer",
+    "description": "",
     "categories": [
         {
             "id": "gas-fireplaces",

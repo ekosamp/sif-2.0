@@ -1,25 +1,26 @@
 {
     "id": "electric-categories",
     "title": "Select a type to see the </br> brands and models we can offer",
+    "description": "Electric Fireplaces are perfect for homes, offices, restaurants or commercial settings. The clean, contemporary design of the fireplaces, along with innovative features such as mood-setting back-lighting, or design finishes, provide unlimited creativity and versatility for designing any interior space. They are convenient and can even be operated by remote control, setting the mood with different colored flames. Electric Fireplaces can be operated with or without heat for year-round ambiance.",
     "categories": [
         {
             "id": "zero-clearance",
-            "title": "Zero Clearance, Wall/Flush Mount",
-            "desc": "Zero-clearance gas fireplaces offer a number of designs to customize your fireplace to your home's look and feel. Zero-clearance fireplaces can be installed almost directly against combustible materials like wood, walls, or paneling.",
+            "title": "Built In, Wall/Flush Mount Fireplaces",
+            "desc": "A built in or wall-mounted electric fireplace is a modern re-vamp of the classic trend and can easily change the mood of an entire space. Think of a built in or wall mount fireplace as a living, breathing piece of art that can also light and heat your space.",
             "image": "../images/products/electric/zero-clearance.jpg",
             "path": "/products/electric/fireplaces"
         },
         {
             "id": "inserts",
             "title": "Inserts",
-            "desc": "Gas inserts are designed to be installed within an existing masonry cavity or fireplace and uses the existing chimney as structure to run venting for the unit. Inserts are typically a lower cost option compared to a zero-clearance renovation, or replacement of your existing masonry fireplace.",
+            "desc": "Electric fireplace inserts are a safe, energy efficient, low cost alternative to gas and traditional wood fireplaces. These electric units offer remarkably realistic flame effects with multiple styles to choose from.",
             "image": "../images/products/electric/insert.jpg",
             "path": "/products/electric/inserts"
         },
         {
             "id": "free-standing",
             "title": "Free Standing",
-            "desc": "Freestanding gas stoves can vent through existing chimneys, through the roof with new venting, or out the wall via a direct vent installation. Continuously warming objects in its path, a gas stove provides radiant heat that will satisfy your comfort needs while using less energy compared to forced air systems.",
+            "desc": "Freestanding electric stoves offer the instant ambiance of a traditional fireplace experience. Each of our freestanding electric fireplaces provide quiet, instant heat, and eye-catching design. Simply plug in and enjoy the warmth and realistic flame of your new fireplace anywhere in your home.",
             "image": "../images/products/electric/free-standing.jpg",
             "path": "/products/electric/stoves"
         }

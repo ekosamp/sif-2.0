@@ -1,6 +1,7 @@
 {
     "id": "outdoor-categories",
     "title": "Select a type to see the </br> brands and models we can offer",
+    "description": "",
     "categories": [
         {
             "id": "bbqs",
@@ -11,15 +12,15 @@
         },
         {
             "id": "fire-pits",
-            "title": "Fire Pits",
-            "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
+            "title": "Fire Pits, Fire Tables",
+            "desc": "There are few things better than a nice summer evening with friends and family around a fire pit or table.",
             "image": "../images/products/outdoor/fire-pit.jpg",
             "path": "/products/outdoor/firepits"
         },
         {
             "id": "heaters",
             "title": "Heaters",
-            "desc": "There are few things better than a nice summer evening with friends and family around a fire pit.",
+            "desc": "Outdoor heaters are designed to breathe new life into your outdoor patio. We offer infrared electric heaters for use both indoor and outdoor, as well as high efficiency gas units.",
             "image": "../images/products/outdoor/heaters.png",
             "path": "/products/outdoor/heaters"
         }

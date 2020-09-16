@@ -1,7 +1,7 @@
 {
     "id": "wood-categories",
     "title": "Select a type to see the </br> brands and models we can offer",
-    "subtitle": "subtitle",
+    "description": "",
     "categories": [
         {
             "id": "wood-fireplaces",
