@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/test`,
+  pathPrefix: `/stage`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
