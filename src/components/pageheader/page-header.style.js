@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {device} from '../../theme'
- 
+
 export const PageHeaderWrap = styled(BackgroundImage) `
     background-color: #f6f2ed;
     background-repeat: no-repeat;
@@ -17,6 +17,7 @@ export const PageHeaderWrap = styled(BackgroundImage) `
     }
     .breadcrumb{
         display: inline-block;
+        color: ${props => props.theme.colors.secondary};
         padding: 0;
         padding-left: 6px;
         margin-bottom: 0;
@@ -42,6 +43,7 @@ export const PageHeaderWrap = styled(BackgroundImage) `
                 background: currentColor;
             }
             &:hover{
+                color: #FFFFFF;
                 &:after{
                     width: 100%;
                     left: 0;
@@ -50,17 +52,17 @@ export const PageHeaderWrap = styled(BackgroundImage) `
                 }
             }
             &__active{
-                color: #6D70A6;
+                color: #FFFFFF;
                 &:after{
                     display: none;
                 }
             }
         }
         &__title{
-            background: rgba(255,255,255, 0.7);
+            background: rgba(0,0,0, 0.5);
             font-size: 56px;
             font-weight: 700;
-            color: ${props => props.theme.colors.themeColor};
+            color: ${props => props.theme.colors.secondary};
             display: block;
             margin-bottom: 20px;
             @media ${device.large}{
