@@ -59,11 +59,11 @@
             "path": "/products/outdoor"
         },
         {
-            "id": "hottubs",
-            "title": "Hot Tubs",
+            "id": "spas",
+            "title": "Spas",
             "desc": "",
             "image": "../images/products/hot-tubs.jpg",
-            "path": "/products/outdoor"
+            "path": "/products/spas"
         }
     ]
 }

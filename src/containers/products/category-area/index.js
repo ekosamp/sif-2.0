@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from '../../../components/ui/wrapper'
 import SectionTitle from '../../../components/ui/section-title'
+import Text from '../../../components/ui/text'
 import CategoryBox from '../../../components/box-large-image/layout-two'
 import { SectionWrap } from './category-area.style'
 
@@ -134,7 +135,9 @@ const CategoryArea = ({
             break;
         }
         default: {
-            // tbd
+            productCategories = {
+                title: 'Coming soon'
+            }
             break;
         }
     }
@@ -142,17 +145,23 @@ const CategoryArea = ({
     return (
         <SectionWrap>
             <Container>
+                {productCategories.description && (
+                    <Row className="justify-content-center">
+                        <Col lg={12}>
+                            <Text {...bottomTextStyle}>{productCategories.description}</Text>
+                        </Col>
+                    </Row>
+                )}
                 <Row> 
                     <Col lg={12}>
                         <SectionTitle
                             {...sectionTitleStyle}
                             title={productCategories.title}
-                            subtitle={productCategories.subtitle}
                         />
                     </Col>
                 </Row>
                 <Row className="justify-content-center">
-                    {productCategories.categories.map((category, index) => (
+                    {productCategories.categories && (productCategories.categories.map((category, index) => (
                         <Col lg={4} md={6} className="box-item" key={`${index}-${category.id}`}>
                             <CategoryBox
                                 {...categoryStyles}
@@ -163,7 +172,7 @@ const CategoryArea = ({
                                 btnText="View selection"
                             />
                         </Col>
-                    ))}
+                    )))}
                 </Row>
             </Container>
         </SectionWrap>
@@ -188,14 +197,16 @@ CategoryArea.defaultProps = {
     },
     bottomTextStyle: {
         fontSize: '18px',
-        fontweight: 500,
+        fontweight: 400,
         lineHeight: 1.40,
         color: '#333333',
-        mt: '60px',
+        pb: '40px',
         align: 'center',
         responsive: {
             small: {
-                mt: '45px'
+                pb: '25px',
+                fontSize: '15px',
+                lineHeight: 1.50,
             }
         }
     },
