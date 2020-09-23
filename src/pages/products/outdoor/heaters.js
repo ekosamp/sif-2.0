@@ -6,13 +6,13 @@ import Header from '../../../containers/layout/header/header-two'
 import Footer from '../../../containers/layout/footer/footer-one'
 import PageHeader from '../../../components/pageheader'
 import Section, {Row, Col} from '../../../components/ui/wrapper'
-import ProductInfoArea from '../../../containers/product-list'
+// import ProductInfoArea from '../../../containers/product-list'
 import CTA from '../../../containers/global/cta-area/section-one'
-import { ProdQuery } from '../../../data/hooks/all-product-data'
+// import { ProdQuery } from '../../../data/hooks/all-product-data'
 
 const OutdoorHeaters = ({ pageContext, location, ...restProps }) => {
     const {sectionStyle} = restProps;
-    const allProducts = ProdQuery();
+    // const allProducts = ProdQuery();
 
     return (
         <Layout location={location}>
@@ -27,10 +27,11 @@ const OutdoorHeaters = ({ pageContext, location, ...restProps }) => {
                 <Section {...sectionStyle}>
                     <Row>
                         <Col xs={12}>
-                            <ProductInfoArea
+                            {/* <ProductInfoArea
                                 products={allProducts}
                                 productType="Heaters"
-                            />
+                            /> */}
+                            Coming soon
                         </Col>
                     </Row>
                 </Section>

@@ -52,11 +52,11 @@ OutdoorBbqs.defaultProps = {
         pb: '100px',
         responsive: {
             medium: {
-                pt: '72px',
-                pb: '80px'
+                pt: '20px',
+                pb: '80px',
             },
             small: {
-                pt: '53px',
+                pt: '20px',
                 pb: '60px'
             }
         }
