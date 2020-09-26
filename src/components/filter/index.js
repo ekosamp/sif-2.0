@@ -88,7 +88,7 @@ class Filter extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={6}>
+                  <Col xs={12}>
                     <Button
                       size="xsmall"
                       hover={false}

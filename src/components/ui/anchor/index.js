@@ -8,7 +8,7 @@ const Anchor = ({path, children, ...props}) => {
         return <LinkWrapper to={path} {...props}>{children}</LinkWrapper>
     }
     return (
-        <AnchorTag href={path} {...props}>
+        <AnchorTag href={path} {...props} target="_blank">
           {children}
         </AnchorTag>
     )

@@ -34,8 +34,8 @@ class Search extends React.Component {
     if (this.props.products && this.props.keyword) {
       this.setState({
         productList: this.props.products,
-        searchQuery: this.props.keyword,
-        searchTitle: this.props.keyword
+        searchQuery: this.props.keyword.trim(),
+        searchTitle: this.props.keyword.trim()
       }, () => {this.searchData(this.state.searchQuery)})
     } else {
       this.setState({
@@ -51,12 +51,15 @@ class Search extends React.Component {
    */
   searchData = (keyword) => {
     const queryResult = this.state.productList.edges
-      .filter(item => item.node.name.name.toLowerCase().includes(keyword.toLowerCase()))
+      .filter(item => item.node.name.name.toLowerCase().includes(keyword.trim().toLowerCase())
+        || item.node.Brand.brand.title.toLowerCase().includes(keyword.trim().toLowerCase())
+        || `${item.node.Brand.brand.title.toLowerCase()} ${item.node.name.name.toLowerCase()}`.includes(keyword.trim().toLowerCase()))
     this.setState({ searchQuery: keyword, searchResults: queryResult, isLoading: false })
   }
 
   newSearch = () => {
-    const { searchQuery, searchTitle } = this.state
+    let { searchQuery, searchTitle } = this.state
+    searchQuery = searchQuery.trim()
     if (searchQuery === '' || searchQuery.length < 2) {
       this.props.addToast(`Enter a model name or brand to search, minimum 2 letters`, {
         appearance: 'error'
@@ -68,7 +71,9 @@ class Search extends React.Component {
     } else {
       this.setState({ isLoading: true}, () => {
         const queryResult = this.state.productList.edges
-          .filter(item => item.node.name.name.toLowerCase().includes(searchQuery.toLowerCase()))
+          .filter(item => item.node.name.name.toLowerCase().includes(searchQuery.toLowerCase())
+            || item.node.Brand.brand.title.toLowerCase().includes(searchQuery.toLowerCase())
+            || `${item.node.Brand.brand.title.toLowerCase()} ${item.node.name.name.toLowerCase()}`.includes(searchQuery.toLowerCase()))
         this.setState({ searchResults: queryResult, searchTitle: searchQuery }, () => {
           this.setState({ isLoading: false })
         })
@@ -99,7 +104,7 @@ class Search extends React.Component {
     if (isError) {
       return (
         // TODO: show create error section
-        <div></div>
+        <div>Error, try again</div>
       )
     }
     if (!isLoading) {

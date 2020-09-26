@@ -44,14 +44,42 @@ class ProductInfoArea extends React.Component {
     loadData() {
         let allProducts = this.props.products;
         if (this.props.fuelType && this.props.productType) {
-            let p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
-                && n.node.productFuel.fuel === this.props.fuelType);
-            p = p.sort(function (a, b) {
-                if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
-                    return a.node.name.name.localeCompare(b.node.name.name);
-                }
-                return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
-            });
+            let p = []
+            if (this.props.fuelType === 'Gas' && (this.props.productType === 'Fireplace' || this.props.productType === 'Insert')) {
+                let valorUnits = allProducts.edges.filter(n => n.node.Brand.brand.title === 'Valor'
+                    && n.node.productType.type.title === this.props.productType
+                    && n.node.productFuel.fuel === this.props.fuelType);
+
+                let otherUnits = allProducts.edges.filter(n => n.node.Brand.brand.title !== 'Valor'
+                    && n.node.productType.type.title === this.props.productType
+                    && n.node.productFuel.fuel === this.props.fuelType)
+
+                valorUnits = valorUnits.sort(function (a, b) {
+                    if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
+                        return a.node.name.name.localeCompare(b.node.name.name);
+                    }
+                    return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
+                });
+
+                otherUnits = otherUnits.sort(function (a, b) {
+                    if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
+                        return a.node.name.name.localeCompare(b.node.name.name);
+                    }
+                    return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
+                });
+
+                p = valorUnits.concat(otherUnits)
+            } else {
+                p = allProducts.edges.filter(n => n.node.productType.type.title === this.props.productType
+                    && n.node.productFuel.fuel === this.props.fuelType);
+                
+                p = p.sort(function (a, b) {
+                    if (a.node.Brand.brand.title === b.node.Brand.brand.title) {
+                        return a.node.name.name.localeCompare(b.node.name.name);
+                    }
+                    return a.node.Brand.brand.title.localeCompare(b.node.Brand.brand.title);
+                });
+            }
             this.setState({
                 products: p,
                 filteredProducts: p,
@@ -100,11 +128,10 @@ class ProductInfoArea extends React.Component {
         }
     }
 
-    // FIXME: fix filter so it can apply one at a time or multiple
     applyFilter = () => {
         let results = this.state.products
         if (this.state.keyword) {
-            results = results.filter(item => item.node.name.name.toLowerCase().includes(this.state.keyword.toLowerCase()))
+            results = results.filter(item => item.node.name.name.toLowerCase().includes(this.state.keyword.trim().toLowerCase()))
         }
         if (this.state.brandFilter) {
             results = results.filter(item => item.node.Brand.brand.title === this.state.brandFilter)

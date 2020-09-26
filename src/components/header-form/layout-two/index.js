@@ -18,7 +18,7 @@ const HeaderForm = ({input, inputId, ...restProps}) => {
             {
                 state: {
                     products: allProducts,
-                    keyword: data.keyword
+                    keyword: data.keyword.trim()
                 }
             }
         )
