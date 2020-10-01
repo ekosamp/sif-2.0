@@ -5,10 +5,10 @@ import Header from '../containers/layout/header/header-two'
 import Footer from '../containers/layout/footer/footer-one'
 import PageHeader from '../containers/about-us/page-header'
 import AboutArea from '../containers/about-us/about-area'
-import ServicesArea from '../containers/about-us/services-area'
 import TestimonialArea from '../containers/global/testimonial-area/section-one'
 import ClientsArea from '../containers/global/clients-area/section-one'
 import ContactArea from '../containers/global/contact-area/contact-one'
+// import TimelineArea from '../containers/elements/timeline'
 
 const AboutPage = ({location}) => (
   <Layout location={location}>
@@ -17,7 +17,7 @@ const AboutPage = ({location}) => (
     <main className="site-wrapper-reveal">
         <PageHeader/>
         <AboutArea/>
-        <ServicesArea/>
+        {/* <TimelineArea /> */}
         <TestimonialArea/>
         <ClientsArea/>
         <ContactArea/>

@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import { TiSocialFacebook, TiSocialTwitter, TiSocialInstagram } from "react-icons/ti";
 import Image from '../image'
-import Social, {SocialLink} from '../ui/social'
 import {
     TeamMemberWrap,
     TeamMemberInner,
     TeamMemberImage,
-    TeamMemberSocialWrap,
     TeamMemberInfo,
     TeamMemberName,
     TeamMemberDesignation} from './team-member.style'
 
 const TeamMember = ({imageSrc, name, designation, social, ...restProps}) => {
     const {nameStyle, roleStyle, infoStyle, socialStyle, wrapperStyle, ...restStyles} = restProps;
-    const {facebook, twitter, instagram} = social;
     let teamImg;
     if(imageSrc.fixed){
         teamImg = <Img fixed={imageSrc.fixed} alt={name}/>;
@@ -29,15 +25,6 @@ const TeamMember = ({imageSrc, name, designation, social, ...restProps}) => {
             <TeamMemberInner>
                 <TeamMemberImage>
                     {teamImg}
-                    {social && (
-                        <TeamMemberSocialWrap>
-                            <Social {...socialStyle}>
-                                {facebook && <SocialLink label="Facebook" path={facebook}><TiSocialFacebook/></SocialLink>}
-                                {twitter && <SocialLink label="Twitter" path={twitter}><TiSocialTwitter/></SocialLink>}
-                                {instagram && <SocialLink label="Instagram" path={instagram}><TiSocialInstagram/></SocialLink>}
-                            </Social>
-                        </TeamMemberSocialWrap>
-                    )}
                 </TeamMemberImage>
                 <TeamMemberInfo {...infoStyle}>
                     {name && <TeamMemberName {...nameStyle}>{name}</TeamMemberName>}
