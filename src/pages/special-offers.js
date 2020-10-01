@@ -58,11 +58,11 @@ SpecialOffersPage.defaultProps = {
         pb: '100px',
         responsive: {
             medium: {
-                pt: '72px',
+                pt: '15px',
                 pb: '80px'
             },
             small: {
-                pt: '53px',
+                pt: '15px',
                 pb: '60px'
             }
         }
