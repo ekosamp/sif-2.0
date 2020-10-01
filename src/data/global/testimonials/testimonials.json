@@ -52,5 +52,23 @@
         "rating": 5,
         "subject": "",
         "review": "From wood stoves to BBQ's to fire pits & our latest purchase of a patio heater we have never gone wrong with South Island Fireplace in Duncan. Highly Recommended!"
+    },
+    {
+        "id": "testimoial-7",
+        "author_name": "Kris Harley-Jesson",
+        "author_designation": "September 2018",
+        "author_image": "../../images/avatar/K.png",
+        "rating": 5,
+        "subject": "",
+        "review": "South Island Fireplaces are my heroes! You were at my Mom’s place yesterday to check and clean her Fireplace and the difference in the look and operation are incredible! Thank you Roger and Brandon for your professionalism."
+    },
+    {
+        "id": "testimoial-8",
+        "author_name": "Melissa Cottam",
+        "author_designation": "April 2020",
+        "author_image": "../../images/avatar/M.png",
+        "rating": 5,
+        "subject": "",
+        "review": "Huge shout out to the team, I really needed a new Bbq and really wanted to shop local. Unbelievable service from start to finish. Hubby is happy with his new grill, he said he’s never seen anything like it."
     }
 ]
