@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Heading from '../../components/ui/heading'
 import Text from '../../components/ui/text'
-import {device} from '../../theme'
 
 export const ProdWrapper = styled.div ``;
 
@@ -35,6 +34,16 @@ export const BrandsLink = styled(Text) `
     padding-left: 4px;
     &:hover {
         color: ${props => props.theme.colors.secondary} !important;
+    }
+`;
+
+export const BrandsLinkClear = styled(Text) `
+    color: ${props => props.theme.colors.secondary} !important;
+    font-size: 12px !important;
+    padding-right: 4px;
+    padding-left: 4px;
+    &:hover {
+        color: ${props => props.theme.colors.themeColor} !important;
     }
 `;
 

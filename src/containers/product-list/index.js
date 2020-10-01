@@ -1,10 +1,9 @@
 import React, {Fragment} from 'react';
 import List from '../../components/product-list/layout-two'
 import Pagination from '../../components/pagination'
-import {ProdWrapper, ProdBox, BrandsWrap, BrandsLink, BrandLinksTitle, NoResultsText} from './prod-area.style'
+import {ProdWrapper, ProdBox, BrandsWrap, BrandsLink, BrandsLinkClear, BrandLinksTitle, NoResultsText} from './prod-area.style'
 import Filter from '../../components/filter'
 import {Transition} from 'react-spring/renderprops'
-import Text from '../../components/ui/text'
 
 class ProductInfoArea extends React.Component {
     constructor(props) {
@@ -201,6 +200,7 @@ class ProductInfoArea extends React.Component {
                                 </BrandsLink>
                             ))
                         )}
+                        {brands && <BrandsLinkClear onClick={(e) => this.clearFilters()}>CLEAR</BrandsLinkClear>}
                     </BrandsWrap>
                     {pageOfItems.length === 0 && (
                         <NoResultsText><br/>No results, try adjusting the filters</NoResultsText>

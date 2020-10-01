@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import SpecialOffersList from '../../components/product-list/special-offers'
 import {ProdWrapper} from './specials-area.style'
 import {Row, Col} from '../../components/ui/wrapper'
-import Text from '../../components/ui/text'
+import Heading from '../../components/ui/heading'
 
 class SpecialOffersArea extends React.Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class SpecialOffersArea extends React.Component {
                     <ProdWrapper>
                         <Row>
                             <Col sm={12}>
-                                <Text>Check back soon for new promotions</Text>
+                                <Heading as="h5">Check back soon for new promotions</Heading>
                             </Col>
                         </Row>
                     </ProdWrapper>
