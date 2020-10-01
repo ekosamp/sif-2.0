@@ -192,12 +192,16 @@
                 "heading": "Service call price list and service area...",
                 "list": [
                     {
+                        "id": 0,
+                        "title":"$149.95 for the first hour on site for one appliance."
+                    },
+                    {
                         "id": 1,
-                        "title":"$149.95 for the first half hour on site, for the first fireplace."
+                        "title":"$99.95 for each additional appliance."
                     },
                     {
                         "id": 2,
-                        "title":"Hourly rate after the first hour in home is $95.00 per hour billed in 15 minute increments."
+                        "title":"Hourly rate after the first hour in home is $99.95 per hour billed in 15 minute increments."
                     },
                     {
                         "id": 3,
