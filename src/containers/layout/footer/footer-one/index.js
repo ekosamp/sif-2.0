@@ -87,7 +87,7 @@ const Footer = ({copyrightStyle, ...props}) => {
                                     <li><Anchor path="/contact-us" color="textColor" hoverstyle="2">Contact Us</Anchor></li>
                                     <li><Anchor path="/about-us" color="textColor" hoverstyle="2">About Us</Anchor></li>
                                     <li><Anchor path="/leadership" color="textColor" hoverstyle="2">Leadership</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Help &amp; FAQ</Anchor></li>
+                                    {/* <li><Anchor path="/" color="textColor" hoverstyle="2">Help &amp; FAQ</Anchor></li> */}
                                 </FooterWidgetList>
                             </FooterWidget>
                         </Col>

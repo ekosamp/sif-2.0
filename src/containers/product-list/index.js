@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
 import List from '../../components/product-list/layout-two'
 import Pagination from '../../components/pagination'
-import {ProdWrapper, ProdBox} from './prod-area.style'
+import {ProdWrapper, ProdBox, BrandsWrap, BrandsLink, BrandLinksTitle, NoResultsText} from './prod-area.style'
 import Filter from '../../components/filter'
 import {Transition} from 'react-spring/renderprops'
+import Text from '../../components/ui/text'
 
 class ProductInfoArea extends React.Component {
     constructor(props) {
@@ -29,7 +30,9 @@ class ProductInfoArea extends React.Component {
     }
 
     handleChange = (name) => (event) => {
-        this.setState({ ...this.state, [name]: event.target.value });
+        this.setState({ ...this.state, [name]: event.target.value }, () => {
+            console.log(this.state)
+        });
     }
 
     onChangePage(pageOfItems) {
@@ -142,9 +145,16 @@ class ProductInfoArea extends React.Component {
         this.setState({ filteredProducts: results })
     }
 
+    filterByBrand = (brand) => {
+        this.setState({ brandFilter: brand }, () => {
+            this.applyFilter()
+        })
+    }
+
     clearFilters = () => {
         this.setState({
             filteredProducts: this.state.products,
+            pageOfItems: this.state.products,
             keyword: '',
             brandFilter: '',
             sizeFilter: ''
@@ -155,6 +165,7 @@ class ProductInfoArea extends React.Component {
         const {
             keyword,
             brands,
+            brandFilter,
             sizes,
             postsPerPage,
             filteredProducts,
@@ -176,7 +187,24 @@ class ProductInfoArea extends React.Component {
                         clearFilters={this.clearFilters}
                         brands={brands}
                         sizes={sizes}
+                        brandFilter={brandFilter}
                     />
+                    <BrandsWrap>
+                        {brands && <BrandLinksTitle>Quick filter: </BrandLinksTitle>}
+                        {brands && (
+                            brands.map((b, index) => (
+                                <BrandsLink
+                                    key={`${b}-${index}`}
+                                    onClick={(e) => this.filterByBrand(b, e)}
+                                >
+                                    {b.toUpperCase()} {`   `}
+                                </BrandsLink>
+                            ))
+                        )}
+                    </BrandsWrap>
+                    {pageOfItems.length === 0 && (
+                        <NoResultsText><br/>No results, try adjusting the filters</NoResultsText>
+                    )}
                     <ProdWrapper>
                         <Transition
                             items={pageOfItems} keys={item => item.node.id}

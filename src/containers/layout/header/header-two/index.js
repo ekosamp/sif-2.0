@@ -156,7 +156,7 @@ const Header = (props) => {
                                                             </InfoIcon>
                                                             <InfoContent>
                                                                 <Heading {...infoHeading}>250-746-0123</Heading>
-                                                                <Text {...infoText}><a href="mailto:sales@southislandfireplace.com">sales@sif.com</a></Text>
+                                                                <Text {...infoText}><a href="mailto:sales@southislandfireplace.com">Email us</a></Text>
                                                             </InfoContent>
                                                         </InfoItem>
                                                     </div>

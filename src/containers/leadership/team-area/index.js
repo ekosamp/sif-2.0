@@ -10,46 +10,16 @@ import {TeamWrapper} from './team-area.style'
 const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, teamStyle, executiveStyle}) => {
     const teamData = useStaticQuery(graphql `
         query {
-            headTeamMember: allTeamsJson(filter: {position: {eq: "head"}}) {
-                edges {
-                    node {
-                        id
-                        name
-                        designation
-                        socials {
-                            facebook
-                            instagram
-                            twitter
-                        }
-                        images {
-                            large {
-                                childImageSharp {
-                                    fluid(maxWidth: 546, maxHeight: 672, quality: 100) {
-                                        ...GatsbyImageSharpFluid_withWebp
-                                        presentationWidth
-                                        presentationHeight
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
             executiveMember: allTeamsJson(filter: {position: {eq: "executive"}}) {
                 edges {
                     node {
                         id
                         name
                         designation
-                        socials {
-                            facebook
-                            instagram
-                            twitter
-                        }
                         images {
                             large {
                                 childImageSharp {
-                                    fluid(maxWidth: 546, maxHeight: 672, quality: 100) {
+                                    fluid(maxWidth: 546, maxHeight: 330, quality: 95) {
                                         ...GatsbyImageSharpFluid_withWebp
                                         presentationWidth
                                         presentationHeight
@@ -62,7 +32,6 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
             }
         }
     `)
-    // const headMembers = teamData.headTeamMember.edges;
     const executives = teamData.executiveMember.edges;
     return (
         <TeamWrapper>
@@ -81,30 +50,15 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
                         </Heading>
                     </Col>
                 </Row>
-                {/* <Row {...headTeamRowStyle}>
-                    {headMembers && headMembers.map(headMember => (
-                        <Col md={4} key={headMember.node.id}>
-                            <TeamMember
-                                {...teamStyle}
-                                {...headTeamStyle}
-                                imageSrc={headMember.node.images.large.childImageSharp}
-                                name={headMember.node.name}
-                                designation={headMember.node.designation}
-                                social={headMember.node.socials}
-                            />
-                        </Col>
-                    ))}
-                </Row> */}
                 <Row>
                     {executives && executives.map(executive => (
-                        <Col md={4} key={executive.node.id}>
+                        <Col md={6} key={executive.node.id}>
                             <TeamMember
                                 {...teamStyle}
                                 {...executiveStyle}
                                 imageSrc={executive.node.images.large.childImageSharp}
                                 name={executive.node.name}
                                 designation={executive.node.designation}
-                                social={executive.node.socials}
                             />
                         </Col>
                     ))}
