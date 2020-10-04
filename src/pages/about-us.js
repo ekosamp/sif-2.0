@@ -8,7 +8,7 @@ import AboutArea from '../containers/about-us/about-area'
 import TestimonialArea from '../containers/global/testimonial-area/section-one'
 import ClientsArea from '../containers/global/clients-area/section-one'
 import ContactArea from '../containers/global/contact-area/contact-one'
-// import TimelineArea from '../containers/elements/timeline'
+import CompanyInfo from '../containers/company-info'
 
 const AboutPage = ({location}) => (
   <Layout location={location}>
@@ -17,7 +17,7 @@ const AboutPage = ({location}) => (
     <main className="site-wrapper-reveal">
         <PageHeader/>
         <AboutArea/>
-        {/* <TimelineArea /> */}
+        <CompanyInfo />
         <TestimonialArea/>
         <ClientsArea/>
         <ContactArea/>

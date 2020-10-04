@@ -3,7 +3,13 @@
         "id": "landing-hero-content",
         "title": "South Island Fireplace & Spas",
         "subtitle": "Your local hearth dealer",
-        "bgImage": "../images/hero/neostone_25.png"
+        "bgImage": "../images/hero/super.png"
+    },
+    {
+        "id": "company-info",
+        "title": "Locally owned and operated since 1994",
+        "desc1": "Trusted experts in the Cowichan Valley for all your natural gas, propane, wood, electric, and outdoor appliance needs. Our showroom boasts large displays from Pacific Energy, Valor, Jotul, Ambiance, and Marquis, all burn-ready to show you exactly what you are getting. With a complete team of sales staff, service technicians, and installation professionals, South Island Fireplace is your one-stop shop. From renovations to new builds, let us help keep you warm.",
+        "desc2": "Come down and visit us at our showroom, we look forward to helping answer any questions you may have!"
     },
     {
         "id": "site_features",

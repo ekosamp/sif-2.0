@@ -14,7 +14,7 @@ const Hero = ({headingSecondary, headingPrimary, buttonStyle}) => {
                 subtitle
                 bgImage {
                     childImageSharp {
-                        fluid(maxWidth: 1920, maxHeight: 1080, quality: 100) {
+                        fluid(maxWidth: 1920, maxHeight: 1080, quality: 90) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -27,6 +27,7 @@ const Hero = ({headingSecondary, headingPrimary, buttonStyle}) => {
         <HeroWrapper fluid={bgImage.childImageSharp.fluid}>
             <Container fluid className="xp-150">
                 <Row className="align-items-center h-100">
+                    <Col lg={6}></Col>
                     <Col lg={6}>
                         <HeroWrapperText>
                             {subtitle && <Heading {...headingSecondary}>{subtitle}</Heading>}
@@ -47,7 +48,7 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
     headingSecondary: {
-        as: 'h6',
+        as: 'h5',
         color: 'secondary',
         letterspacing: '2px',
         fontweight: 700,
@@ -63,8 +64,8 @@ Hero.defaultProps = {
     },
     buttonStyle: {
         size: 'large',
-        to: '#section-demos',
         mt: '40px',
+        skin: 'light',
         responsive: {
             xlarge: {
                 mt: '10px'

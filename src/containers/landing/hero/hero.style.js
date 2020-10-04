@@ -28,6 +28,7 @@ export const HeroWrapper = styled(BackgroundImage) `
 export const HeroWrapperText = styled.div `
     z-index: 4;
     position: relative;
+    text-align: right;
     @media ${device.medium}{
         text-align: center;
     }

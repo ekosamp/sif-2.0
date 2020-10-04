@@ -3,7 +3,7 @@ import {device} from '../../../theme'
 
 export const AboutWrapper = styled.section `
     padding-top: 80px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     @media ${device.medium}{
         padding-top: 50px;
         padding-bottom: 30px;
