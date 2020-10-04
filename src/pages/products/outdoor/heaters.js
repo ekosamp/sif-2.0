@@ -6,12 +6,13 @@ import Header from '../../../containers/layout/header/header-two'
 import Footer from '../../../containers/layout/footer/footer-one'
 import PageHeader from '../../../components/pageheader'
 import Section, {Row, Col} from '../../../components/ui/wrapper'
+import Heading from '../../../components/ui/heading'
 // import ProductInfoArea from '../../../containers/product-list'
 import CTA from '../../../containers/global/cta-area/section-one'
 // import { ProdQuery } from '../../../data/hooks/all-product-data'
 
 const OutdoorHeaters = ({ pageContext, location, ...restProps }) => {
-    const {sectionStyle} = restProps;
+    const {sectionStyle, tempHeadingStyle} = restProps;
     // const allProducts = ProdQuery();
 
     return (
@@ -31,7 +32,7 @@ const OutdoorHeaters = ({ pageContext, location, ...restProps }) => {
                                 products={allProducts}
                                 productType="Heaters"
                             /> */}
-                            Coming soon
+                            <Heading {...tempHeadingStyle} as="h3">Coming soon</Heading>
                         </Col>
                     </Row>
                 </Section>
@@ -74,6 +75,11 @@ OutdoorHeaters.defaultProps = {
                 mb: '50px'
             }
         }
+    },
+    tempHeadingStyle: {
+        textalign: 'center',
+        mt: '40px',
+        mb: '20px'
     }
 }
 
