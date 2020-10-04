@@ -97,13 +97,11 @@ class Search extends React.Component {
 
     if (isLoading) {
       return (
-        // TODO: show loading circle
         <div>Loading...</div>
       )
     }
     if (isError) {
       return (
-        // TODO: show create error section
         <div>Error, try again</div>
       )
     }
@@ -123,7 +121,7 @@ class Search extends React.Component {
             newSearch={this.newSearch} />
 
           {noResults && (
-            <div>No results found</div>
+            <Heading as="h5">No results found</Heading>
           )}
 
           {!noResults && (

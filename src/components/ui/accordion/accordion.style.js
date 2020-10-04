@@ -128,7 +128,7 @@ export const AccordionWrapper = styled.div `
                     margin-top: -4px;
                 }
                 &[aria-expanded="true"]{
-                    color: #086AD8;
+                    color: #452f31;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     &:before{
