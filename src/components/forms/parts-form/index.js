@@ -67,6 +67,7 @@ const ReplacementPartsForm = () => {
                     type="phone"
                     placeholder="Phone"
                     hover="2"
+                    ref={register({})}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -114,6 +115,7 @@ const ReplacementPartsForm = () => {
                     type="text"
                     placeholder="Serial number"
                     hover="2"
+                    ref={register({})}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -122,7 +124,8 @@ const ReplacementPartsForm = () => {
                     id="message" 
                     placeholder="Please describe what part(s) you are looking for, quantities, and any additional info"
                     hover="2"
-                ></Textarea>
+                    ref={register({})}
+                    ></Textarea>
             </FormGroup>
             <FormGroup textalign="center" mb="20px">
                 <input type="text" name="_gotcha" style={{display:"none"}} />
