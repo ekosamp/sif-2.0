@@ -1,38 +1,74 @@
 [
     {
         "id": "testimoial-1",
-        "author_name": "Abbie Ferguson",
-        "author_designation": "Marketing",
-        "author_image": "../../images/avatar/avatar-01-90x90.jpg",
+        "author_name": "Edward Kozicki",
+        "author_designation": "May 2020",
+        "author_image": "../../images/avatar/E.png",
         "rating": 5,
-        "subject": "The Mitech team works really hard to ensure high level of quality",
-        "review": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+        "subject": "",
+        "review": "Excellent service competitive prices and Kirk went above and beyond in refurbishing our existing fireplace gold trim."
     },
     {
         "id": "testimoial-2",
-        "author_name": "Monica Blews",
-        "author_designation": "Web designer",
-        "author_image": "../../images/avatar/avatar-02-90x90.jpg",
+        "author_name": "Aaron H.",
+        "author_designation": "February 2020",
+        "author_image": "../../images/avatar/A.png",
         "rating": 4,
-        "subject": "The Mitech team works really hard to ensure high level of quality",
-        "review": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+        "subject": "",
+        "review": "Nice product, helpful knowledgeable staff, always professional."
     },
     {
         "id": "testimoial-3",
-        "author_name": "Sansa Stark",
-        "author_designation": "Web designer",
-        "author_image": "../../images/avatar/avatar-03-90x90.jpg",
+        "author_name": "Bradford Ramage",
+        "author_designation": "June 2019",
+        "author_image": "../../images/avatar/B.png",
         "rating": 5,
-        "subject": "The Mitech team works really hard to ensure high level of quality",
-        "review": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+        "subject": "",
+        "review": "Excellent work on the install, Roger was great to work with. Fireplace is looking and working fantastic."
     },
     {
         "id": "testimoial-4",
-        "author_name": "Rickon Stark",
-        "author_designation": "Web developer",
-        "author_image": "../../images/avatar/avatar-04-90x90.jpg",
+        "author_name": "Jonathan Bachelder",
+        "author_designation": "June 2014",
+        "author_image": "../../images/avatar/J.png",
         "rating": 5,
-        "subject": "The Mitech team works really hard to ensure high level of quality",
-        "review": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+        "subject": "",
+        "review": "We went in looking for a BBQ for my dad's birthday and found an awesome one. The sales man were knowledgeable and great to work with."
+    },
+    {
+        "id": "testimoial-5",
+        "author_name": "Gary Mols",
+        "author_designation": "May 2020",
+        "author_image": "../../images/avatar/G.png",
+        "rating": 5,
+        "subject": "",
+        "review": "The gasket on my wood stove finally started to drop after several years of use. The staff was very helpful in selling me the appropriate glue, but also describing me the sequence in applying it. Perfect!"
+    },
+    {
+        "id": "testimoial-6",
+        "author_name": "Rose Betsworth",
+        "author_designation": "May 2020",
+        "author_image": "../../images/avatar/B.png",
+        "rating": 5,
+        "subject": "",
+        "review": "From wood stoves to BBQ's to fire pits & our latest purchase of a patio heater we have never gone wrong with South Island Fireplace in Duncan. Highly Recommended!"
+    },
+    {
+        "id": "testimoial-7",
+        "author_name": "Kris Harley-Jesson",
+        "author_designation": "September 2018",
+        "author_image": "../../images/avatar/K.png",
+        "rating": 5,
+        "subject": "",
+        "review": "South Island Fireplaces are my heroes! You were at my Mom’s place yesterday to check and clean her Fireplace and the difference in the look and operation are incredible! Thank you Roger and Brandon for your professionalism."
+    },
+    {
+        "id": "testimoial-8",
+        "author_name": "Melissa Cottam",
+        "author_designation": "April 2020",
+        "author_image": "../../images/avatar/M.png",
+        "rating": 5,
+        "subject": "",
+        "review": "Huge shout out to the team, I really needed a new Bbq and really wanted to shop local. Unbelievable service from start to finish. Hubby is happy with his new grill, he said he’s never seen anything like it."
     }
 ]

@@ -1,0 +1,28 @@
+{
+    "id": "gas-categories",
+    "title": "Select a type to see the </br> brands and models we can offer",
+    "description": "",
+    "categories": [
+        {
+            "id": "gas-fireplaces",
+            "title": "Gas Fireplaces",
+            "desc": "Zero-clearance gas fireplaces offer a number of designs to customize your fireplace to your home's look and feel. Zero-clearance fireplaces can be installed almost directly against combustible materials like wood, walls, or paneling.",
+            "image": "../images/products/gas-fireplace.jpg",
+            "path": "/products/gas/fireplaces"
+        },
+        {
+            "id": "gas-inserts",
+            "title": "Gas Inserts",
+            "desc": "Gas inserts are designed to be installed within an existing masonry cavity or fireplace and uses the existing chimney as structure to run venting for the unit. Inserts are typically a lower cost option compared to a zero-clearance renovation, or replacement of your existing masonry fireplace.",
+            "image": "../images/products/gas-insert.jpg",
+            "path": "/products/gas/inserts"
+        },
+        {
+            "id": "gas-stoves",
+            "title": "Gas Stoves",
+            "desc": "Freestanding gas stoves can vent through existing chimneys, through the roof with new venting, or out the wall via a direct vent installation. Continuously warming objects in its path, a gas stove provides radiant heat that will satisfy your comfort needs while using less energy compared to forced air systems.",
+            "image": "../images/products/gas-stove.jpg",
+            "path": "/products/gas/stoves"
+        }
+    ]
+}

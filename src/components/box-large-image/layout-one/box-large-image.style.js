@@ -105,7 +105,7 @@ export const BoxLargeImgWrap = styled.div `
         }
         ${BoxLargeImgMedia}{
             &:after{
-                background: #002fa6;
+                background: #452f31;
                 opacity: .8;
             }
         }

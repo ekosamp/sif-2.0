@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
-import { MdComment, MdInfoOutline } from "react-icons/md";
+import { MdLocationOn, MdInfoOutline } from "react-icons/md";
 import Section, { Container, Row, Col } from '../../../../components/ui/wrapper'
 import Heading from '../../../../components/ui/heading'
 import Button from '../../../../components/ui/button'
@@ -18,7 +18,7 @@ const CTASection = ({
         query CtaTwoImgQuery {
             file(relativePath: {eq: "images/bg/cta-bg.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 779, maxHeight: 746, quality: 100) {
+                    fluid(maxWidth: 779, maxHeight: 746, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -31,20 +31,20 @@ const CTASection = ({
             <Container>
                 <Row className="align-items-center text-lg-left text-center">
                     <Col xl={8} lg={7}>
-                        <Heading {...heading}>Assess your business potentials and find opportunities <span>for bigger success </span> </Heading> 
+                        <Heading {...heading}>Visit our showroom today to view all <span>30 display models! </span> </Heading> 
                     </Col> 
                     <Col xl ={4} lg={5} className="text-center">
                         <Button 
-                            to="/" 
+                            to="/contact-us" 
                             {...ButtonOne} 
-                            icon={<MdComment/>}
+                            icon={<MdLocationOn/>}
                             iconposition="left"
                             icondistance="4px"
                             iconsize="16px">
-                            Let 's talk 
+                            Come Visit
                         </Button> 
                         <Button 
-                            to="/" 
+                            to="/about-us" 
                             {...ButtonTwo} 
                             icon={<MdInfoOutline/>}
                             iconposition="left"
@@ -102,7 +102,10 @@ CTASection.defaultProps = {
     },
     ButtonTwo: {
         skin: 'secondary',
-        m: '7px'
+        m: '7px',
+        hover: {
+            bgColor: 'primary'
+        }
     }
 }
 

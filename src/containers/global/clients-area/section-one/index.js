@@ -7,38 +7,34 @@ import SwiperSlider from '../../../../components/ui/swiper'
 
 const ClientsArea = (props) => {
     const partnersQueryData = useStaticQuery(graphql `
-        query AboutPartnersDataQuery{
-            allPartnersJson {
+        query AboutPartnersDataQuery {
+            allWpBrand {
                 edges {
-                  node {
-                    id
-                    path
-                    image {
-                      childImageSharp {
-                        fluid(quality: 100) {
-                          ...GatsbyImageSharpFluid_tracedSVG
-                          presentationWidth
-                          presentationHeight
-                          aspectRatio
+                    node {
+                        id
+                        path {
+                            path
                         }
-                      }
-                    }
-                    hover_image {
-                      childImageSharp {
-                        fluid(quality: 100) {
-                            ...GatsbyImageSharpFluid_tracedSVG
-                            presentationWidth
-                            presentationHeight
-                            aspectRatio
+                        img {
+                            img {
+                                localFile {
+                                    childImageSharp {
+                                        fluid(quality: 60) {
+                                            ...GatsbyImageSharpFluid
+                                            presentationWidth
+                                            presentationHeight
+                                            aspectRatio
+                                        }
+                                    }
+                                }
+                            }
                         }
-                      }
                     }
-                  }
                 }
             }
         }
     `); 
-    const partnersData = partnersQueryData.allPartnersJson.edges;
+    const partnersData = partnersQueryData.allWpBrand.edges;
     const {sectionStyle, slider, sliderStyle, clientLogoWrap} = props
     return (
         <Section {...sectionStyle}>
@@ -51,9 +47,9 @@ const ClientsArea = (props) => {
                                     <ClientLogo
                                         layout={1}
                                         title={data.node.id}
-                                        path={data.node.path}
-                                        brandImage={data.node.image.childImageSharp}
-                                        hoverImage={data.node.hover_image.childImageSharp}
+                                        path={data.node.path.path}
+                                        brandImage={data.node.img.img.localFile.childImageSharp}
+                                        hoverImage={data.node.img.img.localFile.childImageSharp}
                                     />
                                 </Box>
                             )

@@ -2,7 +2,7 @@ import React, {Fragment, useState, useRef, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Container, Row, Col} from 'react-bootstrap'
 import { useStaticQuery, graphql } from "gatsby"
-import { MdPlace, MdAvTimer, MdComment, MdPhone, MdMoreHoriz } from "react-icons/md";
+import { MdPlace, MdAvTimer, MdPhone, MdMoreHoriz } from "react-icons/md";
 import { TiSocialFacebook, TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
 import Logo from '../../../../components/logo'
 import SwiperSlider from '../../../../components/ui/swiper'
@@ -14,6 +14,7 @@ import HeaderForm from '../../../../components/header-form/layout-two'
 import BurgerButton from '../../../../components/ui/burger-button'
 import Clickable from '../../../../components/ui/clickable'
 import OffCanvas, {OffCanvasHeader, OffCanvasBody} from '../../../../components/ui/off-canvas';
+import { ToastProvider } from 'react-toast-notifications'
 import {
     HeaderWrap,
     HeaderTop,
@@ -94,6 +95,7 @@ const Header = (props) => {
     const menuArr = headerData.allMenuJson.edges;
     const {facebook, instagram, linkedin} = headerData.site.siteMetadata.social;
     const {slider, headerTopStyles, menuStyle} = props;
+    const isNotSearchResults = props.isSearchResults ? false : true;
     const {infoHeading, infoText, burgerBtnElStyle, clickAbleElStyle, clickAble, innerElementStyle} = headerTopStyles;
  
     return(
@@ -132,7 +134,7 @@ const Header = (props) => {
                                                             </InfoIcon>
                                                             <InfoContent>
                                                                 <Heading {...infoHeading}>9:00AM - 5:00PM</Heading>
-                                                                <Text {...infoText}>Mon - Fri (4pm Sat)</Text>
+                                                                <Text {...infoText}>Mon - Sat (4pm Sat)</Text>
                                                             </InfoContent>
                                                         </InfoItem>
                                                     </div>
@@ -154,7 +156,7 @@ const Header = (props) => {
                                                             </InfoIcon>
                                                             <InfoContent>
                                                                 <Heading {...infoHeading}>250-746-0123</Heading>
-                                                                <Text {...infoText}><a href="mailto:sales@southislandfireplace.com">sales@sif.com</a></Text>
+                                                                <Text {...infoText}><a href="mailto:sales@southislandfireplace.com">Email us</a></Text>
                                                             </InfoContent>
                                                         </InfoItem>
                                                     </div>
@@ -223,9 +225,13 @@ const Header = (props) => {
                                             />
                                         </HeaderNavigation>
                                     </HeaderBottomLeft>
-                                    <HeaderBottomRight>
-                                        <HeaderForm layout={sticky && 'white'}  inputId="header-search-2"/>
-                                    </HeaderBottomRight>
+                                    <ToastProvider autoDismiss placement="top-center">
+                                        <HeaderBottomRight>
+                                            {isNotSearchResults && (
+                                                <HeaderForm layout={sticky && 'white'}  inputId="header-search-2"/>
+                                            )}
+                                        </HeaderBottomRight>
+                                    </ToastProvider>
                                 </HeaderMain>
                             </Col>
                         </Row>

@@ -1,0 +1,28 @@
+{
+    "id": "electric-categories",
+    "title": "Select a type to see the </br> brands and models we can offer",
+    "description": "Electric Fireplaces are perfect for homes, offices, restaurants or commercial settings. The clean, contemporary design of the fireplaces, along with innovative features such as mood-setting back-lighting, or design finishes, provide unlimited creativity and versatility for designing any interior space. They are convenient and can even be operated by remote control, setting the mood with different colored flames. Electric Fireplaces can be operated with or without heat for year-round ambiance.",
+    "categories": [
+        {
+            "id": "zero-clearance",
+            "title": "Built In, Wall/Flush Mount Fireplaces",
+            "desc": "A built in or wall-mounted electric fireplace is a modern re-vamp of the classic trend and can easily change the mood of an entire space. Think of a built in or wall mount fireplace as a living, breathing piece of art that can also light and heat your space.",
+            "image": "../images/products/electric/zero-clearance.jpg",
+            "path": "/products/electric/fireplaces"
+        },
+        {
+            "id": "inserts",
+            "title": "Inserts",
+            "desc": "Electric fireplace inserts are a safe, energy efficient, low cost alternative to gas and traditional wood fireplaces. These electric units offer remarkably realistic flame effects with multiple styles to choose from.",
+            "image": "../images/products/electric/insert.jpg",
+            "path": "/products/electric/inserts"
+        },
+        {
+            "id": "free-standing",
+            "title": "Free Standing",
+            "desc": "Freestanding electric stoves offer the instant ambiance of a traditional fireplace experience. Each of our freestanding electric fireplaces provide quiet, instant heat, and eye-catching design. Simply plug in and enjoy the warmth and realistic flame of your new fireplace anywhere in your home.",
+            "image": "../images/products/electric/free-standing.jpg",
+            "path": "/products/electric/stoves"
+        }
+    ]
+}

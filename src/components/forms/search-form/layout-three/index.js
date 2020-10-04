@@ -1,14 +1,44 @@
 import React from 'react'
-import {SearchFromWrap} from './search-form.style'
+import Form, {Input} from '../../../ui/form'
+import Button from '../../../ui/button'
+import { MdSearch } from "react-icons/md";
+import {SearchFromWrap, ButtonWrap} from './search-form.style'
 
-const SearchForm = () => {
-    return (
-        <SearchFromWrap>
-            <form>
-                <input type="text" name="header-search" id="header-search" placeholder="Search"/>
-            </form>
-        </SearchFromWrap>
-    )
+class SearchForm extends React.Component {
+    onSubmit = (e) => {
+        e.preventDefault()
+        return false
+    }
+
+    render() {
+        return (
+            <SearchFromWrap>
+                <Form onSubmit={this.onSubmit}>
+                    <Input
+                        type="text"
+                        name="keyword"
+                        id="keyword"
+                        placeholder="New search"
+                        required
+                        value={this.props.searchQuery}
+                        onChange={this.props.handleChange('searchQuery')}
+                    />
+                    <ButtonWrap>
+                        <Button 
+                            type="submit"
+                            skin="transparent"
+                            hover="false"
+                            varient='onlyIcon'
+                            color="#452f31"
+                            onClick={this.props.newSearch}
+                        >
+                            <MdSearch/>
+                        </Button>
+                    </ButtonWrap>
+                </Form>
+            </SearchFromWrap>
+        )
+    }
 }
 
 export default SearchForm;

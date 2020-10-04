@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from "gatsby"
-import { TiSocialFacebook, TiSocialTwitter, TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
+import { TiSocialFacebook, TiSocialInstagram, TiSocialLinkedin } from "react-icons/ti";
 import parse from 'html-react-parser'
 import {Container} from 'react-bootstrap'
 import Logo from '../../../../assets/images/logo/dark-logo-160x48.png'
-import gplayImage from '../../../../assets//images/icons/aeroland-button-google-play.jpg'
-import appImage from '../../../../assets//images/icons/aeroland-button-app-store.jpg'
+import financeIt from '../../../../assets//images/logo/finance-it-logo.jpg'
 import {Row, Col} from '../../../../components/ui/wrapper'
 import Text from '../../../../components/ui/text'
 import Anchor from '../../../../components/ui/anchor'
@@ -29,6 +28,7 @@ const Footer = ({copyrightStyle, ...props}) => {
             site {
                 siteMetadata {
                     copyright
+                    authorContact
                     contact {
                         phone
                         email
@@ -47,6 +47,7 @@ const Footer = ({copyrightStyle, ...props}) => {
     const {phone, email, address, website} = siteInfo.site.siteMetadata.contact;
     const {copyright} = siteInfo.site.siteMetadata;
     const {facebook, instagram, linkedin} = siteInfo.site.siteMetadata.social;
+    const ddContact = siteInfo.site.siteMetadata.authorContact;
     return (
         <FooterWrap {...props}>
             <FooterTop>
@@ -66,25 +67,16 @@ const Footer = ({copyrightStyle, ...props}) => {
                             </FooterWidget>
                         </Col>
                         <Col lg={2} md={4} sm={0}>
-                            <FooterWidget responsive={{medium:{mb: '31px'}}}>
-                                {/* <Heading as="h6" mt="-3px" mb="20px">IT Services</Heading>
-                                <FooterWidgetList>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Managed IT</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">IT Support</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">IT Consultancy</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Cloud Computing</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Cyber Security</Anchor></li>
-                                </FooterWidgetList> */}
-                            </FooterWidget>
+                            <FooterWidget responsive={{medium:{mb: '31px'}}}></FooterWidget>
                         </Col>
                         <Col lg={2} md={4} sm={6}>
                             <FooterWidget responsive={{medium:{mb: '27px'}}}>
                                 <Heading as="h6"  mt="-3px" mb="20px">Quick links</Heading>
                                 <FooterWidgetList>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Pick up locations</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Terms of Payment</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Privacy Policy</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Where to Find Us</Anchor></li>
+                                    <li><Anchor path="/products/wood" color="textColor" hoverstyle="2">Wood</Anchor></li>
+                                    <li><Anchor path="/products/gas" color="textColor" hoverstyle="2">Gas</Anchor></li>
+                                    <li><Anchor path="/products/electric" color="textColor" hoverstyle="2">Electric</Anchor></li>
+                                    <li><Anchor path="/products/outdoor" color="textColor" hoverstyle="2">Outdoor</Anchor></li>
                                 </FooterWidgetList>
                             </FooterWidget>
                         </Col>
@@ -92,22 +84,18 @@ const Footer = ({copyrightStyle, ...props}) => {
                             <FooterWidget>
                                 <Heading as="h6"  mt="-3px" mb="20px">Support</Heading>
                                 <FooterWidgetList>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Forum Support</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Help &amp; FAQ</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Contact Us</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Pricing and plans</Anchor></li>
-                                    <li><Anchor path="/" color="textColor" hoverstyle="2">Cookies Policy</Anchor></li>
+                                    <li><Anchor path="/contact-us" color="textColor" hoverstyle="2">Contact Us</Anchor></li>
+                                    <li><Anchor path="/about-us" color="textColor" hoverstyle="2">About Us</Anchor></li>
+                                    <li><Anchor path="/leadership" color="textColor" hoverstyle="2">Our Team</Anchor></li>
                                 </FooterWidgetList>
                             </FooterWidget>
                         </Col>
                         <Col lg={2} md={4} sm={6}>
-                            <FooterWidget mt='50px' responsive={{small:{mt: '34px'}}}>
+                            <FooterWidget responsive={{small:{mt: '20px'}}}>
                                 <FooterWidgetList>
                                     <li>
-                                        <Button path="/" to="/" imgbutton="true" shadow="true"><img src={gplayImage} alt="Google Play"/></Button>
-                                    </li>
-                                    <li>
-                                        <Button path="/" to="/" imgbutton="true" shadow="true"><img src={appImage} alt="App Store"/></Button>
+                                        <Button to="https://www.financeit.ca/s/p3NNHA" imgbutton="true" shadow="true">
+                                            <img src={financeIt} alt="Finance It - South Island Fireplace"/></Button>
                                     </li>
                                 </FooterWidgetList>
                             </FooterWidget>
@@ -118,10 +106,11 @@ const Footer = ({copyrightStyle, ...props}) => {
             <FooterBottom>
                 <Container>
                     <Row className="align-items-center">
-                        <Col md={6} className="text-center text-md-left">
-                            {copyright && <Text {...copyrightStyle}>&copy; {new Date().getFullYear()} {parse(copyright)}</Text>}
+                        <Col md={8} className="text-center text-md-left">
+                            {copyright && <Text {...copyrightStyle}>&copy; {new Date().getFullYear()} {parse(copyright)}
+                            {" "}Web design by <Anchor path={ddContact} hoverstyle="2">Danny Di Iorio</Anchor></Text>}
                         </Col>
-                        <Col md={6} className="text-center text-md-right">
+                        <Col md={4} className="text-center text-md-right">
                             <Social space={8} shape="rounded" varient="outlined">
                                 {facebook && (
                                     <SocialLink 

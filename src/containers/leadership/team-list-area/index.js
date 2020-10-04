@@ -9,7 +9,7 @@ import {TeamListWrapper} from './team-list-area.style'
 const TeamListArea = ({sectionStyle, headingStyle, boxStyles}) => {
     const teamData = useStaticQuery(graphql `
         query {
-            TeamDevs: allTeamsJson(filter: {position: {eq: "developer"}}) {
+            TeamSales: allTeamsJson(filter: {position: {eq: "sales"}}) {
                 edges {
                     node {
                         id
@@ -17,31 +17,7 @@ const TeamListArea = ({sectionStyle, headingStyle, boxStyles}) => {
                     }
                 }
             }
-            TeamEngs: allTeamsJson(filter: {position: {eq: "engineer"}}) {
-                edges {
-                    node {
-                        id
-                        name
-                    }
-                }
-            }
-            TeamStaffs: allTeamsJson(filter: {position: {eq: "staff"}}) {
-                edges {
-                    node {
-                        id
-                        name
-                    }
-                }
-            }
-            TeamDesigner: allTeamsJson(filter: {position: {eq: "design"}}) {
-                edges {
-                    node {
-                        id
-                        name
-                    }
-                }
-            }
-            TeamMarketer: allTeamsJson(filter: {position: {eq: "marketing"}}) {
+            TeamInstalls: allTeamsJson(filter: {position: {eq: "installs"}}) {
                 edges {
                     node {
                         id
@@ -51,50 +27,36 @@ const TeamListArea = ({sectionStyle, headingStyle, boxStyles}) => {
             }
         }
     `)
-    const developers = teamData.TeamDevs.edges;
-    const engineers = teamData.TeamEngs.edges;
-    const staffs = teamData.TeamStaffs.edges;
-    const designers = teamData.TeamDesigner.edges;
-    const marketers = teamData.TeamMarketer.edges;
+    const sales = teamData.TeamSales.edges;
+    const installs = teamData.TeamInstalls.edges;
     return (
         <TeamListWrapper>
             <Container>
                 <Row>
                     <Col md={3}>
-                        <Heading {...headingStyle}>Developer</Heading>
+                        <Heading {...headingStyle}>Sales</Heading>
                         <Box {...boxStyles}>
-                            {developers && developers.map(developer => (
-                                <Text key={developer.node.id}>{developer.node.name}</Text>
+                            {sales && sales.map(item => (
+                                <Text key={item.node.id}>{item.node.name}</Text>
                             ))}
                         </Box>
                     </Col>
                     <Col md={3}>
-                        <Heading {...headingStyle}>engineer</Heading>
+                        <Heading {...headingStyle}>Installs</Heading>
                         <Box {...boxStyles}>
-                            {engineers && engineers.map(engineer => (
-                                <Text key={engineer.node.id}>{engineer.node.name}</Text>
+                            {installs && installs.map(item => (
+                                <Text key={item.node.id}>{item.node.name}</Text>
                             ))}
                         </Box>
                     </Col>
-                    <Col md={3}>
+                    {/* <Col md={3}>
                         <Heading {...headingStyle}>Staffs</Heading>
                         <Box {...boxStyles}>
                             {staffs && staffs.map(staff => (
                                 <Text key={staff.node.id}>{staff.node.name}</Text>
                             ))}
                         </Box>
-                    </Col>
-                    <Col md={3}>
-                        <Heading {...headingStyle}>Design/Marketing</Heading>
-                        <Box>
-                            {designers && designers.map(designer => (
-                                <Text key={designer.node.id}>{designer.node.name}</Text>
-                            ))}
-                            {marketers && marketers.map(marketer => (
-                                <Text key={marketer.node.id}>{marketer.node.name}</Text>
-                            ))}
-                        </Box>
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </TeamListWrapper>

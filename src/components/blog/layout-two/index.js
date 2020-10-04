@@ -11,6 +11,7 @@ import Categories from '../categories'
 import VideoThumb from '../video-thumb'
 import Image from '../../image'
 import ModalVideo from '../../ui/modal-video'
+import {Row, Col} from '../../ui/wrapper'
 
 import {
     BlogWrapper,
@@ -50,65 +51,72 @@ const Blog = ({content, ...restProps}) => {
     return(
         <Fragment>
             <BlogWrapper {...restProps}>
-                <BlogMedia>
-                    {format === 'image' && (
-                        <BlogThumb>
-                            <Anchor path={`/${slug}`}>
-                                <Image fluid={featured_image.childImageSharp.fluid} alt={title}/>
-                            </Anchor>
-                        </BlogThumb>
-                    )}
-                    {format === 'quote' && (
-                        <BlogQuote>
-                            {quote_text && <h3>{quote_text}</h3>}
-                            {quote_author && <footer>-{quote_author}</footer>}
-                        </BlogQuote>
-                    )}
-                    {format === 'video' && (
-                        <VideoThumb
-                            onClick={modalVideoOpen}
-                            poster={featured_image.childImageSharp.fluid}
-                            title={title}
-                        />
-                    )}
-                </BlogMedia>
-                <BlogInfo>
-                    <BlogHeader>
-                        <Categories {...categoryBoxStyle} categories={categories}/>
-                        {title && <BlogTitle><Anchor path={`/${slug}`}>{title}</Anchor></BlogTitle>}
-                        <BlogHeaderMeta>
-                            {author && (
-                                <AuthorMeta
-                                    {...metaStyle}
-                                    slug={authorId}
-                                    name={author.name}
-                                    imageSrc={author.image.childImageSharp}
+                <Row>
+                    <Col lg={4}>
+                        <BlogMedia>
+                            {format === 'image' && (
+                                <BlogThumb>
+                                    <Anchor path={`/${slug}`}>
+                                        <Image fluid={featured_image.childImageSharp.fluid} alt={title}/>
+                                    </Anchor>
+                                </BlogThumb>
+                            )}
+                            {format === 'quote' && (
+                                <BlogQuote>
+                                    {quote_text && <h3>{quote_text}</h3>}
+                                    {quote_author && <footer>-{quote_author}</footer>}
+                                </BlogQuote>
+                            )}
+                            {format === 'video' && (
+                                <VideoThumb
+                                    onClick={modalVideoOpen}
+                                    poster={featured_image.childImageSharp.fluid}
+                                    title={title}
                                 />
                             )}
-                            {date && (
-                                <BlogMeta
-                                    {...metaStyle}
-                                    path={`/date/${dateSlug}`}
-                                    text={date}
-                                    icon={<FaCalendarAlt/>}  
-                                />
+                        </BlogMedia>
+                    </Col>
+
+                    <Col lg={8}>
+                        <BlogInfo>
+                            <BlogHeader>
+                                <Categories {...categoryBoxStyle} categories={categories}/>
+                                {title && <BlogTitle><Anchor path={`/${slug}`}>{title}</Anchor></BlogTitle>}
+                                <BlogHeaderMeta>
+                                    {author && (
+                                        <AuthorMeta
+                                            {...metaStyle}
+                                            slug={authorId}
+                                            name={author.name}
+                                            imageSrc={author.image.childImageSharp}
+                                        />
+                                    )}
+                                    {date && (
+                                        <BlogMeta
+                                            {...metaStyle}
+                                            path={`/date/${dateSlug}`}
+                                            text={date}
+                                            icon={<FaCalendarAlt/>}  
+                                        />
+                                    )}
+                                </BlogHeaderMeta>
+                            </BlogHeader>
+                            {excerpt && (
+                                <BlogExcerpt>
+                                    <Text>{excerpt}</Text>
+                                </BlogExcerpt>
                             )}
-                        </BlogHeaderMeta>
-                    </BlogHeader>
-                    {excerpt && (
-                        <BlogExcerpt>
-                            <Text>{excerpt}</Text>
-                        </BlogExcerpt>
-                    )}
-                    <BlogFooter>
-                        <BlogFooterLeft>
-                            <Button to={`/${slug}`} hover="2">Read More</Button>
-                        </BlogFooterLeft>
-                        <BlogFooterRight>
-                            <SocialShare/>
-                        </BlogFooterRight>
-                    </BlogFooter>
-                </BlogInfo>
+                            <BlogFooter>
+                                <BlogFooterLeft>
+                                    <Button to={`/${slug}`} hover="2">Read More</Button>
+                                </BlogFooterLeft>
+                                <BlogFooterRight>
+                                    <SocialShare/>
+                                </BlogFooterRight>
+                            </BlogFooter>
+                        </BlogInfo>
+                    </Col>
+                </Row>
             </BlogWrapper>
             <ModalVideo
                 channel={video_channel}

@@ -19,7 +19,7 @@ export const IconWrap = styled.div `
     flex-shrink: 0;
     font-size: 48px;
     min-width: 60px;
-    margin-right: 10px;
+    margin-right: 14px;
     color: ${props => props.theme.colors.secondary};
 `;
 

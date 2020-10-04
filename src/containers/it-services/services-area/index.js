@@ -5,56 +5,53 @@ import Heading from '../../../components/ui/heading'
 import Anchor from '../../../components/ui/anchor'
 import {Container, Row, Col} from '../../../components/ui/wrapper'
 import SectionTitle from '../../../components/ui/section-title'
-import FeatureBox from '../../../components/box-image/layout-one'
+import BoxLargeImage from '../../../components/box-large-image/layout-one'
 import {SectionWrap, SectionBottom} from './services-area.style'
 
 const ServicesArea = (props) => {
     const featuredDataQuery = useStaticQuery(graphql `
-        query ITServicesQueryData {
-            allItServicesJson(sort: {order: DESC, fields: id}, limit: 6) {
+        query ProductsTilQueryData {
+            allProductTypesJson {
                 edges {
-                  node {
-                    fields {
-                        slug
-                    }
-                    id
-                    title
-                    excerpt
-                    icon {
-                      img{
-                        childImageSharp{
-                            fixed(width:100, height: 108, quality: 100 ){
-                                ...GatsbyImageSharpFixed_tracedSVG
+                    node {
+                        title
+                        categories {
+                            title
+                            desc
+                            path
+                            image {
+                                childImageSharp{
+                                    fixed(width:400, height: 250, quality: 100 ){
+                                        ...GatsbyImageSharpFixed
+                                    }
+                                }
                             }
                         }
-                      }
                     }
-                  }
                 }
             }
         }
     `); 
-    const featureData = featuredDataQuery.allItServicesJson.edges;
     const {linkStyle, headingStyle} = props;
+    const productsData = featuredDataQuery.allProductTypesJson.edges;
     return (
         <SectionWrap>
             <Container>
                 <Row>
                     <Col lg={12}>
                         <SectionTitle
-                            subtitle="Our Services"
-                            title="For your very specific industry, <br/> we have <span>highly-tailored IT solutions.</span>"
+                            subtitle="Our Products"
+                            title={productsData[0].node.title}
                         />
                     </Col>
                 </Row>
                 <Row>
-                    {featureData.map(feature => (
-                        <Col lg={4} md={6} className="box-item" key={feature.node.id}>
-                            <FeatureBox
-                                title={feature.node.title}
-                                imageSrc={feature.node.icon.img.childImageSharp}
-                                desc={feature.node.excerpt}
-                                path={`/it-service/${feature.node.fields.slug}`}
+                    {productsData[0].node.categories.map((product, index) => (
+                        <Col lg={3} md={6} className="box-item" key={`${index}-${product.id}`}>
+                            <BoxLargeImage 
+                                title={product.title}
+                                imageSrc={product.image.childImageSharp}
+                                path={product.path}
                             />
                         </Col>
                     ))}

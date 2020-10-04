@@ -9,12 +9,12 @@ const GoogleMapSection = () => {
         <SectionWrap>
             <Container>
                 <Row>
-                    <Col lg={6} className="map-one">
+                    {/* <Col lg={6} className="map-one">
                         <Heading as="h3" mb="40px" textalign="center">Default Style</Heading>
                         <GoogleMap />
-                    </Col>
-                    <Col lg={6}>
-                        <Heading as="h3" mb="40px" textalign="center">Custom Marker</Heading>
+                    </Col> */}
+                    <Col lg={12}>
+                        <Heading as="h4" mb="40px" textalign="center">Come check out our showroom</Heading>
                         <GoogleMap
                             marker="animated"
                         />

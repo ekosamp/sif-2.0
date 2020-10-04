@@ -1,56 +1,33 @@
 [
     {
         "text": "Home",
-        "link": "/",
-        "isSubmenu": false,
-        "submenu": [
-            {
-                "text": "Infotechno",
-                "link": "/index-infotechno"
-            },
-            {
-                "text": "Appointment",
-                "link": "/index-appointment"
-            },
-            {
-                "text": "Processing",
-                "link": "/index-processing"
-            },
-            {
-                "text": "Services",
-                "link": "/index-services"
-            },
-            {
-                "text": "Resolutions",
-                "link": "/index-resolutions"
-            }
-        ]
+        "link": "/"
     },
     {
         "text": "Products",
-        "link": "/case-studies",
+        "link": "/products",
         "isSubmenu": true,
         "submenu": [
             {
-                "text": "BBQs",
-                "link": "/"
-            },
-            {
                 "text": "Wood",
-                "link": "/"
+                "link": "/products/wood"
             },
             {
                 "text": "Gas",
-                "link": "/"
+                "link": "/products/gas"
+            },
+            {
+                "text": "Electric",
+                "link": "/products/electric"
             },
             {
                 "text": "Outdoor",
-                "link": "/"
+                "link": "/products/outdoor"
             }
         ]
     },
     {
-        "text": "Company",
+        "text": "About",
         "link": "/about-us",
         "isSubmenu": true,
         "submenu": [
@@ -63,28 +40,32 @@
                 "link": "/contact-us"
             },
             {
-                "text": "Leadership",
+                "text": "Our Team",
                 "link": "/leadership"
             }
         ]
     },
     {
         "text": "Services",
-        "link": "/it-services",
+        "link": "/services",
         "isSubmenu": true,
         "submenu": [
             {
-                "text": "IT Services",
-                "link": "/it-services"
+                "text": "Gas Service",
+                "link": "/services/gas-service"
             },
             {
-                "text": "IT Solutions",
-                "link": "/it-solutions"
+                "text": "Replacement Parts",
+                "link": "/services/parts"
+            },
+            {
+                "text": "Financing",
+                "link": "/services/financing"
             }
         ]
     },
     {
         "text": "Special Offers",
-        "link": "/blogs/list-large-image"
+        "link": "/special-offers"
     }
 ]

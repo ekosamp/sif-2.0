@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
-import { MdComment, MdInfoOutline } from "react-icons/md";
+import { MdLocalOffer, MdInfoOutline } from "react-icons/md";
 import Section, { Container, Row, Col } from '../../../../components/ui/wrapper'
 import Heading from '../../../../components/ui/heading'
 import Button from '../../../../components/ui/button'
@@ -18,7 +18,7 @@ const CTASection = ({
         query CtaImgQuery {
             file(relativePath: {eq: "images/bg/cta-bg-2.png"}) {
                 childImageSharp {
-                    fluid(maxWidth: 711, maxHeight: 280, quality: 100) {
+                    fluid(maxWidth: 711, maxHeight: 280, quality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -30,18 +30,18 @@ const CTASection = ({
         <Section {...sectionStyle} bgImage={imageData}>
             <Container>
                 <Row className="align-items-center text-lg-left text-center">
-                    <Col xl={8} lg={7}>
-                        <Heading {...heading}>Assess your business potentials and find opportunities <span>for bigger success </span> </Heading> 
+                    <Col xl={7} lg={7}>
+                        <Heading {...heading}>Visit our showroom today to view all <span>30 display models! </span> </Heading> 
                     </Col> 
-                    <Col xl ={4} lg={5} className="text-center">
+                    <Col xl={5} lg={5} className="text-center">
                         <Button 
-                            to="/contact-us" 
+                            to="/products" 
                             {...ButtonOne} 
-                            icon={<MdComment/>}
+                            icon={<MdLocalOffer/>}
                             iconposition="left"
                             icondistance="4px"
                             iconsize="16px">
-                            Let 's talk 
+                            See Products
                         </Button> 
                         <Button 
                             to="/about-us" 
@@ -50,7 +50,7 @@ const CTASection = ({
                             iconposition="left"
                             icondistance="4px"
                             iconsize="16px">
-                            Get Info 
+                            About Us 
                         </Button> 
                     </Col> 
                 </Row> 
@@ -68,12 +68,12 @@ CTASection.defaultProps = {
         bgColor: '#454545',
         bgposition: 'top 35% right -68px',
         bgsize: 'auto',
-        pt: '80px',
-        pb: '80px',
+        pt: '60px',
+        pb: '60px',
         responsive: {
             medium: {
-                pt: '60px',
-                pb: '60px'
+                pt: '40px',
+                pb: '40px'
             },
             small: {
                 pt: '40px',

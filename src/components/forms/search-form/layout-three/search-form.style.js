@@ -1,21 +1,20 @@
 import styled from 'styled-components'
+import {device} from '../../../../theme';
 
 export const SearchFromWrap = styled.div `
     position: relative;
-    max-width: 1200px;
-    padding: 0 15px;
+    max-width: 600px;
     width: 100%;
-    margin: auto;
+    padding-bottom: 20px;
     input{
         background-color: transparent;
         border: 0;
         border-bottom: 2px solid ${props => props.theme.colors.themeColor};
         border-radius: 0;
-        padding: 15px 50px 15px 0;
         width: 100%;
         color: ${props => props.theme.colors.themeColor};
-        font-size: 72px;
-        height: 100px;
+        font-size: 24px;
+        height: 60px;
         &::placeholder,
         &::-webkit-input-placeholder {
             color: ${props => props.theme.colors.themeColor} !important;
@@ -23,5 +22,15 @@ export const SearchFromWrap = styled.div `
         &:-ms-input-placeholder {
             color: ${props => props.theme.colors.themeColor} !important;
         }
+    }
+`;
+
+export const ButtonWrap = styled.div `
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    @media ${device.xsmall}{
+        right: 5px;
     }
 `;

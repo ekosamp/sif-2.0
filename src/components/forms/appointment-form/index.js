@@ -1,31 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useForm } from 'react-hook-form'
-import Form, {FormGroup, Input, Select, Error} from '../../ui/form'
+import Form, {FormGroup, Input, Select, Error, Textarea} from '../../ui/form'
 import Button from '../../ui/button'
+import Text from '../../ui/text'
 
 const AppointmentForm = () => {
     const { register, handleSubmit, errors } = useForm({
         mode: "onBlur"
     })
-    const onSubmit = data => { console.log(data) }
+    const onSubmit = data => {
+        const form_data = new FormData()
+        for ( const key in data ) {
+            form_data.append(key, data[key])
+        }
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST", "https://formspree.io/xyyndrdg")
+        xhr.setRequestHeader("Accept", "application/json")
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return
+            if (xhr.status === 200) {
+                setFormStatus("SUCCESS")
+                document.getElementById("sForm").reset()
+            } else {
+                setFormStatus("ERROR")
+            }
+        };
+        xhr.send(form_data)
+    }
+
+    const [formStatus, setFormStatus] = useState('')
 
     return(
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form id="sForm" onSubmit={handleSubmit(onSubmit)}>
             <FormGroup mb="20px">
                 <Input
-                    name="appointment_name"
-                    id="appointment_name"
+                    name="contact_name"
+                    id="contact_name"
                     type="text"
                     placeholder="Name *"
                     hover="2"
                     ref={register({ required: 'Name is required' })}
                 />
-                <Error>{errors.appointment_name && errors.appointment_name.message}</Error>
+                <Error>{errors.contact_name && errors.contact_name.message}</Error>
             </FormGroup>
             <FormGroup mb="20px">
                 <Input
-                    name="appointment_email"
-                    id="appointment_email"
+                    name="_replyto"
+                    id="_replyto"
                     type="email"
                     placeholder="Email *"
                     hover="2"
@@ -37,29 +58,81 @@ const AppointmentForm = () => {
                         }
                     })}
                 />
-                <Error>{errors.appointment_email && errors.appointment_email.message}</Error>
+                <Error>{errors._replyto && errors._replyto.message}</Error>
+            </FormGroup>
+            <FormGroup mb="20px">
+                <Input
+                    name="ph_number"
+                    id="ph_number"
+                    type="phone"
+                    placeholder="Phone"
+                    hover="2"
+                />
             </FormGroup>
             <FormGroup mb="20px">
                 <Select 
-                    name="appointment_inquiry"
-                    id="appointment_inquiry"
+                    name="service_type"
+                    id="service_type"
                     hover="2"
-                    ref={register({ required: "Please select a inquiry" })}
+                    ref={register({ required: "Please select a service" })}
                 >
-                    <option value="">Your inquiry about</option>
-                    <option value="General Information Request">General Information Request</option>
-                    <option value="Partner Relations">Partner Relations</option>
-                    <option value="Careers">Careers</option>
-                    <option value="Software Licencing">Software Licencing</option>
+                    <option value="">Type of service required</option>
+                    <option value="Gas">Gas stove, fireplace, ot insert</option>
+                    <option value="Wood">Wood stove, fireplace, or insert</option>
+                    <option value="Pellet">Pellet stove, fireplace or insert</option>
+                    <option value="Electric">Electric fireplace or insert</option>
+                    <option value="BBQ">BBQ or grill</option>
+                    <option value="Hot tub">Hot tub or spa</option>
+                    <option value="Other">Other</option>
                 </Select>
-                <Error>{errors.appointment_inquiry && errors.appointment_inquiry.message}</Error>
+                <Error>{errors.service_type && errors.service_type.message}</Error>
+            </FormGroup>
+            <FormGroup mb="20px">
+                <Input
+                    name="make"
+                    id="make"
+                    type="text"
+                    placeholder="Make"
+                    hover="2"
+                />
+            </FormGroup>
+            <FormGroup mb="20px">
+                <Input
+                    name="model"
+                    id="model"
+                    type="text"
+                    placeholder="Model"
+                    hover="2"
+                />
+            </FormGroup>
+            <FormGroup mb="20px">
+                <Input
+                    name="serial_number"
+                    id="serial_number"
+                    type="text"
+                    placeholder="Serial number"
+                    hover="2"
+                />
+            </FormGroup>
+            <FormGroup mb="20px">
+                <Textarea 
+                    name="message" 
+                    id="message" 
+                    placeholder="Please add any additional info including current issues you are experiencing"
+                    hover="2"
+                ></Textarea>
             </FormGroup>
             <FormGroup textalign="center">
+                <input type="text" name="_gotcha" style={{display:"none"}} />
+                {formStatus === "SUCCESS" ? <Text as="strong">Thanks!</Text> : 
                 <Button 
                     type="submit"
                     pl="54px"
                     pr="54px"
-                    hover="2">Submit</Button>
+                    hover="2">Submit</Button> }
+                {formStatus === "ERROR" && <Error>Error, please try again</Error>}
+                {'   '}
+                <Button skin="secondary" type="reset" id="resetBtn">Reset</Button>
             </FormGroup>
         </Form>
     )

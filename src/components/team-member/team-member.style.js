@@ -14,6 +14,9 @@ export const TeamMemberInner = styled.div `
 
 export const TeamMemberImage = styled.div `
     position: relative;
+    img{
+        border-radius: 5px;
+    }
 `;
 
 export const TeamMemberSocialWrap = styled.div `

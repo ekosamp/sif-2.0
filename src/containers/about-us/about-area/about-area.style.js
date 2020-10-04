@@ -2,12 +2,15 @@ import styled from 'styled-components'
 import {device} from '../../../theme'
 
 export const AboutWrapper = styled.section `
-    padding-top: 100px;
+    padding-top: 80px;
+    padding-bottom: 20px;
     @media ${device.medium}{
-        padding-top: 80px;
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
     @media ${device.small}{
-        padding-top: 60px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 `;
 

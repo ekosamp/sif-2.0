@@ -1,14 +1,16 @@
 module.exports = {
-  pathPrefix: `/`,
+  pathPrefix: `/stage`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
-    titleTemplate: ``,
-    description: ``,
+    titleTemplate: `South Island Fireplace & Spas`,
+    description: `Vancouver Island's largest retailer of fireplaces and stoves. We provide installation and on-going service for all our customers. Our large and dedicated sales and service staff are trained in all the products we sell, ensuring you get the appliance best suited for you and your home.`,
+    keywords: `south island fireplace, pacific energy, hearthstone, fireplaces, woodstoves, wood stoves, gas fireplaces, gas insert, jotul, scan, alderlea, true north, rsf fireplace, lennox fireplace, kingsman fireplace, valor, lennox, town and country, town & country, traeger pellet grill, outdoor fire pit, firepit, jackson grills, infratech, warmland, heartland cooking stove, bbq accessories, bbq grills, outdoor kitchen, custom outdoor kitchens, outdoor fireplace, outdoor firepits, ambiance, fireplaces duncan, hearth duncan bc, fireplaces cowichan valley, chimney, fireplace service, service gas fireplace`,
     author: `Danny Di Iorio`,
+    authorContact: `https://www.linkedin.com/in/danielrdiiorio/`,
     twitterUsername: ``,
     image: 'landing.png',
-    siteUrl: 'http://www.southislandfireplace.com/',
-    copyright: "South Island Fireplace & Spas. <a href='https://hasthemes.com/' target='_blank' rel='noopener noreferrer'>All Rights Reserved.</a>",
+    siteUrl: 'https://www.southislandfireplace.com/',
+    copyright: "South Island Fireplace & Spas. All Rights Reserved. ",
     social: {
       facebook: "https://www.facebook.com/southislandfireplace/",
       // twitter: "https://www.twitter.com",
@@ -19,7 +21,7 @@ module.exports = {
       phone: '250-746-0123',
       address: "2939 Boys Road, Duncan, BC, Canada. V9L 6W4",
       email: 'sales@southislandfireplace.com',
-      website: "http://southislandfireplace.com/",
+      website: "https://www.southislandfireplace.com/",
       rating: "5.0",
       customers: "700",
       clients: "3200",
@@ -61,6 +63,9 @@ module.exports = {
         "excerpt_separator": `<!-- endexcerpt -->`,
         plugins: [
           {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
@@ -98,12 +103,12 @@ module.exports = {
       options: {
         "name": "South Island Fireplace & Spas",
         "short_name": "sif",
-        "theme_color": "#086ad8",
+        "theme_color": "#452f31",
         "background_color": "#ffffff",
         "display": "standalone",
         "scope": "/",
         "start_url": "/",
-        "icon": "src/assets/images/favicon.png",
+        "icon": "src/assets/images/favicon.ico",
         "icons": [
           {
             "src": "/icons/icon-72x72.png",
@@ -148,6 +153,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
@@ -164,22 +170,60 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'http://southislandfireplace.com',
-        sitemap: 'http://southislandfireplace.com/sitemap.xml',
+        host: 'https://southislandfireplace.com',
+        sitemap: 'https://southislandfireplace.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        // your WordPress source - TODO: UPDATE
-        baseUrl: `http://www.southislandfireplace.com/wp/`,
-        protocol: `http`,
-        // is it hosted on wordpress.com, or self-hosted?
-        hostingWPCOM: false,
-        // does your site use the Advanced Custom Fields Plugin?
-        useACF: false
-      }
-    }
+        url: process.env.GATSBY_WORDPRESS_URL_DEV || `https://www.southislandfireplace.com/wp/graphql`,
+        verbose: true,
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+        debug: {
+          graphql: {
+            writeQueriesToDisk: true,
+            showQueryVarsOnError: true,
+          },
+        },
+        options: {
+          develop: {
+            nodeUpdateInterval: 10000
+          },
+          schema: {
+            timeout: process.env.GATSBY_SCHEMA_TIMEOUT || 100000,
+            perPage: 5,
+          },
+          html: {
+            imageQuality: 60,
+          },
+          excludeFieldNames: [`UserRole`, `Menu`, `Tag`, `PostFormat`, `MenuItem`, `Comment`],
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: 1849858,
+        sv: 6
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GATSBY_GA_TRACKING_ID
+      },
+    },
   ]
 }

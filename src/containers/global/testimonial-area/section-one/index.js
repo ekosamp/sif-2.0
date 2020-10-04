@@ -20,7 +20,7 @@ const TestimonialSection = ({sectionTitleStyle, slider, sliderStyle}) => {
                 review
                 author_image {
                   childImageSharp {
-                    fixed(width: 90, height: 90, quality: 100){
+                    fixed(width: 50, height: 50, quality: 100){
                         ...GatsbyImageSharpFixed_withWebp
                     }
                   }
@@ -39,7 +39,7 @@ const TestimonialSection = ({sectionTitleStyle, slider, sliderStyle}) => {
                     <Col lg={12}>
                         <SectionTitle
                             {...sectionTitleStyle}
-                            title="What do people praise about <span>Mitech?</span>"
+                            title="What do people praise about <span>South Island Fireplace?</span>"
                             subtitle="TESTIMONIALS"
                         />
                     </Col>
