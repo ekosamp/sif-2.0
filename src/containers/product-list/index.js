@@ -173,7 +173,7 @@ class ProductInfoArea extends React.Component {
         } = this.state
         if (isLoading) {
             return (
-                <div>Loading</div>
+                <div>Loading...</div>
             )
         }
         if (!isLoading) {

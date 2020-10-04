@@ -30,7 +30,7 @@ const CategoryArea = ({
                             path
                             image{
                                 childImageSharp {
-                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 70){
                                         ...GatsbyImageSharpFluid
                                         presentationWidth
                                         presentationHeight
@@ -54,7 +54,7 @@ const CategoryArea = ({
                             path
                             image{
                                 childImageSharp {
-                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 70){
                                         ...GatsbyImageSharpFluid
                                         presentationWidth
                                         presentationHeight
@@ -78,7 +78,7 @@ const CategoryArea = ({
                             path
                             image{
                                 childImageSharp {
-                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 70){
                                         ...GatsbyImageSharpFluid
                                         presentationWidth
                                         presentationHeight
@@ -102,7 +102,7 @@ const CategoryArea = ({
                             path
                             image{
                                 childImageSharp {
-                                    fluid(maxWidth: 600, maxHeight: 400, quality: 100){
+                                    fluid(maxWidth: 600, maxHeight: 400, quality: 70){
                                         ...GatsbyImageSharpFluid
                                         presentationWidth
                                         presentationHeight

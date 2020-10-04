@@ -35,7 +35,7 @@ const GasServiceList = ({HeadingStyle, WarningListStyle, StepsListStyle}) => {
                 }
                 img{
                     childImageSharp {
-                        fluid(maxWidth: 600, quality: 100){
+                        fluid(maxWidth: 600, quality: 80){
                             ...GatsbyImageSharpFluid
                         }
                     }

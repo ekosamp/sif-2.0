@@ -21,7 +21,7 @@ const ProductsArea = (props) => {
                             path
                             image {
                                 childImageSharp{
-                                    fixed(width:400, height: 250, quality: 100 ){
+                                    fixed(width:400, height: 250, quality: 70 ){
                                         ...GatsbyImageSharpFixed_noBase64
                                     }
                                 }
