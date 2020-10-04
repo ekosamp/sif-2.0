@@ -103,7 +103,7 @@ module.exports = {
       options: {
         "name": "South Island Fireplace & Spas",
         "short_name": "sif",
-        "theme_color": "#086ad8",
+        "theme_color": "#452f31",
         "background_color": "#ffffff",
         "display": "standalone",
         "scope": "/",
@@ -153,6 +153,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
@@ -213,10 +214,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        // Setting a color is optional.
         color: `tomato`,
         // Disable the loading spinner.
         showSpinner: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GATSBY_GA_TRACKING_ID
       },
     },
   ]
