@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/stage`,
+  pathPrefix: `/test`,
   siteMetadata: {
     title: "South Island Fireplace & Spas",
     titleTemplate: `South Island Fireplace & Spas`,
@@ -102,9 +102,9 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         "name": "South Island Fireplace & Spas",
-        "short_name": "sif",
+        "short_name": "South Island Fireplace",
         "theme_color": "#452f31",
-        "background_color": "#ffffff",
+        "background_color": "#452f31",
         "display": "standalone",
         "scope": "/",
         "start_url": "/",
@@ -222,7 +222,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-179569605-1'
+        trackingId: process.env.GATSBY_GA_TRACKING_ID
       },
     },
   ]

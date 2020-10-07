@@ -1,7 +1,7 @@
 {
   "name": "sif-website",
   "private": true,
-  "homepage": "https://southislandfireplace.com/dev",
+  "homepage": "https://southislandfireplace.com/",
   "description": "Re-designed company website",
   "version": "1.0.0",
   "author": "Danny Di Iorio <ddiiorio.dev@gmail.com>",
@@ -71,7 +71,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "GATSBY_CONCURRENT_DOWNLOAD=20 gatsby build --prefix-paths",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
