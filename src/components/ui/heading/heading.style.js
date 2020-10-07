@@ -95,7 +95,10 @@ export const HeadingWrapper = styled.h2 `
             margin: 0 5px -5px -5px;
             color: ${props => props.theme.colors.secondary};
             @media ${device.small}{
-                font-size: 140px;
+                font-size: 100px;
+            }
+            @media ${device.xsmall}{
+                font-size: 100px;
             }
         }
     `}

@@ -21,7 +21,6 @@ const ContactArea = ({sectionStyle, imgBoxStyle, rightBoxStyle, boxIconStyle, ra
                         email
                         rating
                         customers
-                        clients
                     }
                 }
             }
@@ -43,7 +42,7 @@ const ContactArea = ({sectionStyle, imgBoxStyle, rightBoxStyle, boxIconStyle, ra
             }
         }
     `)
-    const {phone, email, rating, customers, clients} = contactData.info.siteMetadata.contact;
+    const {phone, email, rating, customers} = contactData.info.siteMetadata.contact;
     const bg_image = contactData.bgImage.childImageSharp.fluid;
     const contact_image = contactData.contactImg.childImageSharp.fluid;
     
@@ -61,7 +60,7 @@ const ContactArea = ({sectionStyle, imgBoxStyle, rightBoxStyle, boxIconStyle, ra
                             <Box textalign="center">
                                 {rating && <Heading as="h3">{`${rating}/5.0`}</Heading>}
                                 <Ratings {...ratingStyle} rating={+rating}/>
-                                <Text {...textStyle}>by {customers}+ customers for {clients}+ clients</Text>
+                                <Text {...textStyle}>by {customers}+ customers</Text>
                             </Box>
                             <Box>
                                 <Anchor display="block" path={`tel:${phone}`}>
