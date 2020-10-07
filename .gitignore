@@ -1,6 +1,5 @@
 node_modules
 public
-package-lock.json
 Wordpress
 .DS_Store
 .env
@@ -8,5 +7,4 @@ Wordpress
 .env.production
 .cache
 .git
-.github
 .wordpress-cache
