@@ -1,6 +1,6 @@
 name: New deployment
 
-on: 
+on: push
 
 jobs:
   build:
