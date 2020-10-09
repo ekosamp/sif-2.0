@@ -1,6 +1,9 @@
 name: New deployment
 
-on: push
+on:
+  push:
+    branches:
+      - test-deploy
 
 jobs:
   build:
