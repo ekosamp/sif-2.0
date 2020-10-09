@@ -1,6 +1,6 @@
 name: New deployment
 
-on: push
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -45,10 +45,10 @@ jobs:
       with:
         name: public
     - name: Upload ftp
-      uses: sebastianpopp/ftp-action@releases/v1
+      uses: sebastianpopp/git-ftp-action@releases/v3
       with:
-        host: ${{ secrets.FTP_SERVER }}
+        url: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "public"
-        remoteDir: "/"
+        syncroot: "public"
+        options: "--auto-init --insecure"
