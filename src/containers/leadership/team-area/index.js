@@ -5,9 +5,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import {Container, Row, Col} from '../../../components/ui/wrapper'
 import Heading from '../../../components/ui/heading'
 import TeamMember from '../../../components/team-member'
-import {TeamWrapper} from './team-area.style'
+import {TeamWrapper, TypedWrapper} from './team-area.style'
 
-const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, teamStyle, executiveStyle}) => {
+const TeamArea = ({headingStyle, teamStyle, executiveStyle}) => {
     const teamData = useStaticQuery(graphql `
         query {
             executiveMember: allTeamsJson(filter: {position: {eq: "executive"}}) {
@@ -40,13 +40,15 @@ const TeamArea = ({sectionStyle, headingStyle, headTeamStyle, headTeamRowStyle, 
                     <Col lg={12}>
                         <Heading {...headingStyle}>
                             <span className="not-typical">Meet our </span>
-                                <Typed
-                                    strings={['professional', 'knowledgeable', 'friendly', 'awesome']}
-                                    typeSpeed={55}
-                                    backSpeed={70}
-                                    loop
-                                />
-                            <span className="not-typical"> team</span>
+                                <TypedWrapper>
+                                    <Typed
+                                        strings={['professional ', 'knowledgeable ', 'friendly ', 'awesome ']}
+                                        typeSpeed={55}
+                                        backSpeed={70}
+                                        loop
+                                    />
+                                </TypedWrapper>
+                            <span className="not-typical">team</span>
                         </Heading>
                     </Col>
                 </Row>
@@ -94,30 +96,11 @@ TeamArea.defaultProps = {
             }
         }
     },
-    headTeamRowStyle: {
-        mb: "36px",
-        gutters: {
-            lg: 60
-        },
-        responsive: {
-            medium: {
-                mb: "26px"
-            },
-            small: {
-                mb: 0
-            }
-        }
-    },
     teamStyle: {
         layout: 2,
         wrapperStyle: {
             mb: "30px"
         },
-    },
-    headTeamStyle: {
-        infoStyle: {
-            textalign: "center"
-        }
     },
     executiveStyle: {
         infoStyle: {

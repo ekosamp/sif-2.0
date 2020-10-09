@@ -1,8 +1,8 @@
 [
     {
         "id": "roger-ketch",
-        "name": "Roger Ketch, Lindsay Ketch",
-        "designation": "Project Manager, Financial Services",
+        "name": "Roger & Lindsay Ketch",
+        "designation": "Project Manager, Financial Services, Owners",
         "position": "executive",
         "images": {
             "large": "../../images/about-us/ketchs.jpg",
@@ -12,8 +12,8 @@
     },
     {
         "id": "carey-rabey",
-        "name": "Carey Rabey",
-        "designation": "Installation Manager",
+        "name": "Carey & Leah Rabey",
+        "designation": "Installation Manager, Owners",
         "position": "executive",
         "images": {
             "large": "../../images/about-us/rabeys.jpg",
@@ -44,5 +44,11 @@
         "name": "Jonas Vaness",
         "designation": "installs",
         "position": "installs"
+    },
+    {
+        "id": "laurel-walker",
+        "name": "Laurel Walker",
+        "designation": "office",
+        "position": "office"
     }
 ]

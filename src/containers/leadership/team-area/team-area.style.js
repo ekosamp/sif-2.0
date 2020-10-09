@@ -19,3 +19,12 @@ export const TeamWrapper = styled.section `
         }
     }
 `;
+
+export const TypedWrapper = styled.span `
+    @media ${device.small}{
+        display: none;
+    }
+    @media ${device.xsmall}{
+        display: none;
+    }
+`;

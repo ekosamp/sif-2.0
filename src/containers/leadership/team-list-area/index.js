@@ -6,7 +6,7 @@ import Heading from '../../../components/ui/heading'
 import Text from '../../../components/ui/text'
 import {TeamListWrapper} from './team-list-area.style'
  
-const TeamListArea = ({sectionStyle, headingStyle, boxStyles}) => {
+const TeamListArea = ({headingStyle, boxStyles}) => {
     const teamData = useStaticQuery(graphql `
         query {
             TeamSales: allTeamsJson(filter: {position: {eq: "sales"}}) {
@@ -25,10 +25,19 @@ const TeamListArea = ({sectionStyle, headingStyle, boxStyles}) => {
                     }
                 }
             }
+            TeamOffice: allTeamsJson(filter: {position: {eq: "office"}}) {
+                edges {
+                    node {
+                        id
+                        name
+                    }
+                }
+            }
         }
     `)
     const sales = teamData.TeamSales.edges;
     const installs = teamData.TeamInstalls.edges;
+    const office = teamData.TeamOffice.edges;
     return (
         <TeamListWrapper>
             <Container>
@@ -49,14 +58,14 @@ const TeamListArea = ({sectionStyle, headingStyle, boxStyles}) => {
                             ))}
                         </Box>
                     </Col>
-                    {/* <Col md={3}>
-                        <Heading {...headingStyle}>Staffs</Heading>
+                    <Col md={3}>
+                        <Heading {...headingStyle}>Office Personnel</Heading>
                         <Box {...boxStyles}>
-                            {staffs && staffs.map(staff => (
+                            {office && office.map(staff => (
                                 <Text key={staff.node.id}>{staff.node.name}</Text>
                             ))}
                         </Box>
-                    </Col> */}
+                    </Col>
                 </Row>
             </Container>
         </TeamListWrapper>
