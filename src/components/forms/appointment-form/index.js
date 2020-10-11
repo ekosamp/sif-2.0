@@ -67,6 +67,7 @@ const AppointmentForm = () => {
                     type="phone"
                     placeholder="Phone"
                     hover="2"
+                    ref={register({})}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -94,6 +95,7 @@ const AppointmentForm = () => {
                     type="text"
                     placeholder="Make"
                     hover="2"
+                    ref={register({})}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -103,6 +105,7 @@ const AppointmentForm = () => {
                     type="text"
                     placeholder="Model"
                     hover="2"
+                    ref={register({})}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -112,6 +115,7 @@ const AppointmentForm = () => {
                     type="text"
                     placeholder="Serial number"
                     hover="2"
+                    ref={register({})}
                 />
             </FormGroup>
             <FormGroup mb="20px">
@@ -120,7 +124,8 @@ const AppointmentForm = () => {
                     id="message" 
                     placeholder="Please add any additional info including current issues you are experiencing"
                     hover="2"
-                ></Textarea>
+                    ref={register({})}
+                    ></Textarea>
             </FormGroup>
             <FormGroup textalign="center">
                 <input type="text" name="_gotcha" style={{display:"none"}} />
