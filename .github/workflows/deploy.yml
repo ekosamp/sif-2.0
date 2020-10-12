@@ -1,4 +1,4 @@
-name: New deployment
+name: Test sync deployment
 
 on:
   push:
@@ -12,9 +12,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 40
+    uses: actions/checkout@v2.3.2
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -51,11 +49,11 @@ jobs:
         GATSBY_SCHEMA_TIMEOUT: 10000
         GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
 
-    - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@beta-v4
       with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: public/
-        git-ftp-args: --dry-run
+        dry-run: true
