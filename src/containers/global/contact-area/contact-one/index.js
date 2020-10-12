@@ -29,10 +29,10 @@ const ContactArea = ({
             }
             contactData: site {
                 siteMetadata {
-                  contact {
-                    phone
-                    email
-                  }
+                    contact {
+                        phone
+                        email
+                    }
                 }
             }
         } 

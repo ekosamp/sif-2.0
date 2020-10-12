@@ -12,9 +12,9 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.1.0
       with:
-        fetch-depth: 2
+        fetch-depth: 1
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -64,13 +64,13 @@ jobs:
       run: |
         git reset --hard
 
-    - name: Upload public dir
-      uses: actions/upload-artifact@v1
-      with:
-        name: public
-        path: public
-      env:
-        CI: true
+    # - name: Upload public dir
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: public
+    #     path: public
+    #   env:
+    #     CI: true
 
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
