@@ -51,18 +51,6 @@ jobs:
         GATSBY_SCHEMA_TIMEOUT: 10000
         GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
 
-    # - name: Git reset
-    #   run: |
-    #     git reset --hard
-
-    # - name: Upload public dir
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: public
-    #     path: public
-    #   env:
-    #     CI: true
-
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
