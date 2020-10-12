@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.1.0
       with:
-        fetch-depth: 1
+        fetch-depth: 0
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -29,15 +29,6 @@ jobs:
         key: ${{ runner.os }}-cache-gatsby
         restore-keys: |
           ${{ runner.os }}-cache-gatsby
-
-    - name: Wordpress Cache Folder
-      uses: actions/cache@v1
-      id: wp-cache-folder
-      with:
-        path: .wordpress-cache
-        key: ${{ runner.os }}-cache-wp
-        restore-keys: |
-          ${{ runner.os }}-cache-wp
 
     - name: Gatsby Public Folder
       uses: actions/cache@v1
@@ -54,11 +45,11 @@ jobs:
     - name: Build
       run:  npm run build --if-present --log-pages
       env:
+        GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
         GATSBY_WORDPRESS_URL_DEV: ${{ secrets.GATSBY_WORDPRESS_URL_DEV }}
         GATSBY_CONCURRENT_DOWNLOAD: 20
         GATSBY_SCHEMA_TIMEOUT: 10000
         GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
-        GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
 
     - name: Git reset
       run: |
@@ -79,4 +70,4 @@ jobs:
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
         local-dir: public
-        git-ftp-args: --insecure
+        git-ftp-args: --dry-run
