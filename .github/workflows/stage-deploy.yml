@@ -1,0 +1,82 @@
+name: New deployment
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Gatsby Cache Folder
+      uses: actions/cache@v1
+      id: gatsby-cache-folder
+      with:
+        path: .cache
+        key: ${{ runner.os }}-cache-gatsby
+        restore-keys: |
+          ${{ runner.os }}-cache-gatsby
+
+    - name: Wordpress Cache Folder
+      uses: actions/cache@v1
+      id: wp-cache-folder
+      with:
+        path: .wordpress-cache
+        key: ${{ runner.os }}-cache-wp
+        restore-keys: |
+          ${{ runner.os }}-cache-wp
+
+    - name: Gatsby Public Folder
+      uses: actions/cache@v1
+      id: gatsby-public-folder
+      with:
+        path: public/
+        key: ${{ runner.os }}-public-gatsby
+        restore-keys: |
+          ${{ runner.os }}-public-gatsby
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run:  npm run build --if-present
+      env:
+        GATSBY_WORDPRESS_URL_DEV: ${{ secrets.GATSBY_WORDPRESS_URL_DEV }}
+        GATSBY_CONCURRENT_DOWNLOAD: 20
+        GATSBY_SCHEMA_TIMEOUT: 10000
+        GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
+        GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: false
+
+    - name: Git reset
+      run: |
+        git reset --hard
+
+    - name: Upload public dir
+      uses: actions/upload-artifact@v1
+      with:
+        name: public
+        path: public
+      env:
+        CI: true
+
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME_STAGE }}
+        ftp-password: ${{ secrets.FTP_PASSWORD_STAGE }}
+        local-dir: public
+        git-ftp-args: --insecure
