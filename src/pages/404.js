@@ -5,7 +5,7 @@ import ErrorArea from '../containers/error-area'
 
 const NotFoundPage = ({location}) => (
   <Layout location={location}>
-    <SEO title="404: Not found" />
+    <SEO title="404: Page not found" />
     <ErrorArea/>
   </Layout>
 )
