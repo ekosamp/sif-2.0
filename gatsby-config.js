@@ -200,7 +200,6 @@ module.exports = {
           html: {
             imageQuality: 60,
           },
-          excludeFieldNames: [`UserRole`, `Menu`, `Tag`, `PostFormat`, `MenuItem`, `Comment`],
         },
       },
     },
