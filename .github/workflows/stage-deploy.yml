@@ -44,7 +44,7 @@ jobs:
       run:  npm run build --if-present
       env:
         GATSBY_WORDPRESS_URL_DEV: ${{ secrets.GATSBY_WORDPRESS_URL_DEV }}
-        GATSBY_CONCURRENT_DOWNLOAD: 20
+        GATSBY_CONCURRENT_DOWNLOAD: 5
         GATSBY_SCHEMA_TIMEOUT: 10000
         GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
         GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
