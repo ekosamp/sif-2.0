@@ -4,6 +4,8 @@ Company website revamped 2020
 
 <!-- [![Nuget](https://img.shields.io/nuget/v/SoftwareAteliers.AspNetCoreVueStarter.svg?style=flat&color=2196f3)](https://www.nuget.org/packages/SoftwareAteliers.AspNetCoreVueStarter/) -->
 
+![Staging deployment](https://github.com/ddiiorio/sif-2.0/workflows/Staging%20deployment/badge.svg?branch=dev)
+
 ---
 
 ## Table of Contents
