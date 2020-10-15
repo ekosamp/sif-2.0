@@ -43,7 +43,7 @@ const ContactForm = () => {
                             placeholder="Name *"
                             ref={register({ required: 'Name is required' })}
                         />
-                        <Error>{errors.con_name && errors.con_name.message}</Error>
+                        <Error>{errors.contact_name && errors.contact_name.message}</Error>
                     </FormGroup> 
                 </Col>
                 <Col lg={6}>
@@ -61,7 +61,7 @@ const ContactForm = () => {
                                 }
                             })}
                         />
-                        <Error>{errors.con_email && errors.con_email.message}</Error>
+                        <Error>{errors._replyto && errors._replyto.message}</Error>
                     </FormGroup>
                 </Col>
             </Row>
@@ -75,7 +75,7 @@ const ContactForm = () => {
                             placeholder="Subject *"
                             ref={register({ required: 'Subject is required' })}
                         />
-                        <Error>{errors.con_subject && errors.con_subject.message}</Error>
+                        <Error>{errors.subject && errors.subject.message}</Error>
                     </FormGroup>
                 </Col>
             </Row>
@@ -98,14 +98,14 @@ const ContactForm = () => {
                                 }
                             })}
                             ></Textarea>
-                            <Error>{errors.con_message && errors.con_message.message}</Error>
+                            <Error>{errors.message && errors.message.message}</Error>
                     </FormGroup>
                 </Col>
             </Row>
             <Row>
                 <Col lg={12}>
                     <input type="text" name="_gotcha" style={{display:"none"}} />
-                    {formStatus === "SUCCESS" ? <Text as="strong">Thanks!</Text> : <Button skin="primary" type="submit">Send Message</Button>}
+                    {formStatus === "SUCCESS" ? <Text as="strong">Thanks!{'  '}</Text> : <Button skin="primary" type="submit">Send Message</Button>}
                     {formStatus === "ERROR" && <Error>Error, please try again</Error>}
                     {'   '}
                     <Button skin="secondary" type="reset" id="resetBtn">Reset</Button>

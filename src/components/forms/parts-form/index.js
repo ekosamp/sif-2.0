@@ -53,8 +53,8 @@ const ReplacementPartsForm = () => {
                     ref={register({
                         required: 'Email is required',
                         pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                          message: "invalid email address"
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                            message: "Invalid email address"
                         }
                     })}
                 />
@@ -97,6 +97,7 @@ const ReplacementPartsForm = () => {
                     hover="2"
                     ref={register({ required: 'Make is required' })}
                 />
+                <Error>{errors.make && errors.make.message}</Error>
             </FormGroup>
             <FormGroup mb="20px">
                 <Input
@@ -107,6 +108,7 @@ const ReplacementPartsForm = () => {
                     hover="2"
                     ref={register({ required: 'Model is required' })}
                 />
+                <Error>{errors.model && errors.model.message}</Error>
             </FormGroup>
             <FormGroup mb="20px">
                 <Input
@@ -124,12 +126,19 @@ const ReplacementPartsForm = () => {
                     id="message" 
                     placeholder="Please describe what part(s) you are looking for, quantities, and any additional info"
                     hover="2"
-                    ref={register({})}
+                    ref={register({
+                        required: 'Description is required',
+                        maxLength: {
+                            value: 500,
+                            message: "Maximum length is 500"
+                        }
+                    })}
                     ></Textarea>
+                <Error>{errors.message && errors.message.message}</Error>
             </FormGroup>
             <FormGroup textalign="center" mb="20px">
                 <input type="text" name="_gotcha" style={{display:"none"}} />
-                {formStatus === "SUCCESS" ? <Text as="strong">Thanks!</Text> : 
+                {formStatus === "SUCCESS" ? <Text as="strong">Thanks!{'  '}</Text> : 
                 <Button 
                     type="submit"
                     pl="54px"
