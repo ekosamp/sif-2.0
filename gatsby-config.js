@@ -180,26 +180,31 @@ module.exports = {
       options: {
         url: process.env.GATSBY_WORDPRESS_URL_DEV || `https://www.southislandfireplace.com/wp/graphql`,
         verbose: true,
-        develop: {
-          hardCacheMediaFiles: true,
-        },
         debug: {
           graphql: {
             writeQueriesToDisk: true,
             showQueryVarsOnError: true,
           },
         },
-        options: {
-          develop: {
-            nodeUpdateInterval: 10000
-          },
-          schema: {
-            timeout: process.env.GATSBY_SCHEMA_TIMEOUT || 100000,
-            perPage: 5,
-          },
-          html: {
-            imageQuality: 60,
-          },
+        develop: {
+          hardCacheMediaFiles: true,
+          nodeUpdateInterval: 10000
+        },
+        schema: {
+          timeout: process.env.GATSBY_SCHEMA_TIMEOUT || 150000,
+          perPage: 5,
+        },
+        html: {
+          imageQuality: 60,
+        },
+        type: {
+          Page: { exclude: true },
+          Taxonomy: { exclude: true },
+          Tag: { exclude: true },
+          PostFormat: { exclude: true },
+          Comment: { exclude: true },
+          Menu: { exclude: true },
+          MenuItem: { exclude: true },
         },
       },
     },
