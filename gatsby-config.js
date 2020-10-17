@@ -191,7 +191,7 @@ module.exports = {
           nodeUpdateInterval: 10000
         },
         schema: {
-          timeout: process.env.GATSBY_SCHEMA_TIMEOUT || 150000,
+          timeout: 150000,
           perPage: 5,
         },
         html: {
@@ -219,7 +219,6 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: `tomato`,
-        // Disable the loading spinner.
         showSpinner: true,
       },
     },
