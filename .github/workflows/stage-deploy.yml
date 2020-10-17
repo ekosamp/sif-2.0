@@ -47,7 +47,7 @@ jobs:
         GATSBY_WORDPRESS_URL_DEV: ${{ secrets.GATSBY_WORDPRESS_URL_DEV }}
         GATSBY_CONCURRENT_DOWNLOAD: 10
         GATSBY_SCHEMA_TIMEOUT: 150000
-        GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
+        # GATSBY_GA_TRACKING_ID: ${{ secrets.GATSBY_GA_TRACKING_ID }}
 
     - name: Git reset
       run: |
