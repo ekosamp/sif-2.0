@@ -189,25 +189,17 @@ module.exports = {
             showQueryVarsOnError: true,
           },
         },
-        develop: {
-          hardCacheMediaFiles: true,
-          nodeUpdateInterval: 10000
-        },
-        schema: {
-          timeout: 150000,
-          perPage: 40,
-        },
-        html: {
-          imageQuality: 60,
-        },
-        type: {
-          Page: { exclude: true },
-          Taxonomy: { exclude: true },
-          Tag: { exclude: true },
-          PostFormat: { exclude: true },
-          Comment: { exclude: true },
-          Menu: { exclude: true },
-          MenuItem: { exclude: true },
+        options: {
+          develop: {
+            nodeUpdateInterval: 10000
+          },
+          schema: {
+            timeout: 100000,
+            perPage: 5,
+          },
+          html: {
+            imageQuality: 60,
+          },
         },
       },
     },
