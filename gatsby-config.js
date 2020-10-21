@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   pathPrefix: `/stage`,
   siteMetadata: {
@@ -178,7 +181,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: process.env.GATSBY_WORDPRESS_URL_DEV || `https://www.southislandfireplace.com/wp/graphql`,
+        url: process.env.GATSBY_WORDPRESS_URL_DEV,
         verbose: true,
         debug: {
           graphql: {
@@ -192,7 +195,7 @@ module.exports = {
         },
         schema: {
           timeout: 150000,
-          perPage: 50,
+          perPage: 40,
         },
         html: {
           imageQuality: 60,
