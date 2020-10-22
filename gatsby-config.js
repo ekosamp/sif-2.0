@@ -189,18 +189,26 @@ module.exports = {
             showQueryVarsOnError: true,
           },
         },
-        options: {
-          develop: {
-            nodeUpdateInterval: 10000
-          },
-          schema: {
-            timeout: 100000,
-            perPage: 5,
-          },
-          html: {
-            imageQuality: 60,
-          },
+        develop: {
+          nodeUpdateInterval: 10000
         },
+        schema: {
+          timeout: 100000,
+          perPage: 25,
+        },
+        html: {
+          imageQuality: 60,
+        },
+        type: {
+          Page: { exclude: true },
+          UserRole: { exclude: true },
+          Post: { exclude: true },
+          Category: { exclude: true },
+          Tag: { exclude: true },
+          Taxonomy: { exclude: true },
+          Menu: { exclude: true },
+          MenuItem: { exclude: true },
+        }
       },
     },
     {
