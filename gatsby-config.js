@@ -194,7 +194,7 @@ module.exports = {
         },
         schema: {
           timeout: 100000,
-          perPage: 25,
+          perPage: 35,
         },
         html: {
           imageQuality: 60,
